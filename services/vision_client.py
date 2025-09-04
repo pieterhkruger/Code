@@ -87,6 +87,7 @@ def _result_to_dict(vision_result: Any) -> Dict[str, Any]:
             out["tags"] = [
                 {"name": getattr(t, "name", None), "confidence": getattr(t, "confidence", None)}
                 for t in tags
+                if getattr(t, "name", None)  # keep only tags with a name
             ]
     except Exception:
         pass
@@ -97,7 +98,6 @@ def _result_to_dict(vision_result: Any) -> Dict[str, Any]:
         if objs:
             olist = []
             for o in objs:
-                # Name may be in .name or first tag
                 name = getattr(o, "name", None)
                 if not name:
                     try:
@@ -108,16 +108,23 @@ def _result_to_dict(vision_result: Any) -> Dict[str, Any]:
 
                 bb = getattr(o, "bounding_box", None)
                 poly = getattr(o, "bounding_polygon", None) or getattr(o, "polygon", None)
-                bbox = _box_from_any(bb, poly)
+                bbox = _box_from_any(bb, poly)  # your existing helper to normalize polygons → [x,y,w,h]
 
                 olist.append({
                     "name": name,
                     "confidence": getattr(o, "confidence", None),
                     "bbox": bbox,
                 })
+
+            # Filter out placeholders/noise
+            olist = [
+                o for o in olist
+                if o.get("name") and o["name"] != "object" and o.get("bbox") and (o.get("confidence") is not None)
+            ]
             out["objects"] = olist
     except Exception:
         pass
+
 
     # ---- read (OCR) ----------------------------------------------------------
     try:

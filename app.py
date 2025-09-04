@@ -122,22 +122,47 @@ def _render_step1_results():
     st.json(artifacts)
 
     # Download buttons with stable keys so they survive reruns
-    import os
     from core.io import load_json
+    import os, json, mimetypes
 
     for label, path in artifacts.items():
         try:
-            with open(path, "r", encoding="utf-8") as f:
-                data = f.read()
-            st.download_button(
-                label=f"Download {label}.json",
-                data=data,
-                file_name=os.path.basename(path),
-                mime="application/json",
-                key=f"dl-{label}-{run_id}",
-            )
+            if not path or not os.path.exists(path):
+                st.warning(f"{label}: not found at {path}")
+                continue
+
+            mime, _ = mimetypes.guess_type(path)
+            ext = os.path.splitext(path)[1].lower()
+
+            # JSON preview (text mode)
+            if ext == ".json":
+                with open(path, "r", encoding="utf-8") as f:
+                    try:
+                        st.json(json.load(f))
+                    except Exception:
+                        f.seek(0)
+                        st.code(f.read())
+                st.download_button(
+                    label=f"Download {os.path.basename(path)}",
+                    data=open(path, "rb").read(),          # send bytes even for JSON (safer)
+                    file_name=os.path.basename(path),
+                    mime=mime or "application/json",
+                    key=f"dl-{label}-{run_id}",
+                )
+
+            # Everything else (PDF, images, etc.) — binary
+            else:
+                st.download_button(
+                    label=f"Download {os.path.basename(path)}",
+                    data=open(path, "rb").read(),
+                    file_name=os.path.basename(path),
+                    mime=mime or "application/octet-stream",
+                    key=f"dl-{label}-{run_id}",
+                )
+
         except Exception as ex:
             st.warning(f"Could not read {path}: {ex}")
+
 
     st.subheader("Preview: Combined raw_signals.step1.json")
     try:

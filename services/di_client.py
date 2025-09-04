@@ -136,146 +136,115 @@ class DIService:
         )
 
     def analyze_layout(
-        self,
-        content: bytes,
-        content_type: str,
-        features: Optional[List[str]] = None,
-        model_id: str = "prebuilt-layout",
-    ) -> Dict[str, Any]:
-        """
-        Analyze with DI; negotiate features, and fall back to local style extraction
-        if the service rejects the content/features.
-        """
-        requested = [f.lower().replace("-", "").replace("_", "") for f in (features or ["styleFont","keyValuePairs"])]
-        requested = ["stylefont" if f == "ocrfont" else f for f in requested]  # accept legacy alias
+    self,
+    *,
+    content: bytes,
+    content_type: str = "application/pdf",
+    model_id: str = "prebuilt-layout",
+    want_style_font: bool = True,
+    request_kv: bool = False,
+) -> Dict[str, Any]:
+    """
+    Call Azure DI 'prebuilt-layout' with styleFont/keyValuePairs if available.
+    If the service rejects a feature or content, retry gracefully and then
+    return a DI-shaped fallback built from PyMuPDF so downstream modules can
+    consume a consistent envelope.
 
-        enum_map, _ = _build_enum_map()
+    Returns:
+        dict with keys:
+          - result (on success) OR error (on failure)
+          - _featureNegotiation (always)
+          - style_fallback (when DI failed)
+    """
+    features: List[str] = []
+    if want_style_font:
+        features.append("styleFont")
+    if request_kv:
+        features.append("keyValuePairs")
 
-        def _to_sdk_feats(keys: List[str]) -> List[Any]:
-            return [enum_map.get(k, k) for k in keys]
+    nego = {
+        "requested_features": features[:],
+        "used_features": None,
+        "content_type": content_type,
+        "model_id": model_id,
+        "di_region": getattr(self, "region", None),
+    }
 
-        # Build request body
+    def _fallback_from_pdf() -> Dict[str, Any]:
+        # DI-shaped minimal envelope using PyMuPDF spans so downstream
+        # code sees predictable keys even without DI.
         try:
-            from azure.ai.documentintelligence.models import AnalyzeDocumentRequest  # GA
-            analyze_request = AnalyzeDocumentRequest(bytes_source=content)
-        except Exception:
-            analyze_request = content
+            from pdf_style_probe import extract_pdf_spans, linearize_spans
+            spans = extract_pdf_spans(content)  # [{page, text, font, size, bbox, flags, color}, ...]
+            pages = linearize_spans(spans)      # [{"page_index": i, "linearized_text": "...", "spans": [...]}, ...]
+            return {
+                "result": {
+                    "content": "\n\n".join(p["linearized_text"] for p in pages),
+                    "pages": pages,
+                },
+                "_featureNegotiation": {**nego, "fallback": "pymupdf"},
+                "style_fallback": {"source": "pymupdf", "pdf_spans": spans},
+            }
+        except Exception as ex:
+            return {
+                "error": f"DI failed and PyMuPDF fallback also failed: {ex!r}",
+                "_featureNegotiation": {**nego, "fallback": "pymupdf-error"},
+            }
 
-        def _call(model: str, keys: List[str], ct_override: Optional[str] = None):
-            feats = _to_sdk_feats(keys)
-            ctype = ct_override or content_type
-            try:
-                poller = self.client.begin_analyze_document(
-                    model_id=model,
-                    body=analyze_request,
-                    content_type=ctype,
-                    features=feats,
-                    timeout=self.timeout,
-                )
-            except TypeError:
-                poller = self.client.begin_analyze_document(
-                    model,
-                    analyze_request=analyze_request,
-                    content_type=ctype,
-                    features=feats,
-                    timeout=self.timeout,
-                )
-            return poller.result()
-
-        negotiation: Dict[str, Any] = {
-            "requested": requested[:],
-            "used_model_id": model_id,
-            "used_features": None,
-            "fallbacks": [],
+    # Primary attempt — use body= for binary content and pass features.
+    try:
+        poller = self.client.begin_analyze_document(
+            model_id=model_id,
+            body=content,
+            content_type=content_type,
+            features=features or None,
+            timeout=self.timeout,
+        )
+        result = poller.result()
+        nego["used_features"] = features[:]
+        return {
+            "result": _result_to_dict(result),
+            "_featureNegotiation": nego,
         }
 
-        def _attach_style_fallback(di_dict: Dict[str, Any]):
-            # attach proxies/spans so downstream still gets style signals
-            if _infer_is_pdf(content_type):
-                di_dict["style_fallback"] = {"source": "pymupdf", **_compute_pdf_style_fallback(content)}
-            else:
-                di_dict["style_fallback"] = {"source": "opencv_proxies", "proxies": _image_style_proxies(content)}
-
-        # 1) primary attempt
-        try:
-            res = _call(model_id, requested)
-            d = _result_to_dict(res)
-            negotiation["used_features"] = requested[:]
-            d["_featureNegotiation"] = negotiation
-            return d
-
-        except HttpResponseError as e1:
-            err1 = str(e1).lower()
-            unsupported = "unsupportedcontent" in err1 or "bad or unrecognizable" in err1
-            style_rejected = ("stylefont" in err1) or ("ocrfont" in err1)
-            kv_rejected_on_layout = ("keyvaluepairs" in err1 and model_id == "prebuilt-layout")
-
-            current_feats = requested[:]
-            use_model = model_id
-
-            if style_rejected and "stylefont" in current_feats:
-                current_feats = [k for k in current_feats if k != "stylefont"]
-                negotiation["fallbacks"].append("styleFont rejected; retrying without it")
-
-            if kv_rejected_on_layout:
-                use_model = "prebuilt-document"
-                negotiation["fallbacks"].append("keyValuePairs rejected on layout; switching to prebuilt-document")
-
-            # 2) retry after feature/model tweaks
+    except HttpResponseError as e:
+        msg = str(e)
+        # If styleFont not supported in this region/model, retry without it once.
+        if "InvalidParameter" in msg and "styleFont" in msg and "invalid" in msg.lower():
             try:
-                res = _call(use_model, current_feats)
-                d = _result_to_dict(res)
-                negotiation["used_model_id"] = use_model
-                negotiation["used_features"] = current_feats[:]
-                if style_rejected:
-                    _attach_style_fallback(d)
-                d["_featureNegotiation"] = negotiation
-                return d
-            except HttpResponseError as e2:
-                # 3) if UnsupportedContent, try application/octet-stream
-                if unsupported:
-                    negotiation["fallbacks"].append("UnsupportedContent; retry with application/octet-stream")
-                    try:
-                        res = _call(use_model, current_feats, ct_override="application/octet-stream")
-                        d = _result_to_dict(res)
-                        negotiation["used_model_id"] = use_model
-                        negotiation["used_features"] = current_feats[:]
-                        d["_featureNegotiation"] = negotiation
-                        if style_rejected:
-                            _attach_style_fallback(d)
-                        return d
-                    except Exception as e2b:
-                        pass
+                retry_features = [f for f in features if f != "styleFont"]
+                poller = self.client.begin_analyze_document(
+                    model_id=model_id,
+                    body=content,
+                    content_type=content_type,
+                    features=retry_features or None,
+                    timeout=self.timeout,
+                )
+                result = poller.result()
+                nego["used_features"] = retry_features
+                nego["styleFont_unavailable"] = True
+                return {
+                    "result": _result_to_dict(result),
+                    "_featureNegotiation": nego,
+                }
+            except Exception as e2:
+                # Fall through to PyMuPDF fallback
+                pass
 
-                # 4) if still failing, drop all add-ons and try again once
-                if current_feats:
-                    negotiation["fallbacks"].append("Dropping all add-ons and retrying")
-                    try:
-                        res = _call(use_model, [])
-                        d = _result_to_dict(res)
-                        negotiation["used_model_id"] = use_model
-                        negotiation["used_features"] = []
-                        d["_featureNegotiation"] = negotiation
-                        # No styleFont now; attach local style
-                        _attach_style_fallback(d)
-                        return d
-                    except Exception as e3:
-                        pass
+        # UnsupportedContent or anything else → fallback
+        fb = _fallback_from_pdf()
+        if "result" in fb:
+            fb["error"] = msg
+        else:
+            fb["error"] = f"{msg} (and fallback failed)"
+        return fb
 
-                # 5) give up: return error + local style fallback so downstream isn’t blind
-                out = {"error": str(e2)}
-                _attach_style_fallback(out)
-                out["_featureNegotiation"] = negotiation
-                return out
+    except Exception as ex:
+        fb = _fallback_from_pdf()
+        if "result" in fb:
+            fb["error"] = repr(ex)
+        else:
+            fb["error"] = f"{ex!r} (and fallback failed)"
+        return fb
 
-        except Exception as ex:
-            out = {"error": repr(ex)}
-            _attach_style_fallback(out)
-            out["_featureNegotiation"] = {
-                "requested": requested[:],
-                "used_model_id": model_id,
-                "used_features": None,
-                "fallbacks": ["Client-side exception; attached style fallback"],
-            }
-            return out
 # --- END OF FILE ---

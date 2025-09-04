@@ -195,15 +195,36 @@ if module_choice == "Step 2: Preprocess (stub)":
                 st.json(out2.artifact_paths)
                 # Download button
                 try:
-                    with open(out2.artifact_paths["preprocess"], "r", encoding="utf-8") as f:
-                        data = f.read()
-                    st.download_button(
-                        label="Download preprocess.step2.json",
-                        data=data,
-                        file_name=os.path.basename(out2.artifact_paths["preprocess"]),
-                        mime="application/json",
-                        key=f"dl-step2-{rid}"
-                    )
+                    import os
+                    from mimetypes import guess_type
+
+                    for label, path in artifacts.items():
+                        try:
+                            mime, _ = guess_type(path)
+                            if (mime or "").startswith("application/json") or path.lower().endswith(".json"):
+                                with open(path, "r", encoding="utf-8") as f:
+                                    data = f.read()
+                                st.download_button(
+                                    label=f"Download {label}{os.path.splitext(path)[1]}",
+                                    data=data,
+                                    file_name=os.path.basename(path),
+                                    mime=mime or "application/json",
+                                    key=f"dl-{label}-{run_id}",
+                                )
+                            else:
+                                # binary-safe
+                                with open(path, "rb") as f:
+                                    data = f.read()
+                                st.download_button(
+                                    label=f"Download {label}{os.path.splitext(path)[1]}",
+                                    data=data,
+                                    file_name=os.path.basename(path),
+                                    mime=mime or "application/octet-stream",
+                                    key=f"dl-{label}-{run_id}",
+                                )
+                        except Exception as ex:
+                            st.warning(f"Could not read {path}: {ex}")
+                    
                 except Exception as ex:
                     st.warning(f"Could not read preprocess file: {ex}")
             else:

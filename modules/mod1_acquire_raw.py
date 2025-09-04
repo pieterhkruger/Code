@@ -27,6 +27,17 @@ from core.pdf_utils import infer_content_type, pdf_to_images, pil_to_jpeg_bytes
 from services.di_client import DIService
 from services.vision_client import VisionService
 
+def _try_pdf_page_count(data: bytes) -> Optional[int]:
+    try:
+        import fitz  # PyMuPDF
+        doc = fitz.open(stream=data, filetype="pdf")
+        n = len(doc)
+        doc.close()
+        return int(n)
+    except Exception:
+        return None
+
+
 def _read_file_bytes(path_or_bytes) -> Tuple[bytes, str, str, int]:
     if isinstance(path_or_bytes, (bytes, bytearray)):
         raise ValueError("Binary input provided without filename; supply a tuple (filename, bytes).")
@@ -115,7 +126,8 @@ def run(
         save_json(os.path.join(out_dir, "vision_raw.json"), vision_all)
 
     # ---- Compose payload
-    file_meta = FileMeta(filename=filename, content_type=content_type, size_bytes=size)
+    pc = _try_pdf_page_count(data) if content_type == "application/pdf" else None
+    file_meta = FileMeta(filename=filename, content_type=content_type, size_bytes=size, page_count=pc)
     payload = RawSignalsPayload(
         file_meta=file_meta,
         di=RawDIResult(result=di_json),

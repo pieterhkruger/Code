@@ -1,0 +1,12 @@
+{
+  "error": "(InvalidRequest) Invalid request.\nCode: InvalidRequest\nMessage: Invalid request.\nInner error: {\n    \"code\": \"UnsupportedContent\",\n    \"message\": \"Content is not supported: Bad or unrecognizable request binary file or Json.\"\n}",
+  "_featureNegotiation": {
+    "requested": [
+      "stylefont",
+      "keyvaluepairs"
+    ],
+    "used_model_id": "prebuilt-layout",
+    "used_features": null,
+    "fallbacks": []
+  }
+}

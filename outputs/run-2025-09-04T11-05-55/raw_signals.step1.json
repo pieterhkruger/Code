@@ -1,0 +1,983 @@
+{
+  "file_meta": {
+    "filename": "Dr Golding Invoice - 25 Aug 2028.pdf",
+    "content_type": "application/pdf",
+    "size_bytes": 443196,
+    "page_count": null
+  },
+  "di": {
+    "result": {
+      "error": "TypeError(\"DocumentIntelligenceClientOperationsMixin.begin_analyze_document() missing 1 required positional argument: 'body'\")"
+    }
+  },
+  "vision": {
+    "pages": [
+      {
+        "page_index": 0,
+        "result": {
+          "caption": {
+            "text": "a close-up of a receipt",
+            "confidence": 0.7984177470207214
+          },
+          "read": {
+            "lines": [
+              {
+                "text": "Tax Invoice",
+                "bbox": null,
+                "words": [
+                  "Tax",
+                  "Invoice"
+                ]
+              },
+              {
+                "text": "G",
+                "bbox": null,
+                "words": [
+                  "G"
+                ]
+              },
+              {
+                "text": "Dr. Craige Golding Medical Practice",
+                "bbox": null,
+                "words": [
+                  "Dr.",
+                  "Craige",
+                  "Golding",
+                  "Medical",
+                  "Practice"
+                ]
+              },
+              {
+                "text": "65 Central Street",
+                "bbox": null,
+                "words": [
+                  "65",
+                  "Central",
+                  "Street"
+                ]
+              },
+              {
+                "text": "Houghton Estate",
+                "bbox": null,
+                "words": [
+                  "Houghton",
+                  "Estate"
+                ]
+              },
+              {
+                "text": "Johannesburg",
+                "bbox": null,
+                "words": [
+                  "Johannesburg"
+                ]
+              },
+              {
+                "text": "2187",
+                "bbox": null,
+                "words": [
+                  "2187"
+                ]
+              },
+              {
+                "text": "PLEASE RETAIN INVOICES FOR TAX PURPOSES!",
+                "bbox": null,
+                "words": [
+                  "PLEASE",
+                  "RETAIN",
+                  "INVOICES",
+                  "FOR",
+                  "TAX",
+                  "PURPOSES!"
+                ]
+              },
+              {
+                "text": "Practice No: 1811479 | MP No: 0412104",
+                "bbox": null,
+                "words": [
+                  "Practice",
+                  "No:",
+                  "1811479",
+                  "|",
+                  "MP",
+                  "No:",
+                  "0412104"
+                ]
+              },
+              {
+                "text": "Tax No: 4670187568",
+                "bbox": null,
+                "words": [
+                  "Tax",
+                  "No:",
+                  "4670187568"
+                ]
+              },
+              {
+                "text": "Date",
+                "bbox": null,
+                "words": [
+                  "Date"
+                ]
+              },
+              {
+                "text": "2025/08/25 13:28:17",
+                "bbox": null,
+                "words": [
+                  "2025/08/25",
+                  "13:28:17"
+                ]
+              },
+              {
+                "text": "Medical Aid",
+                "bbox": null,
+                "words": [
+                  "Medical",
+                  "Aid"
+                ]
+              },
+              {
+                "text": "Bankmed",
+                "bbox": null,
+                "words": [
+                  "Bankmed"
+                ]
+              },
+              {
+                "text": "Number",
+                "bbox": null,
+                "words": [
+                  "Number"
+                ]
+              },
+              {
+                "text": "IN148507",
+                "bbox": null,
+                "words": [
+                  "IN148507"
+                ]
+              },
+              {
+                "text": "Member Number",
+                "bbox": null,
+                "words": [
+                  "Member",
+                  "Number"
+                ]
+              },
+              {
+                "text": "510675770",
+                "bbox": null,
+                "words": [
+                  "510675770"
+                ]
+              },
+              {
+                "text": "Reference",
+                "bbox": null,
+                "words": [
+                  "Reference"
+                ]
+              },
+              {
+                "text": "Date Of Birth",
+                "bbox": null,
+                "words": [
+                  "Date",
+                  "Of",
+                  "Birth"
+                ]
+              },
+              {
+                "text": "1980/05/25 00:00:00",
+                "bbox": null,
+                "words": [
+                  "1980/05/25",
+                  "00:00:00"
+                ]
+              },
+              {
+                "text": "Client",
+                "bbox": null,
+                "words": [
+                  "Client"
+                ]
+              },
+              {
+                "text": "Pieter H Kruger",
+                "bbox": null,
+                "words": [
+                  "Pieter",
+                  "H",
+                  "Kruger"
+                ]
+              },
+              {
+                "text": "KRU023",
+                "bbox": null,
+                "words": [
+                  "KRU023"
+                ]
+              },
+              {
+                "text": "269 Herder Drive",
+                "bbox": null,
+                "words": [
+                  "269",
+                  "Herder",
+                  "Drive"
+                ]
+              },
+              {
+                "text": "Northcliff",
+                "bbox": null,
+                "words": [
+                  "Northcliff"
+                ]
+              },
+              {
+                "text": "Randburg",
+                "bbox": null,
+                "words": [
+                  "Randburg"
+                ]
+              },
+              {
+                "text": "South Africa",
+                "bbox": null,
+                "words": [
+                  "South",
+                  "Africa"
+                ]
+              },
+              {
+                "text": "pieterhkruger@gmail.com",
+                "bbox": null,
+                "words": [
+                  "pieterhkruger@gmail.com"
+                ]
+              },
+              {
+                "text": "Date",
+                "bbox": null,
+                "words": [
+                  "Date"
+                ]
+              },
+              {
+                "text": "Code",
+                "bbox": null,
+                "words": [
+                  "Code"
+                ]
+              },
+              {
+                "text": "Item",
+                "bbox": null,
+                "words": [
+                  "Item"
+                ]
+              },
+              {
+                "text": "Price",
+                "bbox": null,
+                "words": [
+                  "Price"
+                ]
+              },
+              {
+                "text": "Qty",
+                "bbox": null,
+                "words": [
+                  "Qty"
+                ]
+              },
+              {
+                "text": "Total",
+                "bbox": null,
+                "words": [
+                  "Total"
+                ]
+              },
+              {
+                "text": "Kruger Pieter H 1980/05/25",
+                "bbox": null,
+                "words": [
+                  "Kruger",
+                  "Pieter",
+                  "H",
+                  "1980/05/25"
+                ]
+              },
+              {
+                "text": "2025/08/25",
+                "bbox": null,
+                "words": [
+                  "2025/08/25"
+                ]
+              },
+              {
+                "text": "0192",
+                "bbox": null,
+                "words": [
+                  "0192"
+                ]
+              },
+              {
+                "text": "Consultation - Follow-Up",
+                "bbox": null,
+                "words": [
+                  "Consultation",
+                  "-",
+                  "Follow-Up"
+                ]
+              },
+              {
+                "text": "1,550.00",
+                "bbox": null,
+                "words": [
+                  "1,550.00"
+                ]
+              },
+              {
+                "text": "1.00",
+                "bbox": null,
+                "words": [
+                  "1.00"
+                ]
+              },
+              {
+                "text": "1,550.00",
+                "bbox": null,
+                "words": [
+                  "1,550.00"
+                ]
+              },
+              {
+                "text": "ICD10: E27.9",
+                "bbox": null,
+                "words": [
+                  "ICD10:",
+                  "E27.9"
+                ]
+              },
+              {
+                "text": "011 483 1080 | 011 718 3004",
+                "bbox": null,
+                "words": [
+                  "011",
+                  "483",
+                  "1080",
+                  "|",
+                  "011",
+                  "718",
+                  "3004"
+                ]
+              },
+              {
+                "text": "patients@craigegolding.co.za | http://www.drcgolding.co.za",
+                "bbox": null,
+                "words": [
+                  "patients@craigegolding.co.za",
+                  "|",
+                  "http://www.drcgolding.co.za"
+                ]
+              },
+              {
+                "text": "Sub total",
+                "bbox": null,
+                "words": [
+                  "Sub",
+                  "total"
+                ]
+              },
+              {
+                "text": "1,347.83",
+                "bbox": null,
+                "words": [
+                  "1,347.83"
+                ]
+              },
+              {
+                "text": "WhatsApp: 0838042903",
+                "bbox": null,
+                "words": [
+                  "WhatsApp:",
+                  "0838042903"
+                ]
+              },
+              {
+                "text": "Tax",
+                "bbox": null,
+                "words": [
+                  "Tax"
+                ]
+              },
+              {
+                "text": "202.17",
+                "bbox": null,
+                "words": [
+                  "202.17"
+                ]
+              },
+              {
+                "text": "Banking Details:",
+                "bbox": null,
+                "words": [
+                  "Banking",
+                  "Details:"
+                ]
+              },
+              {
+                "text": "Discount",
+                "bbox": null,
+                "words": [
+                  "Discount"
+                ]
+              },
+              {
+                "text": "0.00",
+                "bbox": null,
+                "words": [
+                  "0.00"
+                ]
+              },
+              {
+                "text": "Dr. Craige Golding",
+                "bbox": null,
+                "words": [
+                  "Dr.",
+                  "Craige",
+                  "Golding"
+                ]
+              },
+              {
+                "text": "Nedbank Killarney",
+                "bbox": null,
+                "words": [
+                  "Nedbank",
+                  "Killarney"
+                ]
+              },
+              {
+                "text": "Receipts",
+                "bbox": null,
+                "words": [
+                  "Receipts"
+                ]
+              },
+              {
+                "text": "0.00",
+                "bbox": null,
+                "words": [
+                  "0.00"
+                ]
+              },
+              {
+                "text": "1096610833",
+                "bbox": null,
+                "words": [
+                  "1096610833"
+                ]
+              },
+              {
+                "text": "Total due",
+                "bbox": null,
+                "words": [
+                  "Total",
+                  "due"
+                ]
+              },
+              {
+                "text": "1,550.00",
+                "bbox": null,
+                "words": [
+                  "1,550.00"
+                ]
+              },
+              {
+                "text": "NO RETURN OR EXCHANGE ON PRODUCTS ONCE",
+                "bbox": null,
+                "words": [
+                  "NO",
+                  "RETURN",
+                  "OR",
+                  "EXCHANGE",
+                  "ON",
+                  "PRODUCTS",
+                  "ONCE"
+                ]
+              },
+              {
+                "text": "DISPENSED.",
+                "bbox": null,
+                "words": [
+                  "DISPENSED."
+                ]
+              },
+              {
+                "text": "NB! PRICE SUBJECT TO CHANGE WITHOUT PRIOR",
+                "bbox": null,
+                "words": [
+                  "NB!",
+                  "PRICE",
+                  "SUBJECT",
+                  "TO",
+                  "CHANGE",
+                  "WITHOUT",
+                  "PRIOR"
+                ]
+              },
+              {
+                "text": "NOTIFICATION, PLEASE CONFIRM PRICES WHEN PLACING",
+                "bbox": null,
+                "words": [
+                  "NOTIFICATION,",
+                  "PLEASE",
+                  "CONFIRM",
+                  "PRICES",
+                  "WHEN",
+                  "PLACING"
+                ]
+              },
+              {
+                "text": "AN ORDER.",
+                "bbox": null,
+                "words": [
+                  "AN",
+                  "ORDER."
+                ]
+              },
+              {
+                "text": "7",
+                "bbox": null,
+                "words": [
+                  "7"
+                ]
+              },
+              {
+                "text": "Visa",
+                "bbox": null,
+                "words": [
+                  "Visa"
+                ]
+              },
+              {
+                "text": "86",
+                "bbox": null,
+                "words": [
+                  "86"
+                ]
+              },
+              {
+                "text": "Receipt",
+                "bbox": null,
+                "words": [
+                  "Receipt"
+                ]
+              },
+              {
+                "text": "Date",
+                "bbox": null,
+                "words": [
+                  "Date"
+                ]
+              },
+              {
+                "text": "13:25:17",
+                "bbox": null,
+                "words": [
+                  "13:25:17"
+                ]
+              },
+              {
+                "text": "00",
+                "bbox": null,
+                "words": [
+                  "00"
+                ]
+              },
+              {
+                "text": "086008",
+                "bbox": null,
+                "words": [
+                  "086008"
+                ]
+              },
+              {
+                "text": "403883",
+                "bbox": null,
+                "words": [
+                  "403883"
+                ]
+              },
+              {
+                "text": "0000",
+                "bbox": null,
+                "words": [
+                  "0000"
+                ]
+              },
+              {
+                "text": "Issuer",
+                "bbox": null,
+                "words": [
+                  "Issuer"
+                ]
+              },
+              {
+                "text": "0129",
+                "bbox": null,
+                "words": [
+                  "0129"
+                ]
+              },
+              {
+                "text": "Contactless",
+                "bbox": null,
+                "words": [
+                  "Contactless"
+                ]
+              },
+              {
+                "text": "000215028891",
+                "bbox": null,
+                "words": [
+                  "000215028891"
+                ]
+              },
+              {
+                "text": "000215028891",
+                "bbox": null,
+                "words": [
+                  "000215028891"
+                ]
+              },
+              {
+                "text": "0000000000",
+                "bbox": null,
+                "words": [
+                  "0000000000"
+                ]
+              },
+              {
+                "text": "0 - Approved",
+                "bbox": null,
+                "words": [
+                  "0",
+                  "-",
+                  "Approved"
+                ]
+              },
+              {
+                "text": "Notes",
+                "bbox": null,
+                "words": [
+                  "Notes"
+                ]
+              },
+              {
+                "text": "FNB1 DEBIT VISA",
+                "bbox": null,
+                "words": [
+                  "FNB1",
+                  "DEBIT",
+                  "VISA"
+                ]
+              },
+              {
+                "text": "Visa Card",
+                "bbox": null,
+                "words": [
+                  "Visa",
+                  "Card"
+                ]
+              },
+              {
+                "text": "45789670 ****** 06",
+                "bbox": null,
+                "words": [
+                  "45789670",
+                  "******",
+                  "06"
+                ]
+              },
+              {
+                "text": "A0000000031010",
+                "bbox": null,
+                "words": [
+                  "A0000000031010"
+                ]
+              },
+              {
+                "text": "CRAIGE",
+                "bbox": null,
+                "words": [
+                  "CRAIGE"
+                ]
+              },
+              {
+                "text": "R1,550.00",
+                "bbox": null,
+                "words": [
+                  "R1,550.00"
+                ]
+              },
+              {
+                "text": "17FA584CFDEB2071",
+                "bbox": null,
+                "words": [
+                  "17FA584CFDEB2071"
+                ]
+              },
+              {
+                "text": "DR GOLDING",
+                "bbox": null,
+                "words": [
+                  "DR",
+                  "GOLDING"
+                ]
+              },
+              {
+                "text": "08/25/2025",
+                "bbox": null,
+                "words": [
+                  "08/25/2025"
+                ]
+              },
+              {
+                "text": "PIN VERIFIED",
+                "bbox": null,
+                "words": [
+                  "PIN",
+                  "VERIFIED"
+                ]
+              },
+              {
+                "text": "Monday, 25 August 2025 13:28",
+                "bbox": null,
+                "words": [
+                  "Monday,",
+                  "25",
+                  "August",
+                  "2025",
+                  "13:28"
+                ]
+              },
+              {
+                "text": "CUSTOMER COPY",
+                "bbox": null,
+                "words": [
+                  "CUSTOMER",
+                  "COPY"
+                ]
+              },
+              {
+                "text": "Purchase",
+                "bbox": null,
+                "words": [
+                  "Purchase"
+                ]
+              },
+              {
+                "text": "Transaction #:",
+                "bbox": null,
+                "words": [
+                  "Transaction",
+                  "#:"
+                ]
+              },
+              {
+                "text": "Card Type :",
+                "bbox": null,
+                "words": [
+                  "Card",
+                  "Type",
+                  ":"
+                ]
+              },
+              {
+                "text": "Description",
+                "bbox": null,
+                "words": [
+                  "Description"
+                ]
+              },
+              {
+                "text": "Account :",
+                "bbox": null,
+                "words": [
+                  "Account",
+                  ":"
+                ]
+              },
+              {
+                "text": "1851624733202508251325179714",
+                "bbox": null,
+                "words": [
+                  "1851624733202508251325179714"
+                ]
+              },
+              {
+                "text": "Entry:",
+                "bbox": null,
+                "words": [
+                  "Entry:"
+                ]
+              },
+              {
+                "text": "Trace ID:",
+                "bbox": null,
+                "words": [
+                  "Trace",
+                  "ID:"
+                ]
+              },
+              {
+                "text": "Ref. Number:",
+                "bbox": null,
+                "words": [
+                  "Ref.",
+                  "Number:"
+                ]
+              },
+              {
+                "text": "Global UID:",
+                "bbox": null,
+                "words": [
+                  "Global",
+                  "UID:"
+                ]
+              },
+              {
+                "text": "STAN :",
+                "bbox": null,
+                "words": [
+                  "STAN",
+                  ":"
+                ]
+              },
+              {
+                "text": "Auth. Code:",
+                "bbox": null,
+                "words": [
+                  "Auth.",
+                  "Code:"
+                ]
+              },
+              {
+                "text": "Batch #:",
+                "bbox": null,
+                "words": [
+                  "Batch",
+                  "#:"
+                ]
+              },
+              {
+                "text": "Response:",
+                "bbox": null,
+                "words": [
+                  "Response:"
+                ]
+              },
+              {
+                "text": "TVR :",
+                "bbox": null,
+                "words": [
+                  "TVR",
+                  ":"
+                ]
+              },
+              {
+                "text": "Mode :",
+                "bbox": null,
+                "words": [
+                  "Mode",
+                  ":"
+                ]
+              },
+              {
+                "text": "AID:",
+                "bbox": null,
+                "words": [
+                  "AID:"
+                ]
+              },
+              {
+                "text": "CVR :",
+                "bbox": null,
+                "words": [
+                  "CVR",
+                  ":"
+                ]
+              },
+              {
+                "text": "06011203A000000F030000000100",
+                "bbox": null,
+                "words": [
+                  "06011203A000000F030000000100"
+                ]
+              },
+              {
+                "text": "000000000015116095",
+                "bbox": null,
+                "words": [
+                  "000000000015116095"
+                ]
+              },
+              {
+                "text": "TSI :",
+                "bbox": null,
+                "words": [
+                  "TSI",
+                  ":"
+                ]
+              },
+              {
+                "text": "RespCode :",
+                "bbox": null,
+                "words": [
+                  "RespCode",
+                  ":"
+                ]
+              },
+              {
+                "text": "AC:",
+                "bbox": null,
+                "words": [
+                  "AC:"
+                ]
+              },
+              {
+                "text": "ATC:",
+                "bbox": null,
+                "words": [
+                  "ATC:"
+                ]
+              },
+              {
+                "text": "APPN:",
+                "bbox": null,
+                "words": [
+                  "APPN:"
+                ]
+              },
+              {
+                "text": "Amount :",
+                "bbox": null,
+                "words": [
+                  "Amount",
+                  ":"
+                ]
+              }
+            ]
+          }
+        }
+      }
+    ]
+  },
+  "country_bias": "ZA",
+  "notes": [
+    "Step 1 raw acquisition complete",
+    "DI preserves vector text; Vision used for brand/objects/READ on images"
+  ]
+}

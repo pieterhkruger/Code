@@ -1,0 +1,36 @@
+# Byte-compiled / cache
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+
+# Environments
+.venv/
+venv/
+env/
+
+# Build / dist
+build/
+dist/
+*.egg-info/
+
+# OS / editor junk
+.DS_Store
+Thumbs.db
+.vscode/
+
+# Jupyter
+.ipynb_checkpoints/
+
+# Logs
+*.log
+
+# Streamlit secrets (keep credentials out of git)
+.streamlit/secrets.toml
+
+# Local data
+*.sqlite
+data/
+
+# Environment variables
+.env

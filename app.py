@@ -173,16 +173,13 @@ def _render_step1_results():
 # Always render last results if present (so they persist after downloads)
 _render_step1_results()
 
-
 # ---------------------- Step 2 UI ----------------------
 if module_choice == "Step 2: Preprocess (stub)":
-    st.header("Step 2: Preprocess & Enrich")
+    st.header("Step 2: Preprocess & Enrich — Text Styles")
 
-    step2_col1, step2_col2 = st.columns(2)
-    with step2_col1:
-        use_last = st.checkbox("Use last Step 1 results in this session", value=True)
-    with step2_col2:
-        step2_run_id = st.text_input("Run ID for Step 2 (optional; defaults to last or new)", value=st.session_state.get("step1_run_id", ""))
+    # Defaults / context from last run
+    use_last = st.checkbox("Use last Step 1 results in this session", value=True)
+    step2_run_id = st.text_input("Run ID for Step 2 (optional; defaults to last or new)", value=st.session_state.get("step1_run_id", ""))
 
     step1_json = None
     source_hint = None
@@ -197,7 +194,6 @@ if module_choice == "Step 2: Preprocess (stub)":
     if up2:
         import json, tempfile, os
         buf = up2.read().decode("utf-8")
-        # stash to temp file so mod2 can read a path
         tmpdir = os.path.join("tmp")
         os.makedirs(tmpdir, exist_ok=True)
         tmp_step1 = os.path.join(tmpdir, "uploaded_step1.json")
@@ -205,52 +201,106 @@ if module_choice == "Step 2: Preprocess (stub)":
             f.write(buf)
         step1_json = tmp_step1
 
-    source_path = st.text_input("Optional source file path (outputs/<run_id>/source.pdf if you stored it)")
+    source_path = st.text_input("Optional source file path (PDF/image). If you ticked 'Store source file' in Step 1, it's prefilled here.", value=source_hint or "")
 
-    run2 = st.button("Run Step 2")
+    st.markdown("### Backends and weights")
+    from services import text_style_panel as tsp
+    colA, colB = st.columns(2)
+    with colA:
+        en_pm = st.checkbox("Enable PyMuPDF (true PDF spans)", value=tsp.ENABLE_PYMUPDF)
+        en_az = st.checkbox("Enable Azure (DI v4 → FR v3)", value=tsp.ENABLE_AZURE)
+        en_te = st.checkbox("Enable Tesseract + WFA", value=tsp.ENABLE_TESSERACT)
+        en_vi = st.checkbox("Enable Vision pixel ROI metrics", value=tsp.ENABLE_VISION_PIXEL)
+    with colB:
+        wt_pm = st.slider("Weight: PyMuPDF", 0.0, 1.0, float(tsp.WEIGHT_PYMUPDF), 0.05)
+        wt_az = st.slider("Weight: Azure", 0.0, 1.0, float(tsp.WEIGHT_AZURE), 0.05)
+        wt_te = st.slider("Weight: Tesseract", 0.0, 1.0, float(tsp.WEIGHT_TESSERACT), 0.05)
+        wt_vi = st.slider("Weight: Vision pixel", 0.0, 1.0, float(tsp.WEIGHT_VISION_PIXEL), 0.05)
+
+    include_ops = st.checkbox("Include per-service opinions in JSON (for audit)", value=tsp.INCLUDE_BACKEND_OPINIONS)
+
+    run2 = st.button("Run Step 2 (Build Text Style Panel)", type="primary")
     if run2:
         if not step1_json:
             st.error("Provide Step 1 combined JSON (use last results or upload the file).")
         else:
             from modules import mod2_preprocess as mod2
             rid = step2_run_id or (st.session_state.get("step1_run_id") or new_run_id("run"))
-            out2 = mod2.run(step1_json, run_id=rid, source_file_path=source_path or source_hint)
-            if out2.ok:
-                st.success(out2.message)
-                st.json(out2.artifact_paths)
-                # Download button
-                try:
-                    import os
-                    from mimetypes import guess_type
+            out2 = mod2.run(
+                step1_json, run_id=rid, source_file_path=source_path or source_hint,
+                service_toggles={"pymupdf": en_pm, "azure": en_az, "tesseract": en_te, "vision_pixel": en_vi},
+                weights={"pymupdf": wt_pm, "azure": wt_az, "tesseract": wt_te, "vision_pixel": wt_vi},
+                include_backend_opinions=include_ops,
+            )
+            st.session_state["step2_out_ok"] = out2.ok
+            st.session_state["step2_out_msg"] = out2.message
+            st.session_state["step2_run_id"] = out2.run_id
+            st.session_state["step2_artifacts"] = out2.artifact_paths
+            st.session_state["step2_payload"] = out2.payload
 
-                    for label, path in artifacts.items():
+    # --- Render Step 2 results if available ---
+    if st.session_state.get("step2_artifacts"):
+        ok = st.session_state.get("step2_out_ok", False)
+        msg = st.session_state.get("step2_out_msg", "")
+        run_id = st.session_state.get("step2_run_id", "run-unknown")
+        artifacts2 = st.session_state["step2_artifacts"]
+        payload2 = st.session_state.get("step2_payload")
+
+        if ok:
+            st.success(msg)
+        else:
+            st.error(msg)
+        st.write(f"**Run ID:** {run_id}")
+        st.write("Artifacts written:")
+        st.json(artifacts2)
+
+        # Show preview + allow downloads
+        import json, os, mimetypes
+        for label, path in artifacts2.items():
+            try:
+                if not path or not os.path.exists(path):
+                    st.warning(f"{label}: not found at {path}")
+                    continue
+                mime, _ = mimetypes.guess_type(path)
+                ext = os.path.splitext(path)[1].lower()
+                if ext == ".json":
+                    with open(path, "r", encoding="utf-8") as f:
                         try:
-                            mime, _ = guess_type(path)
-                            if (mime or "").startswith("application/json") or path.lower().endswith(".json"):
-                                with open(path, "r", encoding="utf-8") as f:
-                                    data = f.read()
-                                st.download_button(
-                                    label=f"Download {label}{os.path.splitext(path)[1]}",
-                                    data=data,
-                                    file_name=os.path.basename(path),
-                                    mime=mime or "application/json",
-                                    key=f"dl-{label}-{run_id}",
-                                )
-                            else:
-                                # binary-safe
-                                with open(path, "rb") as f:
-                                    data = f.read()
-                                st.download_button(
-                                    label=f"Download {label}{os.path.splitext(path)[1]}",
-                                    data=data,
-                                    file_name=os.path.basename(path),
-                                    mime=mime or "application/octet-stream",
-                                    key=f"dl-{label}-{run_id}",
-                                )
-                        except Exception as ex:
-                            st.warning(f"Could not read {path}: {ex}")
-                    
-                except Exception as ex:
-                    st.warning(f"Could not read preprocess file: {ex}")
+                            st.json(json.load(f))
+                        except Exception:
+                            f.seek(0)
+                            st.code(f.read())
+                    st.download_button(
+                        label=f"Download {os.path.basename(path)}",
+                        data=open(path, "rb").read(),
+                        file_name=os.path.basename(path),
+                        mime=mime or "application/json",
+                        key=f"dl-step2-{label}-{run_id}",
+                    )
+                else:
+                    st.download_button(
+                        label=f"Download {os.path.basename(path)}",
+                        data=open(path, "rb").read(),
+                        file_name=os.path.basename(path),
+                        mime=mime or "application/octet-stream",
+                        key=f"dl-step2-{label}-{run_id}",
+                    )
+            except Exception as ex:
+                st.warning(f"Could not read {path}: {ex}")
+
+    st.markdown("---")
+    st.markdown("### Evaluate services against your truth labels")
+    st.write("Download `textstyles.eval_template.step2.json`, fill `truth.bold` / `truth.italic`, then upload it here.")
+    up_eval = st.file_uploader("Upload adjudicated JSON", type=["json"], key="step2_eval_uploader")
+    if up_eval:
+        try:
+            import json
+            obj = json.loads(up_eval.read().decode("utf-8"))
+            from modules import mod2_preprocess as mod2
+            metrics = mod2.evaluate_adjudicated(obj)
+            if "error" in metrics:
+                st.error(metrics["error"])
             else:
-                st.error(out2.message)
+                st.json(metrics)
+        except Exception as ex:
+            st.error(f"Could not evaluate: {ex}")

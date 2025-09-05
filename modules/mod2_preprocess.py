@@ -331,3 +331,13 @@ def run(
         payload=None,
         artifact_paths={"preprocess": preprocess_path, **tstyle_artifacts},
     )
+
+# --- wrapper used by the Step 2 UI to score adjudicated files ---
+def evaluate_adjudicated(obj: dict) -> dict:
+    try:
+        from services.text_style_panel import evaluate_against_truth
+    except Exception as ex:
+        return {"error": f"Evaluator not available: {ex!r}"}
+    items = obj.get("items") or []
+    return evaluate_against_truth(items)
+

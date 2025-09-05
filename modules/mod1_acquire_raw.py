@@ -91,6 +91,11 @@ def run(
             features=["styleFont", "keyValuePairs"],
             model_id="prebuilt-layout",  # can switch to "prebuilt-document" later if needed
         )
+        # --- Compatibility: guarantee both keys for downstream readers ---
+        # Some older runs only had {"result": {...}}; newer code prefers {"layout": {...}}.
+        # Keep them as aliases to the *same* dict so both paths work.
+        if isinstance(di_json, dict) and "result" in di_json and "layout" not in di_json:
+            di_json["layout"] = di_json["result"]
         save_json(os.path.join(out_dir, "di_raw.json"), di_json)
     else:
         di_json = {"skipped": True, "reason": "DI not configured or disabled"}

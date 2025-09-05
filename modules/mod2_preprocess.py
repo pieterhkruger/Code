@@ -10,32 +10,22 @@ What this module does:
 - Writes preprocess.step2.json into the run's output dir
 - Normalizes DI styles to suppress obvious handwriting false positives
 - Computes basic Vision line stats
-- NEW: Type-agnostic page segmentation (generic change-point detection).
-  For each Vision page we:
-    • sort lines by top-y
-    • evaluate every potential split between consecutive lines
-      using a score that blends:
-         - normalized vertical gap between blocks
-         - change in left margin (layout)
-         - change in average line height (layout/style proxy)
-         - change in digit share (content style)
-         - change in “FIELD: value” line ratio (content style)
-    • choose the split with the highest score, if it clears a threshold
+- Type-agnostic, location-agnostic page segmentation:
+    • Primary: generic change-point detection over sorted lines using a blended score
+      (vertical gap, left-margin shift, height shift, digit-share shift, field:value ratio shift).
+    • Adaptive acceptance: absolute threshold OR statistical outlier (z-score / percentile).
+    • Fallback: 1-D k-means on line y-centers (k=2) with separation heuristics.
+- Writes for each Vision page:
+    read.documents = [doc_A, doc_B]   # zero/one/two segments; no semantics
+    read.read_sections = {"invoice": doc_A.lines, "receipt": doc_B.lines}  # compatibility only
+    read._sectioning_debug = {...}
+- Additionally persists a run-level debug artifact:
+    segmentation.debug.step2.json
 
-  We write:
-    read.documents = [
-        {"id":"doc_A","lines":[...],"bbox":[x,y,w,h],"signals":{...}},
-        {"id":"doc_B","lines":[...],"bbox":[x,y,w,h],"signals":{...}}
-    ]
-  For backward compatibility only, we mirror:
-    read.read_sections = {"invoice": doc_A.lines, "receipt": doc_B.lines}
-  (No semantics are implied by those names; they are just the first and second segments.)
-
-Signals captured per document segment (for downstream LLMs):
-- heading_candidates (tallest lines near the segment top)
-- digit_share
-- field_value_lines (count of "FIELD: value" or "FIELD = value")
-- line_count
+NEW in this drop-in:
+- We also embed the same debug under:
+    preprocess.step2.json → debug.segmentation.pages
+  so you can share it even if the UI doesn’t render a separate download button.
 """
 
 from __future__ import annotations
@@ -50,7 +40,7 @@ from core.io import load_json, save_json
 from core.models import ModuleOutput
 from config import ensure_output_dir
 
-# Optional centralized text-style panel (kept from your project; safe no-op if absent)
+# Optional centralized text-style panel (safe no-op if absent)
 try:
     from services.text_style_panel import build_text_style_panel, evaluate_against_truth  # type: ignore
     _HAS_TSTYLE = True
@@ -58,7 +48,6 @@ except Exception:
     _HAS_TSTYLE = False
 
 # ---------------------------- Tunables ---------------------------- #
-
 # Change-point scoring weights (blend geometry + style)
 W_GAP = 1.0          # vertical gap between blocks (normalized by median line height)
 W_LEFT_SHIFT = 0.8   # change in mean left margin (normalized by page width)
@@ -66,15 +55,30 @@ W_H_SHIFT = 0.8      # change in mean line height (normalized by median height)
 W_DIGIT = 0.6        # change in mean digit share
 W_FIELD = 0.6        # change in ratio of FIELD:VALUE lines
 
-# Decision threshold to accept a split (higher = stricter)
+# Absolute decision threshold; adaptive acceptance may override when strong outlier
 SPLIT_SCORE_THRESHOLD = 1.20
+
+# Adaptive acceptance guards (no NumPy)
+MIN_SCORE_FOR_ADAPTIVE = 0.70       # don’t accept vanishing splits even if they’re top
+ZSCORE_MIN_IMPROVEMENT = 2.0        # best >= mean + 2*std
+PERCENTILE_ACCEPT = 0.90            # best >= 90th percentile
+MIN_CANDIDATES_FOR_ADAPTIVE = 5
+
+# K-means fallback (1-D on y-centers)
+USE_KMEANS_FALLBACK = True
+KMEANS_MAX_ITERS = 20
+KMEANS_MIN_SIZE_FRACTION = 0.2      # each cluster must have at least 20% of lines
+KMEANS_MIN_SEPARATION = 0.25        # |c2-c1| / page_span must be >= 0.25 to accept
 
 # Heading extraction (for LLM context)
 TOP_N_TALLEST_FOR_HEADING = 3
-TOP_STRIP_FRACTION = 0.25     # consider top 25% of segment height for heading pick
+TOP_STRIP_FRACTION = 0.25           # consider top 25% of segment height for heading pick
 
-# Regex for POS-like “FIELD: value” / “FIELD = value”
+# Regex for generic “FIELD: value” / “FIELD = value”
 RE_FIELD_VALUE = re.compile(r"\b[A-Z]{2,8}\s*[:=]\s*\S")
+
+
+MIN_BLOCK_FRACTION = 0.15   # each side must have ≥15% of lines for change-point acceptance
 
 # ------------------------------------------------------------------ #
 
@@ -152,6 +156,13 @@ def _page_width(lines: List[Dict[str, Any]]) -> float:
         return 1.0
     return max(rights) - min(lefts) or 1.0
 
+def _page_span(lines: List[Dict[str, Any]]) -> float:
+    ys = [ln["bbox"][1] for ln in lines]
+    ye = [ln["bbox"][1] + ln["bbox"][3] for ln in lines]
+    if not ys or not ye:
+        return 1.0
+    return max(ye) - min(ys) or 1.0
+
 def _median_line_height(lines: List[Dict[str, Any]]) -> float:
     hs = [ln["bbox"][3] for ln in lines if ln.get("bbox")]
     if not hs:
@@ -175,11 +186,7 @@ def _block_stats(lines: List[Dict[str, Any]]) -> Dict[str, float]:
         "field_ratio": field_count / float(len(lines)),
     }
 
-def _score_split(
-    lines_sorted: List[Dict[str, Any]],
-    i: int,
-    page_w: float,
-    med_h: float
+def _score_split(lines_sorted: List[Dict[str, Any]], i: int, page_w: float, med_h: float
 ) -> Tuple[float, Dict[str, float]]:
     """
     Score a candidate split between lines i-1 and i (0<i<len).
@@ -190,7 +197,7 @@ def _score_split(
     if not top_block or not bot_block:
         return 0.0, {"gap": 0.0, "left": 0.0, "h": 0.0, "digit": 0.0, "field": 0.0}
 
-    # Vertical gap between blocks
+    # Vertical gap between blocks (normalized)
     gap = (bot_block[0]["bbox"][1] - (top_block[-1]["bbox"][1] + top_block[-1]["bbox"][3])) / (med_h or 1.0)
 
     s_top = _block_stats(top_block)
@@ -207,75 +214,184 @@ def _score_split(
             (W_DIGIT * digit_delta) + \
             (W_FIELD * field_delta)
 
-    return score, {
-        "gap": max(0.0, gap),
-        "left": left_shift,
-        "h": h_shift,
-        "digit": digit_delta,
-        "field": field_delta,
-    }
+    return score, {"gap": max(0.0, gap), "left": left_shift, "h": h_shift, "digit": digit_delta, "field": field_delta}
+
+def _mean_std(values: List[float]) -> Tuple[float, float]:
+    if not values:
+        return 0.0, 0.0
+    n = float(len(values))
+    mean = sum(values) / n
+    var = sum((v - mean) ** 2 for v in values) / n
+    return mean, math.sqrt(var)
+
+def _percentile(values: List[float], p: float) -> float:
+    if not values:
+        return 0.0
+    arr = sorted(values)
+    k = max(0, min(len(arr) - 1, int(round((len(arr) - 1) * p))))
+    return arr[k]
+
+def _accept_split_abs_or_adaptive(best: float, all_scores: List[float]) -> Tuple[bool, str, Dict[str, float]]:
+    # Absolute threshold
+    if best >= SPLIT_SCORE_THRESHOLD:
+        return True, "abs_threshold", {"best": best, "threshold": SPLIT_SCORE_THRESHOLD}
+
+    # Adaptive rules when we have enough candidates
+    if len(all_scores) >= MIN_CANDIDATES_FOR_ADAPTIVE and best >= MIN_SCORE_FOR_ADAPTIVE:
+        mean, std = _mean_std(all_scores)
+        p90 = _percentile(all_scores, PERCENTILE_ACCEPT)
+        if std > 1e-6 and best >= mean + ZSCORE_MIN_IMPROVEMENT * std:
+            return True, "zscore", {"best": best, "mean": mean, "std": std}
+        if best >= p90:
+            return True, "percentile", {"best": best, "p90": p90, "mean": mean}
+
+    return False, "below_threshold", {"best": best, "threshold": SPLIT_SCORE_THRESHOLD}
+
+def _kmeans_1d(yvals: List[float], max_iters: int = KMEANS_MAX_ITERS) -> Tuple[Tuple[float, float], List[int]]:
+    """
+    Simple k=2 k-means on 1-D values. Returns (centroids c1,c2 in sorted order), labels.
+    """
+    if not yvals or len(yvals) < 2:
+        return (0.0, 0.0), [0] * len(yvals)
+    y_sorted = sorted(yvals)
+    c1, c2 = y_sorted[len(y_sorted) // 3], y_sorted[2 * len(y_sorted) // 3]  # spaced initialization
+    for _ in range(max_iters):
+        lab = [0 if abs(v - c1) <= abs(v - c2) else 1 for v in yvals]
+        if not any(lab) or all(lab):
+            break
+        n1 = sum(1 for l in lab if l == 0); n2 = len(lab) - n1
+        new_c1 = sum(v for v, l in zip(yvals, lab) if l == 0) / float(n1) if n1 else c1
+        new_c2 = sum(v for v, l in zip(yvals, lab) if l == 1) / float(n2) if n2 else c2
+        if abs(new_c1 - c1) < 1e-6 and abs(new_c2 - c2) < 1e-6:
+            c1, c2 = new_c1, new_c2
+            break
+        c1, c2 = new_c1, new_c2
+    if c1 > c2:
+        c1, c2 = c2, c1
+    labels = [0 if abs(v - c1) <= abs(v - c2) else 1 for v in yvals]
+    return (c1, c2), labels
 
 def _choose_boundary_generic(lines: List[Dict[str, Any]]) -> Tuple[Optional[int], Dict[str, Any]]:
     """
-    Choose an index 'i' such that lines[:i] and lines[i:] are two coherent blocks.
-    Returns (index_or_None, debug_dict). No bias to bottom/top; purely change-point.
+    Choose index boundary i so that lines[:i], lines[i:] form two blocks.
+    Primary: generic change-point with adaptive acceptance.
+    Fallback (optional): 1-D k-means on y-centers with separation heuristics.
+    Returns (index or None, debug_dict).
     """
+    dbg: Dict[str, Any] = {}
     if not lines or len(lines) < 2:
         return None, {"reason": "insufficient_lines"}
 
     lines_sorted = _sorted_lines(lines)
     page_w = _page_width(lines_sorted)
     med_h = _median_line_height(lines_sorted)
+    span = _page_span(lines_sorted)
 
+    # Evaluate all splits
     best_i = None
     best_score = 0.0
     comps_at_best: Dict[str, float] = {}
-    cand_scores = []
+    cand_scores: List[float] = []
+    cand_dbg: List[Dict[str, float]] = []
 
     for i in range(1, len(lines_sorted)):
         score, comps = _score_split(lines_sorted, i, page_w, med_h)
-        cand_scores.append({"i": i, "score": score, **comps})
+        cand_scores.append(score)
+        cand_dbg.append({"i": i, "score": score, **comps})
         if score > best_score:
             best_score = score
             best_i = i
             comps_at_best = comps
 
-    if best_i is not None and best_score >= SPLIT_SCORE_THRESHOLD:
-        return best_i, {
-            "method": "change_point",
+    # Reject trivial top/bottom splits for change-point unless both blocks are large enough
+    # Size guard: both blocks must have enough lines for change-point to be accepted
+    min_count = max(1, int(MIN_BLOCK_FRACTION * len(lines_sorted)))
+
+    # Decide by absolute/adaptive acceptance
+    accepted, method, meta = _accept_split_abs_or_adaptive(best_score, cand_scores)
+
+    # Apply size guard BEFORE returning
+    if accepted and best_i is not None:
+        if best_i < min_count or (len(lines_sorted) - best_i) < min_count:
+            accepted = False
+            method = "below_min_block_fraction"
+            meta = {"best": best_score, "min_block_fraction": MIN_BLOCK_FRACTION}
+
+    # Only return if still accepted; otherwise continue to k-means fallback
+    if accepted and best_i is not None:
+        dbg.update({
+            "method": f"change_point::{method}",
             "best_index": best_i,
             "best_score": best_score,
             "components": comps_at_best,
             "threshold": SPLIT_SCORE_THRESHOLD,
-            "median_line_height": med_h,
+            "candidates_sample": cand_dbg[:30],
             "page_width": page_w,
-            "candidates": cand_scores[:20],  # shorten debug
-        }
+            "median_line_height": med_h,
+            "page_span": span,
+        })
+        return best_i, dbg
 
-    return None, {
-        "reason": "no_split_above_threshold",
-        "best_index": best_i,
-        "best_score": best_score,
-        "threshold": SPLIT_SCORE_THRESHOLD,
-        "candidates": cand_scores[:20],
-    }
+
+    # Fallback: k-means on y-centers
+    if USE_KMEANS_FALLBACK:
+        ymid = [ln["bbox"][1] + ln["bbox"][3] / 2.0 for ln in lines_sorted]
+        (c1, c2), labels = _kmeans_1d(ymid, KMEANS_MAX_ITERS)
+        n1 = sum(1 for l in labels if l == 0)
+        n2 = len(labels) - n1
+        sep = abs(c2 - c1) / (span or 1.0)
+        if sep >= KMEANS_MIN_SEPARATION and \
+           n1 >= KMEANS_MIN_SIZE_FRACTION * len(labels) and \
+           n2 >= KMEANS_MIN_SIZE_FRACTION * len(labels):
+            switch_idx = None
+            for i in range(1, len(labels)):
+                if labels[i - 1] != labels[i]:
+                    switch_idx = i
+                    break
+            if switch_idx is not None:
+                dbg.update({
+                    "method": "kmeans_fallback",
+                    "centroids": [c1, c2],
+                    "cluster_sizes": [n1, n2],
+                    "separation_norm_span": sep,
+                    "kmeans_boundary_index": switch_idx,
+                    "page_span": span,
+                    "note": "Accepted by k-means fallback",
+                })
+                return switch_idx, dbg
+
+        dbg.update({
+            "method": "none",
+            "reason": "no_change_point_and_kmeans_rejected",
+            "best_change_point": {"index": best_i, "score": best_score, "accepted": False, "accept_method": method, **meta},
+            "kmeans": {
+                "centroids": [c1, c2], "sizes": [n1, n2],
+                "sep_norm_span": sep, "min_sep_norm_span": KMEANS_MIN_SEPARATION,
+                "min_size_fraction": KMEANS_MIN_SIZE_FRACTION
+            },
+            "page_span": span,
+            "candidates_sample": cand_dbg[:30],
+        })
+        return None, dbg
+
+    dbg.update({
+        "method": "none",
+        "reason": "no_split_above_threshold_no_fallback",
+        "best_change_point": {"index": best_i, "score": best_score, "accepted": False, "accept_method": method, **meta},
+        "page_span": span,
+        "candidates_sample": cand_dbg[:30],
+    })
+    return None, dbg
 
 def _segment_to_features(lines: List[Dict[str, Any]]) -> Dict[str, Any]:
     """Compute lightweight features for LLM consumption."""
     if not lines:
-        return {
-            "line_count": 0, "digit_share": 0.0,
-            "field_value_lines": 0, "heading_candidates": []
-        }
+        return {"line_count": 0, "digit_share": 0.0, "field_value_lines": 0, "heading_candidates": []}
 
-    # digit share over the whole segment
     all_text = "".join((ln.get("text") or "") for ln in lines).lower()
     ds = _digit_share(all_text)
-
-    # count of FIELD:VALUE lines
     fvl = sum(1 for ln in lines if RE_FIELD_VALUE.search(ln.get("text") or ""))
 
-    # heading candidates: pick tallest N among the top strip of the segment
     ys = [ln["bbox"][1] for ln in lines if ln.get("bbox")]
     ye = [ln["bbox"][1] + ln["bbox"][3] for ln in lines if ln.get("bbox")]
     ymin, ymax = (min(ys) if ys else 0.0), (max(ye) if ye else 0.0)
@@ -291,14 +407,14 @@ def _segment_to_features(lines: List[Dict[str, Any]]) -> Dict[str, Any]:
         "heading_candidates": heading
     }
 
-def _assign_documents_inplace(step1: Dict[str, Any]) -> None:
+def _assign_documents_inplace(step1: Dict[str, Any], debug_pages: List[Dict[str, Any]]) -> None:
     """
     For each Vision page, split lines into two document-like segments using
-    generic change-point detection (no class names, no bottom bias).
-    Writes:
+    generic change-point detection with k-means fallback. Writes:
         read.documents = [doc_A, doc_B]  (either or both may be present)
         read.read_sections = {"invoice": doc_A.lines, "receipt": doc_B.lines}  # compatibility only
         read._sectioning_debug = {...}
+    Collects a compact debug summary per page into debug_pages.
     """
     pages = (step1.get("vision") or {}).get("pages") or []
     for pg in pages:
@@ -308,44 +424,44 @@ def _assign_documents_inplace(step1: Dict[str, Any]) -> None:
         if not lines:
             continue
 
-        # Choose index boundary by generic change-point
         idx, dbg = _choose_boundary_generic(lines)
+        lines_sorted = _sorted_lines(lines)
 
         if idx is None:
-            # No split accepted → single document spanning all lines
             all_bbox: Optional[List[float]] = None
-            for ln in lines:
+            for ln in lines_sorted:
                 all_bbox = _bbox_union(all_bbox, ln.get("bbox"))
             doc_A = {
                 "id": "doc_A",
-                "lines": _sorted_lines(lines),
+                "lines": lines_sorted,
                 "bbox": all_bbox,
-                "signals": _segment_to_features(lines),
+                "signals": _segment_to_features(lines_sorted),
             }
             read["documents"] = [doc_A]
             read["read_sections"] = {"invoice": doc_A["lines"], "receipt": []}
             read["_sectioning_debug"] = {**dbg, "boundary_index": None}
-            continue
+        else:
+            top_lines = lines_sorted[:idx]
+            bot_lines = lines_sorted[idx:]
+            top_box: Optional[List[float]] = None
+            for ln in top_lines:
+                top_box = _bbox_union(top_box, ln.get("bbox"))
+            bot_box: Optional[List[float]] = None
+            for ln in bot_lines:
+                bot_box = _bbox_union(bot_box, ln.get("bbox"))
+            doc_A = {"id": "doc_A", "lines": top_lines, "bbox": top_box, "signals": _segment_to_features(top_lines)}
+            doc_B = {"id": "doc_B", "lines": bot_lines, "bbox": bot_box, "signals": _segment_to_features(bot_lines)}
+            read["documents"] = [doc_A, doc_B]
+            read["read_sections"] = {"invoice": top_lines, "receipt": bot_lines}
+            read["_sectioning_debug"] = dbg
 
-        lines_sorted = _sorted_lines(lines)
-        top_lines = lines_sorted[:idx]
-        bot_lines = lines_sorted[idx:]
-
-        # bboxes
-        top_box: Optional[List[float]] = None
-        for ln in top_lines:
-            top_box = _bbox_union(top_box, ln.get("bbox"))
-        bot_box: Optional[List[float]] = None
-        for ln in bot_lines:
-            bot_box = _bbox_union(bot_box, ln.get("bbox"))
-
-        doc_A = {"id": "doc_A", "lines": top_lines, "bbox": top_box, "signals": _segment_to_features(top_lines)}
-        doc_B = {"id": "doc_B", "lines": bot_lines, "bbox": bot_box, "signals": _segment_to_features(bot_lines)}
-
-        read["documents"] = [doc_A, doc_B]
-        # Compatibility mirror (legacy field names). No semantics implied.
-        read["read_sections"] = {"invoice": top_lines, "receipt": bot_lines}
-        read["_sectioning_debug"] = dbg
+        debug_pages.append({
+            "page_index": int(pg.get("page_index", 0)),
+            "line_count": len(lines_sorted),
+            "accepted": idx is not None,
+            "boundary_index": idx,
+            "debug": read.get("_sectioning_debug"),
+        })
 
 # -------------------- DI style normalization -------------------- #
 
@@ -395,8 +511,9 @@ def run(
         )
 
     # Enrich (non-destructive; we alter Step-1 copy)
+    segmentation_debug_pages: List[Dict[str, Any]] = []
     try:
-        _assign_documents_inplace(step1)
+        _assign_documents_inplace(step1, segmentation_debug_pages)
     except Exception as ex:
         step1.setdefault("_warnings", []).append(f"Vision segmentation failed: {ex}")
 
@@ -406,6 +523,15 @@ def run(
     lines = _extract_vision_lines(step1)
     stats = _height_stats(lines)
 
+    # Save segmentation debug artifact (separate file)
+    seg_debug_path = os.path.join(out_dir, "segmentation.debug.step2.json")
+    try:
+        save_json(seg_debug_path, {"pages": segmentation_debug_pages})
+    except Exception:
+        # Non-fatal
+        pass
+
+    # Main enriched payload (now also embeds debug)
     enriched = {
         "summary": {
             "pages": len((step1.get("vision") or {}).get("pages") or []),
@@ -416,6 +542,9 @@ def run(
         },
         "lines": lines,
         "step1_plus": step1,  # keep the whole enriched Step-1 for downstream use
+        "debug": {            # <— embedded debug for convenience
+            "segmentation": {"pages": segmentation_debug_pages}
+        },
     }
 
     # Save Step-2 main artifact
@@ -477,8 +606,14 @@ def run(
 
     return ModuleOutput(
         run_id=run_id, module_name="mod2_preprocess",
-        ok=True, message="Preprocess/enrich complete (generic segmentation; styles normalized).",
-        payload=None, artifact_paths={"preprocess": preprocess_path, **tstyle_artifacts},
+        ok=True,
+        message="Preprocess complete (generic segmentation + k-means fallback; styles normalized).",
+        payload=None,
+        artifact_paths={
+            "preprocess": preprocess_path,
+            "segmentation_debug": seg_debug_path,   # <— UI can render this
+            **tstyle_artifacts,
+        },
     )
 
 def evaluate_adjudicated(obj: dict) -> dict:

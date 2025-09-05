@@ -25,6 +25,7 @@ from core.models import ModuleOutput
 from core.service_health import get_health_report
 from core.io import load_json
 from modules import mod1_acquire_raw as mod1
+from typing import Optional
 
 st.set_page_config(page_title="SA OCR/Fraud POC", layout="wide")
 
@@ -81,28 +82,48 @@ else:
         run_now = st.button("Run Step 1", type="primary")
 
     # --- run button handler ---
-if run_now:
-    if not uploaded:
-        st.error("Please upload a file first.")
-    else:
-        run_id = custom_run_id or new_run_id("run")
-        file_bytes = uploaded.read()
+    if run_now:
+        if not uploaded:
+            st.error("Please upload a file first.")
+        else:
+            run_id = custom_run_id or new_run_id("run")
+            file_bytes = uploaded.read()
 
-        out: ModuleOutput = mod1.run(
-            (uploaded.name, file_bytes),
-            store_source_file=store_source,
-            run_id=run_id,
-            call_di=call_di,
-            call_vision=call_vision,
-            vision_on_pdf_pages=vision_on_pdf_pages,
-            vision_pages_limit=int(vision_pages_limit),
-        )
+            out: ModuleOutput = mod1.run(
+                (uploaded.name, file_bytes),
+                store_source_file=store_source,
+                run_id=run_id,
+                call_di=call_di,
+                call_vision=call_vision,
+                vision_on_pdf_pages=vision_on_pdf_pages,
+                vision_pages_limit=int(vision_pages_limit),
+            )
 
-        # Persist for subsequent reruns (e.g., when clicking a download button)
-        st.session_state["step1_out_ok"] = out.ok
-        st.session_state["step1_out_msg"] = out.message
-        st.session_state["step1_run_id"] = out.run_id
-        st.session_state["step1_artifacts"] = out.artifact_paths
+            # Persist for subsequent reruns (e.g., when clicking a download button)
+            st.session_state["step1_out_ok"] = out.ok
+            st.session_state["step1_out_msg"] = out.message
+            st.session_state["step1_run_id"] = out.run_id
+            st.session_state["step1_artifacts"] = out.artifact_paths
+
+            # Cache combined Step-1 JSON in session so Step-2 can run and re-render after reruns
+            if not st.session_state.get("combined_step1"):
+                # Try several common keys your Step-1 module may use
+                combined_path = (
+                    out.artifact_paths.get("combined_step1")
+                    or out.artifact_paths.get("raw_signals")
+                    or out.artifact_paths.get("raw_signals_step1")
+                    or out.artifact_paths.get("raw_signals_step1_json")
+                )
+                if combined_path and os.path.exists(combined_path):
+                    try:
+                        with open(combined_path, "r", encoding="utf-8") as f:
+                            st.session_state["combined_step1"] = json.load(f)
+                    except Exception:
+                        pass
+
+            # Flag that Step-1 is complete so Step-2 panel can render automatically
+            st.session_state["step1_done"] = True
+
 
 # --- helper to display results if we have them in session_state ---
 def _render_step1_results():
@@ -117,6 +138,7 @@ def _render_step1_results():
         st.success(msg)
     else:
         st.error(msg)
+
     st.write(f"**Run ID:** {run_id}")
     st.write("Artifacts written:")
     st.json(artifacts)
@@ -173,21 +195,122 @@ def _render_step1_results():
 # Always render last results if present (so they persist after downloads)
 _render_step1_results()
 
-# In app.py, right after you finish Step 1 and have `combined_step1` (dict)
-import modules.mod2_preprocess as mod2
+def _render_step2_seg_debug_from_session():
+    """Render the segmentation summary/table from session artifacts (survives reruns)."""
+    artifacts = st.session_state.get("step2_artifacts") or {}
+    if not artifacts:
+        return
+    seg_pages = []
+    # Prefer the separate artifact
+    seg_debug_path = artifacts.get("segmentation_debug")
+    if seg_debug_path and os.path.exists(seg_debug_path):
+        try:
+            with open(seg_debug_path, "r", encoding="utf-8") as f:
+                seg_json = json.load(f)
+            seg_pages = seg_json.get("pages") or []
+        except Exception as e:
+            st.warning(f"Could not read segmentation debug file: {e}")
 
-st.markdown("### Next step")
-if st.button("Run Step 2 on these results"):
-    out2 = mod2.run(combined_step1, run_id=current_run_id, source_file_path=source_path)
-    if out2.ok:
-        st.success("Step 2 complete.")
-        st.write(out2.message)
-        with open(out2.artifact_paths["preprocess"], "rb") as fh:
-            st.download_button("Download Step 2 JSON", data=fh.read(),
-                               file_name="preprocess.step2.json", mime="application/json")
+    # Fallback to embedded debug inside preprocess.step2.json
+    if not seg_pages and artifacts.get("preprocess") and os.path.exists(artifacts["preprocess"]):
+        try:
+            with open(artifacts["preprocess"], "r", encoding="utf-8") as f:
+                pre_json = json.load(f)
+            seg_pages = (((pre_json.get("debug") or {}).get("segmentation") or {}).get("pages")) or []
+        except Exception as e:
+            st.warning(f"Could not read embedded segmentation debug: {e}")
+
+    if not seg_pages:
+        return
+
+    # Summarize
+    rows = []
+    for pg in seg_pages:
+        d = pg.get("debug") or {}
+        method = d.get("method") or d.get("reason") or ""
+        best_cp = d.get("best_score")
+        if best_cp is None:
+            best_cp = (d.get("best_change_point") or {}).get("score")
+        rows.append({
+            "page": pg.get("page_index"),
+            "accepted": pg.get("accepted"),
+            "boundary_index": pg.get("boundary_index"),
+            "method": method,
+            "best_score": best_cp,
+        })
+
+    st.subheader("Segmentation debug summary")
+    try:
+        import pandas as pd
+        st.dataframe(pd.DataFrame(rows))
+    except Exception:
+        st.table(rows)
+
+    with st.expander("Per-page debug details"):
+        for pg in seg_pages:
+            st.markdown(
+                f"**Page {pg.get('page_index')}** — "
+                f"accepted: {pg.get('accepted')}, "
+                f"boundary_index: {pg.get('boundary_index')}"
+            )
+            st.json(pg.get("debug") or {})
+
 
 # ---------------------- Step 2 UI ----------------------
-if module_choice == "Step 2: Preprocess (stub)":
+if module_choice == "Step 2: Preprocess (stub)" or st.session_state.get("step1_done"):
+    # In app.py, right after you finish Step 1 and have `combined_step1` (dict)
+    import modules.mod2_preprocess as mod2
+
+    st.markdown("### Next step")
+
+    if st.session_state.get("combined_step1"):
+        if st.button("Run Step 2 on these results"):
+            out2 = mod2.run(
+                st.session_state["combined_step1"],
+                run_id=current_run_id,
+                source_file_path=source_path
+            )
+            # Persist Step-2 results so they survive reruns (e.g., after any download click)
+            st.session_state["step2_out_ok"] = out2.ok
+            st.session_state["step2_out_msg"] = out2.message
+            st.session_state["step2_run_id"] = out2.run_id
+            st.session_state["step2_artifacts"] = out2.artifact_paths
+        else:
+            st.info("Step 1 must complete before running Step 2.")
+
+    # if st.button("Run Step 2 on these results"):
+    #     out2 = mod2.run(combined_step1, run_id=current_run_id, source_file_path=source_path)
+    #     if out2.ok:
+    #         st.success("Step 2 complete.")
+    #         st.write(out2.message)
+    #         with open(out2.artifact_paths["preprocess"], "rb") as fh:
+    #             st.download_button("Download Step 2 JSON", data=fh.read(),
+    #                             file_name="preprocess.step2.json", mime="application/json")
+
+    # If Step-2 artifacts exist in session, render all download buttons every rerun
+    if st.session_state.get("step2_artifacts"):
+        if st.session_state.get("step2_out_ok"):
+            st.success(st.session_state.get("step2_out_msg", "Step 2 complete."))
+        else:
+            st.warning(st.session_state.get("step2_out_msg", "Step 2 finished with warnings."))
+
+        for label, path in st.session_state["step2_artifacts"].items():
+            try:
+                with open(path, "rb") as fh:
+                    data = fh.read()
+                fname = os.path.basename(path)
+                # Uniform download buttons, including segmentation.debug.step2.json and eval template
+                st.download_button(
+                    label=f"Download: {fname}",
+                    data=data,
+                    file_name=fname,
+                    mime="application/json",
+                    key=f"dl_step2_{label}_{st.session_state.get('step2_run_id')}"
+                )
+            except Exception as e:
+                st.warning(f"{label}: {e}")
+    #----------------------------------------------------------------------------------    
+
     st.header("Step 2: Preprocess & Enrich — Text Styles")
 
     # Defaults / context from last run
@@ -251,6 +374,35 @@ if module_choice == "Step 2: Preprocess (stub)":
             st.session_state["step2_artifacts"] = out2.artifact_paths
             st.session_state["step2_payload"] = out2.payload
 
+            if out2.ok:
+                st.success(out2.message)
+
+                # show a JSON preview of the main file (optional)
+                if "preprocess" in out2.artifact_paths:
+                    try:
+                        with open(out2.artifact_paths["preprocess"], "r", encoding="utf-8") as f:
+                            st.expander("Preview: preprocess.step2.json (first 4000 chars)").write(f.read()[:4000])
+                    except Exception as e:
+                        st.warning(f"Preview failed: {e}")
+
+                # render a download button for every artifact the module returned
+                for label, path in out2.artifact_paths.items():
+                    try:
+                        with open(path, "rb") as fh:
+                            data = fh.read()
+                        fname = os.path.basename(path)
+                        st.download_button(
+                            label=f"Download: {fname}" if label == "preprocess" else f"Download: {label}.json" if not fname.endswith(".json") else f"Download: {fname}",
+                            data=data,
+                            file_name=fname,
+                            mime="application/json",
+                            key=f"dl_step2_{label}",
+                        )
+                    except Exception as e:
+                        st.warning(f"{label}: {e}")
+
+            _render_step2_seg_debug_from_session()
+
     # --- Render Step 2 results if available ---
     if st.session_state.get("step2_artifacts"):
         ok = st.session_state.get("step2_out_ok", False)
@@ -301,6 +453,8 @@ if module_choice == "Step 2: Preprocess (stub)":
             except Exception as ex:
                 st.warning(f"Could not read {path}: {ex}")
 
+        _render_step2_seg_debug_from_session()
+        
     st.markdown("---")
     st.markdown("### Evaluate services against your truth labels")
     st.write("Download `textstyles.eval_template.step2.json`, fill `truth.bold` / `truth.italic`, then upload it here.")

@@ -1,0 +1,30 @@
+{
+  "items": [],
+  "summary": {
+    "toggles": {
+      "pymupdf": true,
+      "azure": true,
+      "tesseract": true,
+      "vision_pixel": true
+    },
+    "weights": {
+      "pymupdf": 0.3,
+      "azure": 0.4,
+      "tesseract": 0.2,
+      "vision_pixel": 0.1
+    },
+    "errors": {},
+    "counts": {
+      "pymupdf_spans": 0,
+      "azure_style_spans": 0,
+      "tesseract_words": 0,
+      "vision_word_rois": 0,
+      "items": 0
+    },
+    "notes": [
+      "Consolidation key is (page, normalized_text). Multiple occurrences of the same word on a page will merge.",
+      "Tune weights in this module or via the Step 2 UI sliders."
+    ]
+  },
+  "instructions": "Fill in truth.bold and truth.italic for as many items as you can. Use true/false; leave null if unsure. Re-upload in Step 2 to score accuracy."
+}

@@ -173,6 +173,19 @@ def _render_step1_results():
 # Always render last results if present (so they persist after downloads)
 _render_step1_results()
 
+# In app.py, right after you finish Step 1 and have `combined_step1` (dict)
+import modules.mod2_preprocess as mod2
+
+st.markdown("### Next step")
+if st.button("Run Step 2 on these results"):
+    out2 = mod2.run(combined_step1, run_id=current_run_id, source_file_path=source_path)
+    if out2.ok:
+        st.success("Step 2 complete.")
+        st.write(out2.message)
+        with open(out2.artifact_paths["preprocess"], "rb") as fh:
+            st.download_button("Download Step 2 JSON", data=fh.read(),
+                               file_name="preprocess.step2.json", mime="application/json")
+
 # ---------------------- Step 2 UI ----------------------
 if module_choice == "Step 2: Preprocess (stub)":
     st.header("Step 2: Preprocess & Enrich — Text Styles")

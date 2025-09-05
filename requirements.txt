@@ -13,5 +13,7 @@ typing_extensions>=4.12.2
 openai>=1.40.0
 pymupdf>=1.24.4
 spacy>=3.7.0
+azure-ai-formrecognizer>=3.2.0
+azure-ai-documentintelligence>=1.0.0b4
 #Also need to import English model: python -m spacy download en_core_web_sm
 #Also need to import models relevant to the south african contect: python -m spacy download xx_ent_wiki_sm

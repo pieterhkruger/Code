@@ -33,4 +33,11 @@ Thumbs.db
 data/
 
 # Environment variables
+# ---- Dotenv files: keep secrets out of git ----
 .env
+.env.*
+*.env
+*.env.*
+
+# ---- But DO commit the template(s) ----
+!.env_example

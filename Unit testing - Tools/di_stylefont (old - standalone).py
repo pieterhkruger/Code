@@ -12,7 +12,7 @@ Azure Document Intelligence style detection tester (FR v3 first, DI v4 fallback)
 - Tries FR SDK (azure-ai-formrecognizer) first: prebuilt-document (line.appearance).
 - Falls back to DI SDK (azure-ai-documentintelligence) with features=['styleFont'].
 
-Run: streamlit run modules/di_stylefont_tester.py
+Run: streamlit run modules/di_stylefont.py
 """
 
 from __future__ import annotations
@@ -339,7 +339,7 @@ def analyze_stylefont(file_bytes: bytes, mime_type: str) -> Dict[str, Any]:
                 "diagnostics": diags, "message": "Analysis failed. See diagnostics."}
 
 # ---------- UI ----------
-def draw_stylefont_tester():
+def draw_stylefont():
     st.subheader("Azure DI: style detection tester (FR v3 → DI v4)")
     with st.expander("Test (FR appearance or DI styleFont)", expanded=True):
         st.caption("Uses FR v3 line.appearance first; falls back to DI v4 styleFont. Includes auth preflight and diagnostics.")
@@ -400,5 +400,5 @@ def draw_stylefont_tester():
 # Run directly
 if __name__ == "__main__":
     st.set_page_config(page_title="DI styleFont / FR appearance", layout="wide")
-    st.title("Azure Document Intelligence: Style Detection Tester")
-    draw_stylefont_tester()
+    st.title("Azure Document Intelligence: Style Detection")
+    draw_stylefont()

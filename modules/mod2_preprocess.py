@@ -1,31 +1,19 @@
-# --- START OF FILE: modules/mod2_preprocess.py ---
 """
 modules/mod2_preprocess.py
 ==========================
 
 Step 2: Preprocess / enrich raw signals for downstream modules.
 
-What this module does:
-- Accepts either an in-memory Step-1 dict or a path to raw_signals.step1.json
-- Writes preprocess.step2.json into the run's output dir
-- Normalizes DI styles to suppress obvious handwriting false positives
-- Computes basic Vision line stats
-- Type-agnostic, location-agnostic page segmentation:
-    • Primary: generic change-point detection over sorted lines using a blended score
-      (vertical gap, left-margin shift, height shift, digit-share shift, field:value ratio shift).
-    • Adaptive acceptance: absolute threshold OR statistical outlier (z-score / percentile).
-    • Fallback: 1-D k-means on line y-centers (k=2) with separation heuristics.
-- Writes for each Vision page:
-    read.documents = [doc_A, doc_B]   # zero/one/two segments; no semantics
-    read.read_sections = {"invoice": doc_A.lines, "receipt": doc_B.lines}  # compatibility only
-    read._sectioning_debug = {...}
-- Additionally persists a run-level debug artifact:
-    segmentation.debug.step2.json
-
-NEW in this drop-in:
-- We also embed the same debug under:
-    preprocess.step2.json → debug.segmentation.pages
-  so you can share it even if the UI doesn’t render a separate download button.
+What this module does (consolidated for Patch Sets 2–4):
+- Accepts either an in-memory Step-1 dict or a path to raw_signals.step1.json.
+- Type-agnostic, position-agnostic page segmentation of Vision READ lines
+  (generic change-point with adaptive acceptance; k-means fallback).
+- Tags each Vision READ line with segment_id (0/1) when a split is accepted.
+- Emits a top-level "segments" list and an embedded debug block:
+    preprocess.step2.json → { segments, lines, step1_plus, debug.segmentation.pages }
+- Normalizes DI styles in place (adds layout.style_normalized; down-weights one-glyph handwriting).
+- Calls text_style_panel (if available) and emits text-styles artifacts.
+- Always writes segmentation.debug.step2.json (even if empty).
 """
 
 from __future__ import annotations
@@ -44,8 +32,9 @@ from config import ensure_output_dir
 try:
     from services.text_style_panel import build_text_style_panel, evaluate_against_truth  # type: ignore
     _HAS_TSTYLE = True
-except Exception:
+except Exception:  # pragma: no cover
     _HAS_TSTYLE = False
+
 
 # ---------------------------- Tunables ---------------------------- #
 # Change-point scoring weights (blend geometry + style)
@@ -77,17 +66,19 @@ TOP_STRIP_FRACTION = 0.25           # consider top 25% of segment height for hea
 # Regex for generic “FIELD: value” / “FIELD = value”
 RE_FIELD_VALUE = re.compile(r"\b[A-Z]{2,8}\s*[:=]\s*\S")
 
-
-MIN_BLOCK_FRACTION = 0.15   # each side must have ≥15% of lines for change-point acceptance
-
+# Minimum fraction of lines per side for change-point acceptance
+MIN_BLOCK_FRACTION = 0.15
 # ------------------------------------------------------------------ #
 
-# ---------------------------- Helpers ----------------------------- #
 
+# ---------------------------- Helpers ----------------------------- #
 def _load_step1(step1: Union[str, Dict[str, Any]]) -> Dict[str, Any]:
+    """Load Step-1 combined JSON or accept an in-memory dict."""
     return load_json(step1) if isinstance(step1, str) else dict(step1 or {})
 
+
 def _extract_vision_lines(step1: Dict[str, Any]) -> List[Dict[str, Any]]:
+    """Flatten Vision READ lines, preserving bbox and (if present) segment_id."""
     out: List[Dict[str, Any]] = []
     pages = (step1.get("vision") or {}).get("pages") or []
     for p in pages:
@@ -102,9 +93,11 @@ def _extract_vision_lines(step1: Dict[str, Any]) -> List[Dict[str, Any]]:
             out.append({
                 "page": pno,
                 "text": text,
-                "bbox": [float(bbox[0]), float(bbox[1]), float(bbox[2]), float(bbox[3])]
+                "bbox": [float(bbox[0]), float(bbox[1]), float(bbox[2]), float(bbox[3])],
+                "segment_id": ln.get("segment_id"),  # may be None
             })
     return out
+
 
 def _height_stats(lines: List[Dict[str, Any]]) -> Dict[str, Any]:
     by_page: Dict[int, List[float]] = {}
@@ -127,11 +120,13 @@ def _height_stats(lines: List[Dict[str, Any]]) -> Dict[str, Any]:
 
     return {"overall": _stats(all_h), "per_page": {p: _stats(v) for p, v in by_page.items()}}
 
+
 def _digit_share(s: str) -> float:
     if not s:
         return 0.0
     digits = sum(ch.isdigit() for ch in s)
     return digits / float(len(s))
+
 
 def _bbox_union(b1: Optional[List[float]], b2: Optional[List[float]]) -> Optional[List[float]]:
     if not b1: return b2
@@ -141,10 +136,11 @@ def _bbox_union(b1: Optional[List[float]], b2: Optional[List[float]]) -> Optiona
     X1 = max(x1 + w1, x2 + w2); Y1 = max(y1 + h1, y2 + h2)
     return [X0, Y0, X1 - X0, Y1 - Y0]
 
-# -------------------- Generic segmentation logic ------------------- #
 
+# -------------------- Generic segmentation logic ------------------- #
 def _sorted_lines(lines: List[Dict[str, Any]]) -> List[Dict[str, Any]]:
     return sorted(lines, key=lambda ln: (ln["bbox"][1], ln["bbox"][0]))
+
 
 def _page_width(lines: List[Dict[str, Any]]) -> float:
     lefts, rights = [], []
@@ -156,12 +152,14 @@ def _page_width(lines: List[Dict[str, Any]]) -> float:
         return 1.0
     return max(rights) - min(lefts) or 1.0
 
+
 def _page_span(lines: List[Dict[str, Any]]) -> float:
     ys = [ln["bbox"][1] for ln in lines]
     ye = [ln["bbox"][1] + ln["bbox"][3] for ln in lines]
     if not ys or not ye:
         return 1.0
     return max(ye) - min(ys) or 1.0
+
 
 def _median_line_height(lines: List[Dict[str, Any]]) -> float:
     hs = [ln["bbox"][3] for ln in lines if ln.get("bbox")]
@@ -170,6 +168,7 @@ def _median_line_height(lines: List[Dict[str, Any]]) -> float:
     hs.sort()
     n = len(hs)
     return hs[n//2] if n % 2 else 0.5 * (hs[n//2 - 1] + hs[n//2])
+
 
 def _block_stats(lines: List[Dict[str, Any]]) -> Dict[str, float]:
     """Compute stats used in score for a block of lines."""
@@ -186,12 +185,10 @@ def _block_stats(lines: List[Dict[str, Any]]) -> Dict[str, float]:
         "field_ratio": field_count / float(len(lines)),
     }
 
+
 def _score_split(lines_sorted: List[Dict[str, Any]], i: int, page_w: float, med_h: float
 ) -> Tuple[float, Dict[str, float]]:
-    """
-    Score a candidate split between lines i-1 and i (0<i<len).
-    Returns (score, components).
-    """
+    """Score a candidate split between lines i-1 and i (0<i<len). Returns (score, components)."""
     top_block = lines_sorted[:i]
     bot_block = lines_sorted[i:]
     if not top_block or not bot_block:
@@ -216,6 +213,7 @@ def _score_split(lines_sorted: List[Dict[str, Any]], i: int, page_w: float, med_
 
     return score, {"gap": max(0.0, gap), "left": left_shift, "h": h_shift, "digit": digit_delta, "field": field_delta}
 
+
 def _mean_std(values: List[float]) -> Tuple[float, float]:
     if not values:
         return 0.0, 0.0
@@ -224,12 +222,14 @@ def _mean_std(values: List[float]) -> Tuple[float, float]:
     var = sum((v - mean) ** 2 for v in values) / n
     return mean, math.sqrt(var)
 
+
 def _percentile(values: List[float], p: float) -> float:
     if not values:
         return 0.0
     arr = sorted(values)
     k = max(0, min(len(arr) - 1, int(round((len(arr) - 1) * p))))
     return arr[k]
+
 
 def _accept_split_abs_or_adaptive(best: float, all_scores: List[float]) -> Tuple[bool, str, Dict[str, float]]:
     # Absolute threshold
@@ -247,10 +247,9 @@ def _accept_split_abs_or_adaptive(best: float, all_scores: List[float]) -> Tuple
 
     return False, "below_threshold", {"best": best, "threshold": SPLIT_SCORE_THRESHOLD}
 
+
 def _kmeans_1d(yvals: List[float], max_iters: int = KMEANS_MAX_ITERS) -> Tuple[Tuple[float, float], List[int]]:
-    """
-    Simple k=2 k-means on 1-D values. Returns (centroids c1,c2 in sorted order), labels.
-    """
+    """Simple k=2 k-means on 1-D values. Returns (centroids c1,c2 in sorted order), labels."""
     if not yvals or len(yvals) < 2:
         return (0.0, 0.0), [0] * len(yvals)
     y_sorted = sorted(yvals)
@@ -271,13 +270,9 @@ def _kmeans_1d(yvals: List[float], max_iters: int = KMEANS_MAX_ITERS) -> Tuple[T
     labels = [0 if abs(v - c1) <= abs(v - c2) else 1 for v in yvals]
     return (c1, c2), labels
 
+
 def _choose_boundary_generic(lines: List[Dict[str, Any]]) -> Tuple[Optional[int], Dict[str, Any]]:
-    """
-    Choose index boundary i so that lines[:i], lines[i:] form two blocks.
-    Primary: generic change-point with adaptive acceptance.
-    Fallback (optional): 1-D k-means on y-centers with separation heuristics.
-    Returns (index or None, debug_dict).
-    """
+    """Choose index boundary i so that lines[:i], lines[i:] form two blocks."""
     dbg: Dict[str, Any] = {}
     if not lines or len(lines) < 2:
         return None, {"reason": "insufficient_lines"}
@@ -303,21 +298,18 @@ def _choose_boundary_generic(lines: List[Dict[str, Any]]) -> Tuple[Optional[int]
             best_i = i
             comps_at_best = comps
 
-    # Reject trivial top/bottom splits for change-point unless both blocks are large enough
-    # Size guard: both blocks must have enough lines for change-point to be accepted
+    # Size guard for change-point acceptance
     min_count = max(1, int(MIN_BLOCK_FRACTION * len(lines_sorted)))
 
     # Decide by absolute/adaptive acceptance
     accepted, method, meta = _accept_split_abs_or_adaptive(best_score, cand_scores)
 
-    # Apply size guard BEFORE returning
     if accepted and best_i is not None:
         if best_i < min_count or (len(lines_sorted) - best_i) < min_count:
             accepted = False
             method = "below_min_block_fraction"
             meta = {"best": best_score, "min_block_fraction": MIN_BLOCK_FRACTION}
 
-    # Only return if still accepted; otherwise continue to k-means fallback
     if accepted and best_i is not None:
         dbg.update({
             "method": f"change_point::{method}",
@@ -331,7 +323,6 @@ def _choose_boundary_generic(lines: List[Dict[str, Any]]) -> Tuple[Optional[int]
             "page_span": span,
         })
         return best_i, dbg
-
 
     # Fallback: k-means on y-centers
     if USE_KMEANS_FALLBACK:
@@ -383,6 +374,7 @@ def _choose_boundary_generic(lines: List[Dict[str, Any]]) -> Tuple[Optional[int]
     })
     return None, dbg
 
+
 def _segment_to_features(lines: List[Dict[str, Any]]) -> Dict[str, Any]:
     """Compute lightweight features for LLM consumption."""
     if not lines:
@@ -407,15 +399,10 @@ def _segment_to_features(lines: List[Dict[str, Any]]) -> Dict[str, Any]:
         "heading_candidates": heading
     }
 
-def _assign_documents_inplace(step1: Dict[str, Any], debug_pages: List[Dict[str, Any]]) -> None:
-    """
-    For each Vision page, split lines into two document-like segments using
-    generic change-point detection with k-means fallback. Writes:
-        read.documents = [doc_A, doc_B]  (either or both may be present)
-        read.read_sections = {"invoice": doc_A.lines, "receipt": doc_B.lines}  # compatibility only
-        read._sectioning_debug = {...}
-    Collects a compact debug summary per page into debug_pages.
-    """
+
+def _assign_documents_inplace(step1: Dict[str, Any], debug_pages: List[Dict[str, Any]]) -> List[Dict[str, Any]]:
+    """Split each Vision page into up to two segments, tag lines with segment_id, and return segments."""
+    segments_out: List[Dict[str, Any]] = []
     pages = (step1.get("vision") or {}).get("pages") or []
     for pg in pages:
         res = (pg.get("result") or {})
@@ -424,37 +411,58 @@ def _assign_documents_inplace(step1: Dict[str, Any], debug_pages: List[Dict[str,
         if not lines:
             continue
 
+        # Keep identity of original list positions for indices
+        orig_index = {id(ln): idx for idx, ln in enumerate(lines)}
+
         idx, dbg = _choose_boundary_generic(lines)
         lines_sorted = _sorted_lines(lines)
 
         if idx is None:
-            all_bbox: Optional[List[float]] = None
-            for ln in lines_sorted:
-                all_bbox = _bbox_union(all_bbox, ln.get("bbox"))
-            doc_A = {
-                "id": "doc_A",
-                "lines": lines_sorted,
-                "bbox": all_bbox,
-                "signals": _segment_to_features(lines_sorted),
-            }
-            read["documents"] = [doc_A]
-            read["read_sections"] = {"invoice": doc_A["lines"], "receipt": []}
-            read["_sectioning_debug"] = {**dbg, "boundary_index": None}
+            # No split accepted → nothing to tag; still record debug
+            read["_sectioning_debug"] = dbg
         else:
+            # Split into two coherent blocks (A/B) in sorted order
             top_lines = lines_sorted[:idx]
             bot_lines = lines_sorted[idx:]
+
+            # Tag the original line dicts (sorted list items reference the same dicts)
+            for ln in top_lines:
+                ln["segment_id"] = 0
+            for ln in bot_lines:
+                ln["segment_id"] = 1
+
+            # Union bboxes
             top_box: Optional[List[float]] = None
             for ln in top_lines:
                 top_box = _bbox_union(top_box, ln.get("bbox"))
             bot_box: Optional[List[float]] = None
             for ln in bot_lines:
                 bot_box = _bbox_union(bot_box, ln.get("bbox"))
+
+            # Build doc shells for backward compatibility
             doc_A = {"id": "doc_A", "lines": top_lines, "bbox": top_box, "signals": _segment_to_features(top_lines)}
             doc_B = {"id": "doc_B", "lines": bot_lines, "bbox": bot_box, "signals": _segment_to_features(bot_lines)}
             read["documents"] = [doc_A, doc_B]
             read["read_sections"] = {"invoice": top_lines, "receipt": bot_lines}
             read["_sectioning_debug"] = dbg
 
+            # Emit first-class segments (line_indices refer to ORIGINAL read.lines)
+            top_indices = [orig_index[id(ln)] for ln in top_lines if id(ln) in orig_index]
+            bot_indices = [orig_index[id(ln)] for ln in bot_lines if id(ln) in orig_index]
+            segments_out.append({
+                "id": 0,
+                "page": int(pg.get("page_index", 0)),
+                "line_indices": top_indices,
+                "bbox": top_box,
+            })
+            segments_out.append({
+                "id": 1,
+                "page": int(pg.get("page_index", 0)),
+                "line_indices": bot_indices,
+                "bbox": bot_box,
+            })
+
+        # Compact debug summary per page
         debug_pages.append({
             "page_index": int(pg.get("page_index", 0)),
             "line_count": len(lines_sorted),
@@ -463,14 +471,54 @@ def _assign_documents_inplace(step1: Dict[str, Any], debug_pages: List[Dict[str,
             "debug": read.get("_sectioning_debug"),
         })
 
-# -------------------- DI style normalization -------------------- #
+    return segments_out
+
+
+def _normalize_di_styles_inplace(step1: Dict[str, Any]) -> None:
+    """Write a 'style_normalized' array under di.result.layout (if styles exist)."""
+    di = (step1.get("di") or {}).get("result") or {}
+    layout = ((di.get("layout") or di.get("analyzeResult") or di) or {})
+    styles = list(layout.get("styles") or [])
+    content = (layout.get("content") or "")
+    out = []
+    for st in styles:
+        spans = st.get("spans") or []
+        f_style = st.get("fontStyle") or st.get("font_style")
+        f_weight = st.get("fontWeight") or st.get("font_weight")
+        is_hw = st.get("isHandwritten", None)
+        conf = float(st.get("confidence", 0.7))
+        snippet = ""
+        page = None
+        bbox = None  # spans→page mapping is non-trivial; leave None for now
+        if content and spans:
+            s0 = spans[0]
+            off = int(s0.get("offset", 0)); length = int(s0.get("length", 0))
+            try:
+                snippet = content[off: off + length]
+            except Exception:
+                snippet = ""
+        if is_hw and snippet and len(snippet.strip()) == 1:
+            conf = min(conf, 0.3)
+        out.append({
+            "page": page,
+            "text": (snippet or "").strip(),
+            "bbox": bbox,
+            "fontStyle": f_style,
+            "fontWeight": f_weight,
+            "isHandwritten": is_hw,
+            "confidence": conf,
+        })
+    if out:
+        layout["style_normalized"] = out
+        if "layout" in di:
+            di["layout"] = layout
+        else:
+            di["analyzeResult"] = {**(di.get("analyzeResult") or {}), "layout": layout}
+        step1.setdefault("di", {}).setdefault("result", {})["layout"] = layout
+
 
 def _normalize_handwriting_inplace(step1: Dict[str, Any]) -> None:
-    """
-    Write di.result.layout.style_normalized: copy of styles with obvious
-    false-positives for handwriting set to False.
-    Conservative rule: if any span has very short length (<3), set isHandwritten=False.
-    """
+    """Light, conservative handwriting normalization (kept for compatibility)."""
     di = step1.get("di") or {}
     res = di.get("result") or {}
     layout = res.get("layout") or {}
@@ -485,10 +533,10 @@ def _normalize_handwriting_inplace(step1: Dict[str, Any]) -> None:
             is_hw = False
         norm.append({**st, "isHandwritten": is_hw})
     layout["style_normalized"] = norm
-    step1["di"]["result"]["layout"] = layout  # reattach
+    step1.setdefault("di", {}).setdefault("result", {})["layout"] = layout
+
 
 # -------------------- public API -------------------- #
-
 def run(
     step1_combined_json_path: Union[str, Dict[str, Any]],
     run_id: str,
@@ -497,12 +545,14 @@ def run(
     service_toggles: Optional[Dict[str, bool]] = None,
     weights: Optional[Dict[str, float]] = None,
     include_backend_opinions: Optional[bool] = None,
+    merge_duplicates: Optional[bool] = None,
 ) -> ModuleOutput:
+    """Main entry for Step 2."""
     out_dir = ensure_output_dir(run_id)
 
-    # Load
+    # Load Step-1 first
     try:
-        step1 = _load_step1(step1_combined_json_path)
+        step1: Dict[str, Any] = _load_step1(step1_combined_json_path)
     except Exception as ex:
         return ModuleOutput(
             run_id=run_id, module_name="mod2_preprocess",
@@ -510,28 +560,44 @@ def run(
             payload=None, artifact_paths={}
         )
 
-    # Enrich (non-destructive; we alter Step-1 copy)
-    segmentation_debug_pages: List[Dict[str, Any]] = []
+    # Normalize DI styles (best-effort)
     try:
-        _assign_documents_inplace(step1, segmentation_debug_pages)
+        _normalize_di_styles_inplace(step1)
+    except Exception as ex:  # be defensive; do not fail run for this
+        try:
+            step1.setdefault("_warnings", []).append(f"DI style normalization skipped: {ex}")
+        except Exception:
+            pass
+
+    # Vision segmentation
+    segmentation_debug_pages: List[Dict[str, Any]] = []
+    segments_all: List[Dict[str, Any]] = []
+    try:
+        segments_all = _assign_documents_inplace(step1, segmentation_debug_pages)
     except Exception as ex:
-        step1.setdefault("_warnings", []).append(f"Vision segmentation failed: {ex}")
+        try:
+            step1.setdefault("_warnings", []).append(f"Vision segmentation failed: {ex}")
+        except Exception:
+            pass
 
-    _normalize_handwriting_inplace(step1)
+    # (Compatibility) extra handwriting normalization
+    try:
+        _normalize_handwriting_inplace(step1)
+    except Exception:
+        pass
 
-    # Flatten Vision lines + basic stats (unchanged)
+    # Flatten Vision lines + basic stats
     lines = _extract_vision_lines(step1)
     stats = _height_stats(lines)
 
-    # Save segmentation debug artifact (separate file)
+    # Save segmentation debug artifact (always)
     seg_debug_path = os.path.join(out_dir, "segmentation.debug.step2.json")
     try:
         save_json(seg_debug_path, {"pages": segmentation_debug_pages})
     except Exception:
-        # Non-fatal
-        pass
+        pass  # non-fatal
 
-    # Main enriched payload (now also embeds debug)
+    # Build enriched payload (also embeds debug)
     enriched = {
         "summary": {
             "pages": len((step1.get("vision") or {}).get("pages") or []),
@@ -540,14 +606,12 @@ def run(
             "has_di_styles": bool(((step1.get("di") or {}).get("result") or {}).get("layout", {}).get("styles")),
             "has_di_style_normalized": bool(((step1.get("di") or {}).get("result") or {}).get("layout", {}).get("style_normalized")),
         },
+        "segments": segments_all,
         "lines": lines,
-        "step1_plus": step1,  # keep the whole enriched Step-1 for downstream use
-        "debug": {            # <— embedded debug for convenience
-            "segmentation": {"pages": segmentation_debug_pages}
-        },
+        "step1_plus": step1,
+        "debug": {"segmentation": {"pages": segmentation_debug_pages}},
     }
 
-    # Save Step-2 main artifact
     preprocess_path = os.path.join(out_dir, "preprocess.step2.json")
     try:
         save_json(preprocess_path, enriched)
@@ -558,8 +622,9 @@ def run(
             payload=None, artifact_paths={}
         )
 
-    # Optional centralized text-style panel (as in your project)
+    # Optional: text-style panel
     tstyle_artifacts: Dict[str, str] = {}
+    msg = "Preprocess complete."
     if _HAS_TSTYLE:
         try:
             src_bytes = None; src_ext = None
@@ -574,6 +639,7 @@ def run(
                 service_toggles=service_toggles,
                 weights=weights,
                 include_backend_opinions=include_backend_opinions,
+                merge_duplicates=merge_duplicates,
             )
             opinions_path = os.path.join(out_dir, "textstyles.opinions.step2.json")
             consensus_path = os.path.join(out_dir, "textstyles.consensus.step2.json")
@@ -596,30 +662,47 @@ def run(
             )
             save_json(eval_template_path, eval_template)
 
+            # Ensure segmentation debug exists (even if empty)
+            if not os.path.exists(seg_debug_path):
+                save_json(seg_debug_path, {"pages": []})
+
             tstyle_artifacts = {
                 "textstyles_opinions": opinions_path,
                 "textstyles_consensus": consensus_path,
                 "textstyles_eval_template": eval_template_path,
             }
+
+            # Clearer message summarizing counts/errors
+            counts = (panel.get("summary") or {}).get("counts") or {}
+            errs = (panel.get("summary") or {}).get("errors") or {}
+            msg = (
+                f"Step 2 preprocessing complete | "
+                f"PyMuPDF={counts.get('pymupdf_spans', 0)}, "
+                f"Azure={counts.get('azure_style_spans', 0)}, "
+                f"Tesseract={counts.get('tesseract_words', 0)}, "
+                f"VisionROI={counts.get('vision_word_rois', 0)}"
+            )
+            if errs:
+                msg += " | errors: " + "; ".join(f"{k}: {v}" for k, v in errs.items())
         except Exception as ex:
             tstyle_artifacts = {"textstyles_error": f"{ex}"}
+            msg = f"Preprocess complete (text-style panel error: {ex})"
 
     return ModuleOutput(
         run_id=run_id, module_name="mod2_preprocess",
         ok=True,
-        message="Preprocess complete (generic segmentation + k-means fallback; styles normalized).",
+        message=msg,
         payload=None,
         artifact_paths={
             "preprocess": preprocess_path,
-            "segmentation_debug": seg_debug_path,   # <— UI can render this
+            "segmentation_debug": seg_debug_path,
             **tstyle_artifacts,
         },
     )
+
 
 def evaluate_adjudicated(obj: dict) -> dict:
     if not _HAS_TSTYLE:
         return {"error": "Evaluator not available"}
     items = obj.get("items") or []
     return evaluate_against_truth(items)
-
-# --- END OF FILE: modules/mod2_preprocess.py ---

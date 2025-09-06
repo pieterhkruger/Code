@@ -1,0 +1,7715 @@
+{
+  "items": [
+    {
+      "id": "pg0-1635153",
+      "page": 0,
+      "text": "tax",
+      "bbox": [
+        1452,
+        1964,
+        73,
+        39
+      ],
+      "consolidated": {
+        "bold": false,
+        "italic": false,
+        "bold_score": 0.45440100179537696,
+        "italic_score": 0.45440100179537696
+      },
+      "truth": {
+        "bold": null,
+        "italic": null
+      },
+      "services": {
+        "pymupdf": {
+          "service": "pymupdf",
+          "page": 0,
+          "text": "Tax",
+          "bbox": null,
+          "font": "Times-Roman",
+          "size": 8.835590362548828,
+          "is_bold": false,
+          "is_italic": false,
+          "confidence": 0.6
+        },
+        "vision_pixel": {
+          "service": "vision_pixel",
+          "page": 0,
+          "text": "Tax",
+          "bbox": [
+            1452,
+            1964,
+            73,
+            39
+          ],
+          "fill_ratio": 0.2100456621004566,
+          "stroke_width": 2.9236416816711426,
+          "slant_deg": 0.0,
+          "fill_z": 0.11616793330058352,
+          "bold_hint": false,
+          "italic_hint": false,
+          "confidence": 0.02904198332514588
+        }
+      }
+    },
+    {
+      "id": "pg0-9586252",
+      "page": 0,
+      "text": "invoice",
+      "bbox": null,
+      "consolidated": {
+        "bold": false,
+        "italic": false,
+        "bold_score": 0.45512110762641994,
+        "italic_score": 0.45512110762641994
+      },
+      "truth": {
+        "bold": null,
+        "italic": null
+      },
+      "services": {
+        "pymupdf": {
+          "service": "pymupdf",
+          "page": 0,
+          "text": "Invoice",
+          "bbox": null,
+          "font": "Times-Roman",
+          "size": 18.261857986450195,
+          "is_bold": false,
+          "is_italic": false,
+          "confidence": 0.6
+        }
+      }
+    },
+    {
+      "id": "pg0-4348756",
+      "page": 0,
+      "text": "dr.",
+      "bbox": null,
+      "consolidated": {
+        "bold": false,
+        "italic": false,
+        "bold_score": 0.45512110762641994,
+        "italic_score": 0.45512110762641994
+      },
+      "truth": {
+        "bold": null,
+        "italic": null
+      },
+      "services": {
+        "pymupdf": {
+          "service": "pymupdf",
+          "page": 0,
+          "text": "Dr.",
+          "bbox": null,
+          "font": "Times-Roman",
+          "size": 9.319778442382812,
+          "is_bold": false,
+          "is_italic": false,
+          "confidence": 0.6
+        }
+      }
+    },
+    {
+      "id": "pg0-9047395",
+      "page": 0,
+      "text": "craige",
+      "bbox": [
+        952,
+        2710,
+        80,
+        219
+      ],
+      "consolidated": {
+        "bold": false,
+        "italic": false,
+        "bold_score": 0.4520012292500502,
+        "italic_score": 0.4582445130493062
+      },
+      "truth": {
+        "bold": null,
+        "italic": null
+      },
+      "services": {
+        "pymupdf": {
+          "service": "pymupdf",
+          "page": 0,
+          "text": "CRAIGE",
+          "bbox": null,
+          "font": "Times-Roman",
+          "size": 17.90210723876953,
+          "is_bold": false,
+          "is_italic": false,
+          "confidence": 0.6
+        },
+        "vision_pixel": {
+          "service": "vision_pixel",
+          "page": 0,
+          "text": "CRAIGE",
+          "bbox": [
+            952,
+            2710,
+            80,
+            219
+          ],
+          "fill_ratio": 0.23310502283105022,
+          "stroke_width": 5.041444778442383,
+          "slant_deg": 11.309932474020215,
+          "fill_z": 0.5035257752073375,
+          "bold_hint": false,
+          "italic_hint": true,
+          "confidence": 0.1258814438018344
+        }
+      }
+    },
+    {
+      "id": "pg0-9139224",
+      "page": 0,
+      "text": "golding",
+      "bbox": null,
+      "consolidated": {
+        "bold": false,
+        "italic": false,
+        "bold_score": 0.45512110762641994,
+        "italic_score": 0.45512110762641994
+      },
+      "truth": {
+        "bold": null,
+        "italic": null
+      },
+      "services": {
+        "pymupdf": {
+          "service": "pymupdf",
+          "page": 0,
+          "text": "GOLDING",
+          "bbox": null,
+          "font": "Times-Roman",
+          "size": 16.06694793701172,
+          "is_bold": false,
+          "is_italic": false,
+          "confidence": 0.6
+        }
+      }
+    },
+    {
+      "id": "pg0-1099033",
+      "page": 0,
+      "text": "medical",
+      "bbox": null,
+      "consolidated": {
+        "bold": false,
+        "italic": false,
+        "bold_score": 0.45512110762641994,
+        "italic_score": 0.45512110762641994
+      },
+      "truth": {
+        "bold": null,
+        "italic": null
+      },
+      "services": {
+        "pymupdf": {
+          "service": "pymupdf",
+          "page": 0,
+          "text": "Medical",
+          "bbox": null,
+          "font": "Times-Roman",
+          "size": 9.301875114440918,
+          "is_bold": false,
+          "is_italic": false,
+          "confidence": 0.6
+        }
+      }
+    },
+    {
+      "id": "pg0-8594096",
+      "page": 0,
+      "text": "practice",
+      "bbox": null,
+      "consolidated": {
+        "bold": false,
+        "italic": false,
+        "bold_score": 0.45512110762641994,
+        "italic_score": 0.45512110762641994
+      },
+      "truth": {
+        "bold": null,
+        "italic": null
+      },
+      "services": {
+        "pymupdf": {
+          "service": "pymupdf",
+          "page": 0,
+          "text": "Practice",
+          "bbox": null,
+          "font": "Times-Roman",
+          "size": 11.463922500610352,
+          "is_bold": false,
+          "is_italic": false,
+          "confidence": 0.6
+        }
+      }
+    },
+    {
+      "id": "pg0-2430171",
+      "page": 0,
+      "text": "65",
+      "bbox": null,
+      "consolidated": {
+        "bold": false,
+        "italic": false,
+        "bold_score": 0.45512110762641994,
+        "italic_score": 0.45512110762641994
+      },
+      "truth": {
+        "bold": null,
+        "italic": null
+      },
+      "services": {
+        "pymupdf": {
+          "service": "pymupdf",
+          "page": 0,
+          "text": "65",
+          "bbox": null,
+          "font": "Times-Roman",
+          "size": 9.235583305358887,
+          "is_bold": false,
+          "is_italic": false,
+          "confidence": 0.6
+        }
+      }
+    },
+    {
+      "id": "pg0-8957636",
+      "page": 0,
+      "text": "central",
+      "bbox": null,
+      "consolidated": {
+        "bold": false,
+        "italic": false,
+        "bold_score": 0.45512110762641994,
+        "italic_score": 0.45512110762641994
+      },
+      "truth": {
+        "bold": null,
+        "italic": null
+      },
+      "services": {
+        "pymupdf": {
+          "service": "pymupdf",
+          "page": 0,
+          "text": "Central",
+          "bbox": null,
+          "font": "Times-Roman",
+          "size": 9.135049819946289,
+          "is_bold": false,
+          "is_italic": false,
+          "confidence": 0.6
+        }
+      }
+    },
+    {
+      "id": "pg0-1194727",
+      "page": 0,
+      "text": "street",
+      "bbox": null,
+      "consolidated": {
+        "bold": false,
+        "italic": false,
+        "bold_score": 0.45512110762641994,
+        "italic_score": 0.45512110762641994
+      },
+      "truth": {
+        "bold": null,
+        "italic": null
+      },
+      "services": {
+        "pymupdf": {
+          "service": "pymupdf",
+          "page": 0,
+          "text": "Street",
+          "bbox": null,
+          "font": "Times-Roman",
+          "size": 9.419791221618652,
+          "is_bold": false,
+          "is_italic": false,
+          "confidence": 0.6
+        }
+      }
+    },
+    {
+      "id": "pg0-5181291",
+      "page": 0,
+      "text": "houghton",
+      "bbox": null,
+      "consolidated": {
+        "bold": false,
+        "italic": false,
+        "bold_score": 0.45512110762641994,
+        "italic_score": 0.45512110762641994
+      },
+      "truth": {
+        "bold": null,
+        "italic": null
+      },
+      "services": {
+        "pymupdf": {
+          "service": "pymupdf",
+          "page": 0,
+          "text": "Houghton",
+          "bbox": null,
+          "font": "Times-Roman",
+          "size": 10.627021789550781,
+          "is_bold": false,
+          "is_italic": false,
+          "confidence": 0.6
+        }
+      }
+    },
+    {
+      "id": "pg0-8507076",
+      "page": 0,
+      "text": "estate",
+      "bbox": null,
+      "consolidated": {
+        "bold": false,
+        "italic": false,
+        "bold_score": 0.45512110762641994,
+        "italic_score": 0.45512110762641994
+      },
+      "truth": {
+        "bold": null,
+        "italic": null
+      },
+      "services": {
+        "pymupdf": {
+          "service": "pymupdf",
+          "page": 0,
+          "text": "Estate",
+          "bbox": null,
+          "font": "Times-Roman",
+          "size": 10.711250305175781,
+          "is_bold": false,
+          "is_italic": false,
+          "confidence": 0.6
+        }
+      }
+    },
+    {
+      "id": "pg0-5188132",
+      "page": 0,
+      "text": "johannesburg",
+      "bbox": [
+        152,
+        457,
+        261,
+        47
+      ],
+      "consolidated": {
+        "bold": false,
+        "italic": false,
+        "bold_score": 0.45442332516388123,
+        "italic_score": 0.45442332516388123
+      },
+      "truth": {
+        "bold": null,
+        "italic": null
+      },
+      "services": {
+        "pymupdf": {
+          "service": "pymupdf",
+          "page": 0,
+          "text": "Johannesburg",
+          "bbox": null,
+          "font": "Times-Roman",
+          "size": 11.845067024230957,
+          "is_bold": false,
+          "is_italic": false,
+          "confidence": 0.6
+        },
+        "vision_pixel": {
+          "service": "vision_pixel",
+          "page": 0,
+          "text": "Johannesburg",
+          "bbox": [
+            152,
+            457,
+            261,
+            47
+          ],
+          "fill_ratio": 0.20983125458547322,
+          "stroke_width": 3.0031816959381104,
+          "slant_deg": 0.0,
+          "fill_z": 0.11256625356354001,
+          "bold_hint": false,
+          "italic_hint": false,
+          "confidence": 0.028141563390885003
+        }
+      }
+    },
+    {
+      "id": "pg0-5654910",
+      "page": 0,
+      "text": "2187",
+      "bbox": [
+        150,
+        501,
+        95,
+        44
+      ],
+      "consolidated": {
+        "bold": false,
+        "italic": false,
+        "bold_score": 0.45504426580780466,
+        "italic_score": 0.45504426580780466
+      },
+      "truth": {
+        "bold": null,
+        "italic": null
+      },
+      "services": {
+        "pymupdf": {
+          "service": "pymupdf",
+          "page": 0,
+          "text": "2187",
+          "bbox": null,
+          "font": "Times-Roman",
+          "size": 9.122254371643066,
+          "is_bold": false,
+          "is_italic": false,
+          "confidence": 0.6
+        },
+        "vision_pixel": {
+          "service": "vision_pixel",
+          "page": 0,
+          "text": "2187",
+          "bbox": [
+            150,
+            501,
+            95,
+            44
+          ],
+          "fill_ratio": 0.20239234449760765,
+          "stroke_width": 3.023651361465454,
+          "slant_deg": 0.0,
+          "fill_z": -0.012394719615173518,
+          "bold_hint": false,
+          "italic_hint": false,
+          "confidence": 0.0030986799037933796
+        }
+      }
+    },
+    {
+      "id": "pg0-4789964",
+      "page": 0,
+      "text": "please",
+      "bbox": null,
+      "consolidated": {
+        "bold": false,
+        "italic": false,
+        "bold_score": 0.45512110762641994,
+        "italic_score": 0.45512110762641994
+      },
+      "truth": {
+        "bold": null,
+        "italic": null
+      },
+      "services": {
+        "pymupdf": {
+          "service": "pymupdf",
+          "page": 0,
+          "text": "PLEASE",
+          "bbox": null,
+          "font": "Times-Roman",
+          "size": 11.459074974060059,
+          "is_bold": false,
+          "is_italic": false,
+          "confidence": 0.6
+        }
+      }
+    },
+    {
+      "id": "pg0-9368902",
+      "page": 0,
+      "text": "retain",
+      "bbox": null,
+      "consolidated": {
+        "bold": false,
+        "italic": false,
+        "bold_score": 0.45512110762641994,
+        "italic_score": 0.45512110762641994
+      },
+      "truth": {
+        "bold": null,
+        "italic": null
+      },
+      "services": {
+        "pymupdf": {
+          "service": "pymupdf",
+          "page": 0,
+          "text": "RETAIN",
+          "bbox": null,
+          "font": "Times-Roman",
+          "size": 9.992825508117676,
+          "is_bold": false,
+          "is_italic": false,
+          "confidence": 0.6
+        }
+      }
+    },
+    {
+      "id": "pg0-2212052",
+      "page": 0,
+      "text": "invoices",
+      "bbox": null,
+      "consolidated": {
+        "bold": false,
+        "italic": false,
+        "bold_score": 0.45512110762641994,
+        "italic_score": 0.45512110762641994
+      },
+      "truth": {
+        "bold": null,
+        "italic": null
+      },
+      "services": {
+        "pymupdf": {
+          "service": "pymupdf",
+          "page": 0,
+          "text": "INVOICES",
+          "bbox": null,
+          "font": "Times-Roman",
+          "size": 10.256460189819336,
+          "is_bold": false,
+          "is_italic": false,
+          "confidence": 0.6
+        }
+      }
+    },
+    {
+      "id": "pg0-2512319",
+      "page": 0,
+      "text": "for",
+      "bbox": null,
+      "consolidated": {
+        "bold": false,
+        "italic": false,
+        "bold_score": 0.45512110762641994,
+        "italic_score": 0.45512110762641994
+      },
+      "truth": {
+        "bold": null,
+        "italic": null
+      },
+      "services": {
+        "pymupdf": {
+          "service": "pymupdf",
+          "page": 0,
+          "text": "FOR",
+          "bbox": null,
+          "font": "Times-Roman",
+          "size": 10.314618110656738,
+          "is_bold": false,
+          "is_italic": false,
+          "confidence": 0.6
+        }
+      }
+    },
+    {
+      "id": "pg0-7680146",
+      "page": 0,
+      "text": "purposes!",
+      "bbox": null,
+      "consolidated": {
+        "bold": false,
+        "italic": false,
+        "bold_score": 0.45512110762641994,
+        "italic_score": 0.45512110762641994
+      },
+      "truth": {
+        "bold": null,
+        "italic": null
+      },
+      "services": {
+        "pymupdf": {
+          "service": "pymupdf",
+          "page": 0,
+          "text": "PURPOSES!",
+          "bbox": null,
+          "font": "Times-Roman",
+          "size": 10.429374694824219,
+          "is_bold": false,
+          "is_italic": false,
+          "confidence": 0.6
+        }
+      }
+    },
+    {
+      "id": "pg0-7135186",
+      "page": 0,
+      "text": "no:",
+      "bbox": null,
+      "consolidated": {
+        "bold": false,
+        "italic": false,
+        "bold_score": 0.45512110762641994,
+        "italic_score": 0.45512110762641994
+      },
+      "truth": {
+        "bold": null,
+        "italic": null
+      },
+      "services": {
+        "pymupdf": {
+          "service": "pymupdf",
+          "page": 0,
+          "text": "No:",
+          "bbox": null,
+          "font": "Times-Roman",
+          "size": 9.020000457763672,
+          "is_bold": false,
+          "is_italic": false,
+          "confidence": 0.6
+        }
+      }
+    },
+    {
+      "id": "pg0-9221272",
+      "page": 0,
+      "text": "1811479",
+      "bbox": null,
+      "consolidated": {
+        "bold": false,
+        "italic": false,
+        "bold_score": 0.45512110762641994,
+        "italic_score": 0.45512110762641994
+      },
+      "truth": {
+        "bold": null,
+        "italic": null
+      },
+      "services": {
+        "pymupdf": {
+          "service": "pymupdf",
+          "page": 0,
+          "text": "1811479",
+          "bbox": null,
+          "font": "Times-Roman",
+          "size": 11.310678482055664,
+          "is_bold": false,
+          "is_italic": false,
+          "confidence": 0.6
+        }
+      }
+    },
+    {
+      "id": "pg0-2935187",
+      "page": 0,
+      "text": "|",
+      "bbox": null,
+      "consolidated": {
+        "bold": false,
+        "italic": false,
+        "bold_score": 0.45512110762641994,
+        "italic_score": 0.45512110762641994
+      },
+      "truth": {
+        "bold": null,
+        "italic": null
+      },
+      "services": {
+        "pymupdf": {
+          "service": "pymupdf",
+          "page": 0,
+          "text": "|",
+          "bbox": null,
+          "font": "Times-Roman",
+          "size": 11.838749885559082,
+          "is_bold": false,
+          "is_italic": false,
+          "confidence": 0.6
+        }
+      }
+    },
+    {
+      "id": "pg0-561248",
+      "page": 0,
+      "text": "mp",
+      "bbox": null,
+      "consolidated": {
+        "bold": false,
+        "italic": false,
+        "bold_score": 0.45512110762641994,
+        "italic_score": 0.45512110762641994
+      },
+      "truth": {
+        "bold": null,
+        "italic": null
+      },
+      "services": {
+        "pymupdf": {
+          "service": "pymupdf",
+          "page": 0,
+          "text": "MP",
+          "bbox": null,
+          "font": "Times-Roman",
+          "size": 10.481928825378418,
+          "is_bold": false,
+          "is_italic": false,
+          "confidence": 0.6
+        }
+      }
+    },
+    {
+      "id": "pg0-5439662",
+      "page": 0,
+      "text": "0412104",
+      "bbox": null,
+      "consolidated": {
+        "bold": false,
+        "italic": false,
+        "bold_score": 0.45512110762641994,
+        "italic_score": 0.45512110762641994
+      },
+      "truth": {
+        "bold": null,
+        "italic": null
+      },
+      "services": {
+        "pymupdf": {
+          "service": "pymupdf",
+          "page": 0,
+          "text": "0412104",
+          "bbox": null,
+          "font": "Times-Roman",
+          "size": 11.2596435546875,
+          "is_bold": false,
+          "is_italic": false,
+          "confidence": 0.6
+        }
+      }
+    },
+    {
+      "id": "pg0-3050707",
+      "page": 0,
+      "text": "4670187568",
+      "bbox": null,
+      "consolidated": {
+        "bold": false,
+        "italic": false,
+        "bold_score": 0.45512110762641994,
+        "italic_score": 0.45512110762641994
+      },
+      "truth": {
+        "bold": null,
+        "italic": null
+      },
+      "services": {
+        "pymupdf": {
+          "service": "pymupdf",
+          "page": 0,
+          "text": "4670187568",
+          "bbox": null,
+          "font": "Times-Roman",
+          "size": 9.257779121398926,
+          "is_bold": false,
+          "is_italic": false,
+          "confidence": 0.6
+        }
+      }
+    },
+    {
+      "id": "pg0-1492249",
+      "page": 0,
+      "text": "date",
+      "bbox": [
+        578,
+        2690,
+        93,
+        40
+      ],
+      "consolidated": {
+        "bold": false,
+        "italic": false,
+        "bold_score": 0.45060768066882445,
+        "italic_score": 0.45060768066882445
+      },
+      "truth": {
+        "bold": null,
+        "italic": null
+      },
+      "services": {
+        "pymupdf": {
+          "service": "pymupdf",
+          "page": 0,
+          "text": "Date",
+          "bbox": null,
+          "font": "Times-Roman",
+          "size": 9.090229988098145,
+          "is_bold": false,
+          "is_italic": false,
+          "confidence": 0.6
+        },
+        "vision_pixel": {
+          "service": "vision_pixel",
+          "page": 0,
+          "text": "Date",
+          "bbox": [
+            578,
+            2690,
+            93,
+            40
+          ],
+          "fill_ratio": 0.246505376344086,
+          "stroke_width": 3.272998571395874,
+          "slant_deg": 0.0,
+          "fill_z": 0.7286288072575893,
+          "bold_hint": false,
+          "italic_hint": false,
+          "confidence": 0.18215720181439732
+        }
+      }
+    },
+    {
+      "id": "pg0-5961733",
+      "page": 0,
+      "text": "number",
+      "bbox": [
+        147,
+        893,
+        150,
+        44
+      ],
+      "consolidated": {
+        "bold": false,
+        "italic": false,
+        "bold_score": 0.45297059601570316,
+        "italic_score": 0.45297059601570316
+      },
+      "truth": {
+        "bold": null,
+        "italic": null
+      },
+      "services": {
+        "pymupdf": {
+          "service": "pymupdf",
+          "page": 0,
+          "text": "Number",
+          "bbox": null,
+          "font": "Times-Roman",
+          "size": 9.064800262451172,
+          "is_bold": false,
+          "is_italic": false,
+          "confidence": 0.6
+        },
+        "vision_pixel": {
+          "service": "vision_pixel",
+          "page": 0,
+          "text": "Number",
+          "bbox": [
+            147,
+            893,
+            150,
+            44
+          ],
+          "fill_ratio": 0.22378787878787879,
+          "stroke_width": 3.1566646099090576,
+          "slant_deg": 0.0,
+          "fill_z": 0.34701368228929813,
+          "bold_hint": false,
+          "italic_hint": false,
+          "confidence": 0.08675342057232453
+        }
+      }
+    },
+    {
+      "id": "pg0-6701971",
+      "page": 0,
+      "text": "reference",
+      "bbox": [
+        149,
+        978,
+        192,
+        46
+      ],
+      "consolidated": {
+        "bold": false,
+        "italic": false,
+        "bold_score": 0.45292929434168083,
+        "italic_score": 0.45292929434168083
+      },
+      "truth": {
+        "bold": null,
+        "italic": null
+      },
+      "services": {
+        "pymupdf": {
+          "service": "pymupdf",
+          "page": 0,
+          "text": "Reference",
+          "bbox": null,
+          "font": "Times-Roman",
+          "size": 9.865625381469727,
+          "is_bold": false,
+          "is_italic": false,
+          "confidence": 0.6
+        },
+        "vision_pixel": {
+          "service": "vision_pixel",
+          "page": 0,
+          "text": "Reference",
+          "bbox": [
+            149,
+            978,
+            192,
+            46
+          ],
+          "fill_ratio": 0.22418478260869565,
+          "stroke_width": 3.059354305267334,
+          "slant_deg": 0.0,
+          "fill_z": 0.35368098799965064,
+          "bold_hint": false,
+          "italic_hint": false,
+          "confidence": 0.08842024699991266
+        }
+      }
+    },
+    {
+      "id": "pg0-1372089",
+      "page": 0,
+      "text": "client",
+      "bbox": [
+        146,
+        1096,
+        114,
+        45
+      ],
+      "consolidated": {
+        "bold": false,
+        "italic": false,
+        "bold_score": 0.4545539176820259,
+        "italic_score": 0.4545539176820259
+      },
+      "truth": {
+        "bold": null,
+        "italic": null
+      },
+      "services": {
+        "pymupdf": {
+          "service": "pymupdf",
+          "page": 0,
+          "text": "Client",
+          "bbox": null,
+          "font": "Times-Roman",
+          "size": 9.020000457763672,
+          "is_bold": false,
+          "is_italic": false,
+          "confidence": 0.6
+        },
+        "vision_pixel": {
+          "service": "vision_pixel",
+          "page": 0,
+          "text": "Client",
+          "bbox": [
+            146,
+            1096,
+            114,
+            45
+          ],
+          "fill_ratio": 0.20857699805068225,
+          "stroke_width": 3.006293773651123,
+          "slant_deg": 0.0,
+          "fill_z": 0.0914968878430287,
+          "bold_hint": false,
+          "italic_hint": false,
+          "confidence": 0.022874221960757175
+        }
+      }
+    },
+    {
+      "id": "pg0-5340069",
+      "page": 0,
+      "text": "2025/08/25",
+      "bbox": [
+        152,
+        1730,
+        212,
+        42
+      ],
+      "consolidated": {
+        "bold": false,
+        "italic": false,
+        "bold_score": 0.45044286350284507,
+        "italic_score": 0.45044286350284507
+      },
+      "truth": {
+        "bold": null,
+        "italic": null
+      },
+      "services": {
+        "pymupdf": {
+          "service": "pymupdf",
+          "page": 0,
+          "text": "2025/08/25",
+          "bbox": null,
+          "font": "Times-Roman",
+          "size": 9.067289352416992,
+          "is_bold": false,
+          "is_italic": false,
+          "confidence": 0.6
+        },
+        "vision_pixel": {
+          "service": "vision_pixel",
+          "page": 0,
+          "text": "2025/08/25",
+          "bbox": [
+            152,
+            1730,
+            212,
+            42
+          ],
+          "fill_ratio": 0.24809074573225517,
+          "stroke_width": 2.8880584239959717,
+          "slant_deg": 0.0,
+          "fill_z": 0.755260302900549,
+          "bold_hint": false,
+          "italic_hint": false,
+          "confidence": 0.18881507572513725
+        }
+      }
+    },
+    {
+      "id": "pg0-5881948",
+      "page": 0,
+      "text": "code",
+      "bbox": [
+        410,
+        1497,
+        108,
+        39
+      ],
+      "consolidated": {
+        "bold": false,
+        "italic": false,
+        "bold_score": 0.4446733251146574,
+        "italic_score": 0.4446733251146574
+      },
+      "truth": {
+        "bold": null,
+        "italic": null
+      },
+      "services": {
+        "pymupdf": {
+          "service": "pymupdf",
+          "page": 0,
+          "text": "Code",
+          "bbox": null,
+          "font": "Times-Roman",
+          "size": 9.431295394897461,
+          "is_bold": false,
+          "is_italic": false,
+          "confidence": 0.6
+        },
+        "vision_pixel": {
+          "service": "vision_pixel",
+          "page": 0,
+          "text": "Code",
+          "bbox": [
+            410,
+            1497,
+            108,
+            39
+          ],
+          "fill_ratio": 0.30365622032288697,
+          "stroke_width": 3.7011451721191406,
+          "slant_deg": 0.0,
+          "fill_z": 1.6886652907238011,
+          "bold_hint": false,
+          "italic_hint": false,
+          "confidence": 0.4221663226809503
+        }
+      }
+    },
+    {
+      "id": "pg0-4627566",
+      "page": 0,
+      "text": "0192",
+      "bbox": [
+        397,
+        1728,
+        107,
+        43
+      ],
+      "consolidated": {
+        "bold": false,
+        "italic": false,
+        "bold_score": 0.454931026927694,
+        "italic_score": 0.454931026927694
+      },
+      "truth": {
+        "bold": null,
+        "italic": null
+      },
+      "services": {
+        "pymupdf": {
+          "service": "pymupdf",
+          "page": 0,
+          "text": "0192",
+          "bbox": null,
+          "font": "Times-Roman",
+          "size": 9.077181816101074,
+          "is_bold": false,
+          "is_italic": false,
+          "confidence": 0.6
+        },
+        "vision_pixel": {
+          "service": "vision_pixel",
+          "page": 0,
+          "text": "0192",
+          "bbox": [
+            397,
+            1728,
+            107,
+            43
+          ],
+          "fill_ratio": 0.2049554444685938,
+          "stroke_width": 2.9592275619506836,
+          "slant_deg": 0.0,
+          "fill_z": 0.0306609784569428,
+          "bold_hint": false,
+          "italic_hint": false,
+          "confidence": 0.0076652446142357
+        }
+      }
+    },
+    {
+      "id": "pg0-7905839",
+      "page": 0,
+      "text": "banking",
+      "bbox": null,
+      "consolidated": {
+        "bold": false,
+        "italic": false,
+        "bold_score": 0.45512110762641994,
+        "italic_score": 0.45512110762641994
+      },
+      "truth": {
+        "bold": null,
+        "italic": null
+      },
+      "services": {
+        "pymupdf": {
+          "service": "pymupdf",
+          "page": 0,
+          "text": "Banking",
+          "bbox": null,
+          "font": "Times-Roman",
+          "size": 9.865625381469727,
+          "is_bold": false,
+          "is_italic": false,
+          "confidence": 0.6
+        }
+      }
+    },
+    {
+      "id": "pg0-5024166",
+      "page": 0,
+      "text": "details:",
+      "bbox": null,
+      "consolidated": {
+        "bold": false,
+        "italic": false,
+        "bold_score": 0.45512110762641994,
+        "italic_score": 0.45512110762641994
+      },
+      "truth": {
+        "bold": null,
+        "italic": null
+      },
+      "services": {
+        "pymupdf": {
+          "service": "pymupdf",
+          "page": 0,
+          "text": "Details:",
+          "bbox": null,
+          "font": "Times-Roman",
+          "size": 9.849725723266602,
+          "is_bold": false,
+          "is_italic": false,
+          "confidence": 0.6
+        }
+      }
+    },
+    {
+      "id": "pg0-8993857",
+      "page": 0,
+      "text": "nedbank",
+      "bbox": null,
+      "consolidated": {
+        "bold": false,
+        "italic": false,
+        "bold_score": 0.45512110762641994,
+        "italic_score": 0.45512110762641994
+      },
+      "truth": {
+        "bold": null,
+        "italic": null
+      },
+      "services": {
+        "pymupdf": {
+          "service": "pymupdf",
+          "page": 0,
+          "text": "Nedbank",
+          "bbox": null,
+          "font": "Times-Roman",
+          "size": 10.429374694824219,
+          "is_bold": false,
+          "is_italic": false,
+          "confidence": 0.6
+        }
+      }
+    },
+    {
+      "id": "pg0-8605420",
+      "page": 0,
+      "text": "killarney",
+      "bbox": null,
+      "consolidated": {
+        "bold": false,
+        "italic": false,
+        "bold_score": 0.45512110762641994,
+        "italic_score": 0.45512110762641994
+      },
+      "truth": {
+        "bold": null,
+        "italic": null
+      },
+      "services": {
+        "pymupdf": {
+          "service": "pymupdf",
+          "page": 0,
+          "text": "Killarney",
+          "bbox": null,
+          "font": "Times-Roman",
+          "size": 10.253249168395996,
+          "is_bold": false,
+          "is_italic": false,
+          "confidence": 0.6
+        }
+      }
+    },
+    {
+      "id": "pg0-8143399",
+      "page": 0,
+      "text": "1096610833",
+      "bbox": [
+        161,
+        2200,
+        222,
+        41
+      ],
+      "consolidated": {
+        "bold": false,
+        "italic": false,
+        "bold_score": 0.45044425654938014,
+        "italic_score": 0.45044425654938014
+      },
+      "truth": {
+        "bold": null,
+        "italic": null
+      },
+      "services": {
+        "pymupdf": {
+          "service": "pymupdf",
+          "page": 0,
+          "text": "1096610833",
+          "bbox": null,
+          "font": "Times-Roman",
+          "size": 8.761738777160645,
+          "is_bold": false,
+          "is_italic": false,
+          "confidence": 0.6
+        },
+        "vision_pixel": {
+          "service": "vision_pixel",
+          "page": 0,
+          "text": "1096610833",
+          "bbox": [
+            161,
+            2200,
+            222,
+            41
+          ],
+          "fill_ratio": 0.24807734563832126,
+          "stroke_width": 2.819166421890259,
+          "slant_deg": 0.0,
+          "fill_z": 0.7550352042289843,
+          "bold_hint": false,
+          "italic_hint": false,
+          "confidence": 0.18875880105724607
+        }
+      }
+    },
+    {
+      "id": "pg0-2720943",
+      "page": 0,
+      "text": "2025/08/25 13:28:17",
+      "bbox": [
+        553,
+        809,
+        371,
+        44
+      ],
+      "consolidated": {
+        "bold": false,
+        "italic": false,
+        "bold_score": 0.4530924404406652,
+        "italic_score": 0.4530924404406652
+      },
+      "truth": {
+        "bold": null,
+        "italic": null
+      },
+      "services": {
+        "pymupdf": {
+          "service": "pymupdf",
+          "page": 0,
+          "text": "2025/08/25 13:28:17",
+          "bbox": null,
+          "font": "Times-Roman",
+          "size": 10.147500038146973,
+          "is_bold": false,
+          "is_italic": false,
+          "confidence": 0.6
+        },
+        "vision_pixel": {
+          "service": "vision_pixel",
+          "page": 0,
+          "text": "2025/08/25 13:28:17",
+          "bbox": [
+            553,
+            809,
+            371,
+            44
+          ],
+          "fill_ratio": 0.22261700563587355,
+          "stroke_width": 3.02402925491333,
+          "slant_deg": 0.0,
+          "fill_z": 0.327345014861516,
+          "bold_hint": false,
+          "italic_hint": false,
+          "confidence": 0.081836253715379
+        }
+      }
+    },
+    {
+      "id": "pg0-9268070",
+      "page": 0,
+      "text": "receipt",
+      "bbox": [
+        159,
+        2699,
+        145,
+        38
+      ],
+      "consolidated": {
+        "bold": false,
+        "italic": false,
+        "bold_score": 0.46809092214147974,
+        "italic_score": 0.44221189396161537
+      },
+      "truth": {
+        "bold": null,
+        "italic": null
+      },
+      "services": {
+        "pymupdf": {
+          "service": "pymupdf",
+          "page": 0,
+          "text": "Receipt",
+          "bbox": null,
+          "font": "Times-Roman",
+          "size": 10.147500038146973,
+          "is_bold": false,
+          "is_italic": false,
+          "confidence": 0.6
+        },
+        "vision_pixel": {
+          "service": "vision_pixel",
+          "page": 0,
+          "text": "Receipt",
+          "bbox": [
+            159,
+            2699,
+            145,
+            38
+          ],
+          "fill_ratio": 0.3274047186932849,
+          "stroke_width": 3.6275382041931152,
+          "slant_deg": 0.0,
+          "fill_z": 2.0875994669465863,
+          "bold_hint": true,
+          "italic_hint": false,
+          "confidence": 0.5218998667366466
+        }
+      }
+    },
+    {
+      "id": "pg0-6450330",
+      "page": 0,
+      "text": "in148507",
+      "bbox": [
+        553,
+        893,
+        178,
+        46
+      ],
+      "consolidated": {
+        "bold": false,
+        "italic": false,
+        "bold_score": 0.45297536378293196,
+        "italic_score": 0.45297536378293196
+      },
+      "truth": {
+        "bold": null,
+        "italic": null
+      },
+      "services": {
+        "pymupdf": {
+          "service": "pymupdf",
+          "page": 0,
+          "text": "IN148507",
+          "bbox": null,
+          "font": "Times-Roman",
+          "size": 9.029973030090332,
+          "is_bold": false,
+          "is_italic": false,
+          "confidence": 0.6
+        },
+        "vision_pixel": {
+          "service": "vision_pixel",
+          "page": 0,
+          "text": "IN148507",
+          "bbox": [
+            553,
+            893,
+            178,
+            46
+          ],
+          "fill_ratio": 0.2237420615534929,
+          "stroke_width": 3.1141061782836914,
+          "slant_deg": 0.0,
+          "fill_z": 0.34624403107297874,
+          "bold_hint": false,
+          "italic_hint": false,
+          "confidence": 0.08656100776824469
+        }
+      }
+    },
+    {
+      "id": "pg0-188614",
+      "page": 0,
+      "text": "kruger",
+      "bbox": null,
+      "consolidated": {
+        "bold": false,
+        "italic": false,
+        "bold_score": 0.45512110762641994,
+        "italic_score": 0.45512110762641994
+      },
+      "truth": {
+        "bold": null,
+        "italic": null
+      },
+      "services": {
+        "pymupdf": {
+          "service": "pymupdf",
+          "page": 0,
+          "text": "Kruger",
+          "bbox": null,
+          "font": "Times-Roman",
+          "size": 10.587334632873535,
+          "is_bold": false,
+          "is_italic": false,
+          "confidence": 0.6
+        }
+      }
+    },
+    {
+      "id": "pg0-6263540",
+      "page": 0,
+      "text": "pieter",
+      "bbox": null,
+      "consolidated": {
+        "bold": false,
+        "italic": false,
+        "bold_score": 0.45512110762641994,
+        "italic_score": 0.45512110762641994
+      },
+      "truth": {
+        "bold": null,
+        "italic": null
+      },
+      "services": {
+        "pymupdf": {
+          "service": "pymupdf",
+          "page": 0,
+          "text": "Pieter",
+          "bbox": null,
+          "font": "Times-Roman",
+          "size": 9.700139999389648,
+          "is_bold": false,
+          "is_italic": false,
+          "confidence": 0.6
+        }
+      }
+    },
+    {
+      "id": "pg0-7211234",
+      "page": 0,
+      "text": "h 1980/05/25",
+      "bbox": null,
+      "consolidated": {
+        "bold": false,
+        "italic": false,
+        "bold_score": 0.45512110762641994,
+        "italic_score": 0.45512110762641994
+      },
+      "truth": {
+        "bold": null,
+        "italic": null
+      },
+      "services": {
+        "pymupdf": {
+          "service": "pymupdf",
+          "page": 0,
+          "text": "H 1980/05/25",
+          "bbox": null,
+          "font": "Times-Roman",
+          "size": 9.301875114440918,
+          "is_bold": false,
+          "is_italic": false,
+          "confidence": 0.6
+        }
+      }
+    },
+    {
+      "id": "pg0-3864532",
+      "page": 0,
+      "text": "notes",
+      "bbox": [
+        157,
+        2884,
+        117,
+        34
+      ],
+      "consolidated": {
+        "bold": false,
+        "italic": false,
+        "bold_score": 0.4699466558239957,
+        "italic_score": 0.4403746896652952
+      },
+      "truth": {
+        "bold": null,
+        "italic": null
+      },
+      "services": {
+        "pymupdf": {
+          "service": "pymupdf",
+          "page": 0,
+          "text": "Notes",
+          "bbox": null,
+          "font": "Times-Roman",
+          "size": 9.103492736816406,
+          "is_bold": false,
+          "is_italic": false,
+          "confidence": 0.6
+        },
+        "vision_pixel": {
+          "service": "vision_pixel",
+          "page": 0,
+          "text": "Notes",
+          "bbox": [
+            157,
+            2884,
+            117,
+            34
+          ],
+          "fill_ratio": 0.345148315736551,
+          "stroke_width": 3.765254020690918,
+          "slant_deg": 0.0,
+          "fill_z": 2.3856615658331277,
+          "bold_hint": true,
+          "italic_hint": false,
+          "confidence": 0.5964153914582819
+        }
+      }
+    },
+    {
+      "id": "pg0-6133376",
+      "page": 0,
+      "text": "pieter h",
+      "bbox": null,
+      "consolidated": {
+        "bold": false,
+        "italic": false,
+        "bold_score": 0.45512110762641994,
+        "italic_score": 0.45512110762641994
+      },
+      "truth": {
+        "bold": null,
+        "italic": null
+      },
+      "services": {
+        "pymupdf": {
+          "service": "pymupdf",
+          "page": 0,
+          "text": "Pieter H",
+          "bbox": null,
+          "font": "Times-Roman",
+          "size": 10.993124961853027,
+          "is_bold": false,
+          "is_italic": false,
+          "confidence": 0.6
+        }
+      }
+    },
+    {
+      "id": "pg0-3174325",
+      "page": 0,
+      "text": "269",
+      "bbox": null,
+      "consolidated": {
+        "bold": false,
+        "italic": false,
+        "bold_score": 0.45512110762641994,
+        "italic_score": 0.45512110762641994
+      },
+      "truth": {
+        "bold": null,
+        "italic": null
+      },
+      "services": {
+        "pymupdf": {
+          "service": "pymupdf",
+          "page": 0,
+          "text": "269",
+          "bbox": null,
+          "font": "Times-Roman",
+          "size": 10.40831470489502,
+          "is_bold": false,
+          "is_italic": false,
+          "confidence": 0.6
+        }
+      }
+    },
+    {
+      "id": "pg0-2477893",
+      "page": 0,
+      "text": "herder",
+      "bbox": null,
+      "consolidated": {
+        "bold": false,
+        "italic": false,
+        "bold_score": 0.45512110762641994,
+        "italic_score": 0.45512110762641994
+      },
+      "truth": {
+        "bold": null,
+        "italic": null
+      },
+      "services": {
+        "pymupdf": {
+          "service": "pymupdf",
+          "page": 0,
+          "text": "Herder",
+          "bbox": null,
+          "font": "Times-Roman",
+          "size": 10.429374694824219,
+          "is_bold": false,
+          "is_italic": false,
+          "confidence": 0.6
+        }
+      }
+    },
+    {
+      "id": "pg0-1050372",
+      "page": 0,
+      "text": "drive",
+      "bbox": null,
+      "consolidated": {
+        "bold": false,
+        "italic": false,
+        "bold_score": 0.45512110762641994,
+        "italic_score": 0.45512110762641994
+      },
+      "truth": {
+        "bold": null,
+        "italic": null
+      },
+      "services": {
+        "pymupdf": {
+          "service": "pymupdf",
+          "page": 0,
+          "text": "Drive",
+          "bbox": null,
+          "font": "Times-Roman",
+          "size": 9.940061569213867,
+          "is_bold": false,
+          "is_italic": false,
+          "confidence": 0.6
+        }
+      }
+    },
+    {
+      "id": "pg0-2649027",
+      "page": 0,
+      "text": "northcliff",
+      "bbox": [
+        553,
+        1233,
+        167,
+        43
+      ],
+      "consolidated": {
+        "bold": false,
+        "italic": false,
+        "bold_score": 0.45094293710888894,
+        "italic_score": 0.45094293710888894
+      },
+      "truth": {
+        "bold": null,
+        "italic": null
+      },
+      "services": {
+        "pymupdf": {
+          "service": "pymupdf",
+          "page": 0,
+          "text": "Northcliff",
+          "bbox": null,
+          "font": "Times-Roman",
+          "size": 9.020000457763672,
+          "is_bold": false,
+          "is_italic": false,
+          "confidence": 0.6
+        },
+        "vision_pixel": {
+          "service": "vision_pixel",
+          "page": 0,
+          "text": "Northcliff",
+          "bbox": [
+            553,
+            1233,
+            167,
+            43
+          ],
+          "fill_ratio": 0.24328088010026458,
+          "stroke_width": 3.114513874053955,
+          "slant_deg": 0.0,
+          "fill_z": 0.6744627824125914,
+          "bold_hint": false,
+          "italic_hint": false,
+          "confidence": 0.16861569560314785
+        }
+      }
+    },
+    {
+      "id": "pg0-94269",
+      "page": 0,
+      "text": "randburg",
+      "bbox": [
+        555,
+        1279,
+        180,
+        43
+      ],
+      "consolidated": {
+        "bold": false,
+        "italic": false,
+        "bold_score": 0.45033840235826716,
+        "italic_score": 0.45033840235826716
+      },
+      "truth": {
+        "bold": null,
+        "italic": null
+      },
+      "services": {
+        "pymupdf": {
+          "service": "pymupdf",
+          "page": 0,
+          "text": "Randburg",
+          "bbox": null,
+          "font": "Times-Roman",
+          "size": 11.078439712524414,
+          "is_bold": false,
+          "is_italic": false,
+          "confidence": 0.6
+        },
+        "vision_pixel": {
+          "service": "vision_pixel",
+          "page": 0,
+          "text": "Randburg",
+          "bbox": [
+            555,
+            1279,
+            180,
+            43
+          ],
+          "fill_ratio": 0.24909560723514212,
+          "stroke_width": 3.0398807525634766,
+          "slant_deg": 0.0,
+          "fill_z": 0.7721402584084676,
+          "bold_hint": false,
+          "italic_hint": false,
+          "confidence": 0.1930350646021169
+        }
+      }
+    },
+    {
+      "id": "pg0-2597652",
+      "page": 0,
+      "text": "south",
+      "bbox": null,
+      "consolidated": {
+        "bold": false,
+        "italic": false,
+        "bold_score": 0.45512110762641994,
+        "italic_score": 0.45512110762641994
+      },
+      "truth": {
+        "bold": null,
+        "italic": null
+      },
+      "services": {
+        "pymupdf": {
+          "service": "pymupdf",
+          "page": 0,
+          "text": "South",
+          "bbox": null,
+          "font": "Times-Roman",
+          "size": 9.05656909942627,
+          "is_bold": false,
+          "is_italic": false,
+          "confidence": 0.6
+        }
+      }
+    },
+    {
+      "id": "pg0-8976239",
+      "page": 0,
+      "text": "africa",
+      "bbox": null,
+      "consolidated": {
+        "bold": false,
+        "italic": false,
+        "bold_score": 0.45512110762641994,
+        "italic_score": 0.45512110762641994
+      },
+      "truth": {
+        "bold": null,
+        "italic": null
+      },
+      "services": {
+        "pymupdf": {
+          "service": "pymupdf",
+          "page": 0,
+          "text": "Africa",
+          "bbox": null,
+          "font": "Times-Roman",
+          "size": 8.73812484741211,
+          "is_bold": false,
+          "is_italic": false,
+          "confidence": 0.6
+        }
+      }
+    },
+    {
+      "id": "pg0-1449058",
+      "page": 0,
+      "text": "pieterhkruger@gmail.com",
+      "bbox": [
+        557,
+        1378,
+        463,
+        45
+      ],
+      "consolidated": {
+        "bold": false,
+        "italic": false,
+        "bold_score": 0.45289378395072505,
+        "italic_score": 0.45289378395072505
+      },
+      "truth": {
+        "bold": null,
+        "italic": null
+      },
+      "services": {
+        "pymupdf": {
+          "service": "pymupdf",
+          "page": 0,
+          "text": "pieterhkruger@gmail.com",
+          "bbox": null,
+          "font": "Times-Roman",
+          "size": 11.096399307250977,
+          "is_bold": false,
+          "is_italic": false,
+          "confidence": 0.6
+        },
+        "vision_pixel": {
+          "service": "vision_pixel",
+          "page": 0,
+          "text": "pieterhkruger@gmail.com",
+          "bbox": [
+            557,
+            1378,
+            463,
+            45
+          ],
+          "fill_ratio": 0.22452603791696665,
+          "stroke_width": 2.918299913406372,
+          "slant_deg": 0.0,
+          "fill_z": 0.35941349382647964,
+          "bold_hint": false,
+          "italic_hint": false,
+          "confidence": 0.08985337345661991
+        }
+      }
+    },
+    {
+      "id": "pg0-6702885",
+      "page": 0,
+      "text": "011",
+      "bbox": null,
+      "consolidated": {
+        "bold": false,
+        "italic": false,
+        "bold_score": 0.45512110762641994,
+        "italic_score": 0.45512110762641994
+      },
+      "truth": {
+        "bold": null,
+        "italic": null
+      },
+      "services": {
+        "pymupdf": {
+          "service": "pymupdf",
+          "page": 0,
+          "text": "011",
+          "bbox": null,
+          "font": "Times-Roman",
+          "size": 10.485225677490234,
+          "is_bold": false,
+          "is_italic": false,
+          "confidence": 0.6
+        }
+      }
+    },
+    {
+      "id": "pg0-834840",
+      "page": 0,
+      "text": "483",
+      "bbox": null,
+      "consolidated": {
+        "bold": false,
+        "italic": false,
+        "bold_score": 0.45512110762641994,
+        "italic_score": 0.45512110762641994
+      },
+      "truth": {
+        "bold": null,
+        "italic": null
+      },
+      "services": {
+        "pymupdf": {
+          "service": "pymupdf",
+          "page": 0,
+          "text": "483",
+          "bbox": null,
+          "font": "Times-Roman",
+          "size": 11.327872276306152,
+          "is_bold": false,
+          "is_italic": false,
+          "confidence": 0.6
+        }
+      }
+    },
+    {
+      "id": "pg0-5984103",
+      "page": 0,
+      "text": "1080",
+      "bbox": null,
+      "consolidated": {
+        "bold": false,
+        "italic": false,
+        "bold_score": 0.45512110762641994,
+        "italic_score": 0.45512110762641994
+      },
+      "truth": {
+        "bold": null,
+        "italic": null
+      },
+      "services": {
+        "pymupdf": {
+          "service": "pymupdf",
+          "page": 0,
+          "text": "1080",
+          "bbox": null,
+          "font": "Times-Roman",
+          "size": 11.285513877868652,
+          "is_bold": false,
+          "is_italic": false,
+          "confidence": 0.6
+        }
+      }
+    },
+    {
+      "id": "pg0-1552524",
+      "page": 0,
+      "text": "718",
+      "bbox": null,
+      "consolidated": {
+        "bold": false,
+        "italic": false,
+        "bold_score": 0.45512110762641994,
+        "italic_score": 0.45512110762641994
+      },
+      "truth": {
+        "bold": null,
+        "italic": null
+      },
+      "services": {
+        "pymupdf": {
+          "service": "pymupdf",
+          "page": 0,
+          "text": "718",
+          "bbox": null,
+          "font": "Times-Roman",
+          "size": 11.196931838989258,
+          "is_bold": false,
+          "is_italic": false,
+          "confidence": 0.6
+        }
+      }
+    },
+    {
+      "id": "pg0-6352736",
+      "page": 0,
+      "text": "3004",
+      "bbox": null,
+      "consolidated": {
+        "bold": false,
+        "italic": false,
+        "bold_score": 0.45512110762641994,
+        "italic_score": 0.45512110762641994
+      },
+      "truth": {
+        "bold": null,
+        "italic": null
+      },
+      "services": {
+        "pymupdf": {
+          "service": "pymupdf",
+          "page": 0,
+          "text": "3004",
+          "bbox": null,
+          "font": "Times-Roman",
+          "size": 11.180253982543945,
+          "is_bold": false,
+          "is_italic": false,
+          "confidence": 0.6
+        }
+      }
+    },
+    {
+      "id": "pg0-6861355",
+      "page": 0,
+      "text": "patients@craigegolding.co.za",
+      "bbox": null,
+      "consolidated": {
+        "bold": false,
+        "italic": false,
+        "bold_score": 0.45512110762641994,
+        "italic_score": 0.45512110762641994
+      },
+      "truth": {
+        "bold": null,
+        "italic": null
+      },
+      "services": {
+        "pymupdf": {
+          "service": "pymupdf",
+          "page": 0,
+          "text": "patients@craigegolding.co.za",
+          "bbox": null,
+          "font": "Times-Roman",
+          "size": 9.31003475189209,
+          "is_bold": false,
+          "is_italic": false,
+          "confidence": 0.6
+        }
+      }
+    },
+    {
+      "id": "pg0-9959484",
+      "page": 0,
+      "text": "| http://www.drcgolding.co.za",
+      "bbox": null,
+      "consolidated": {
+        "bold": false,
+        "italic": false,
+        "bold_score": 0.45512110762641994,
+        "italic_score": 0.45512110762641994
+      },
+      "truth": {
+        "bold": null,
+        "italic": null
+      },
+      "services": {
+        "pymupdf": {
+          "service": "pymupdf",
+          "page": 0,
+          "text": "| http://www.drcgolding.co.za",
+          "bbox": null,
+          "font": "Times-Roman",
+          "size": 9.301875114440918,
+          "is_bold": false,
+          "is_italic": false,
+          "confidence": 0.6
+        }
+      }
+    },
+    {
+      "id": "pg0-3620515",
+      "page": 0,
+      "text": "whatsapp:",
+      "bbox": null,
+      "consolidated": {
+        "bold": false,
+        "italic": false,
+        "bold_score": 0.45512110762641994,
+        "italic_score": 0.45512110762641994
+      },
+      "truth": {
+        "bold": null,
+        "italic": null
+      },
+      "services": {
+        "pymupdf": {
+          "service": "pymupdf",
+          "page": 0,
+          "text": "WhatsApp:",
+          "bbox": null,
+          "font": "Times-Roman",
+          "size": 9.301875114440918,
+          "is_bold": false,
+          "is_italic": false,
+          "confidence": 0.6
+        }
+      }
+    },
+    {
+      "id": "pg0-7076340",
+      "page": 0,
+      "text": "0838042903",
+      "bbox": null,
+      "consolidated": {
+        "bold": false,
+        "italic": false,
+        "bold_score": 0.45512110762641994,
+        "italic_score": 0.45512110762641994
+      },
+      "truth": {
+        "bold": null,
+        "italic": null
+      },
+      "services": {
+        "pymupdf": {
+          "service": "pymupdf",
+          "page": 0,
+          "text": "0838042903",
+          "bbox": null,
+          "font": "Times-Roman",
+          "size": 9.386212348937988,
+          "is_bold": false,
+          "is_italic": false,
+          "confidence": 0.6
+        }
+      }
+    },
+    {
+      "id": "pg0-4832413",
+      "page": 0,
+      "text": "no",
+      "bbox": null,
+      "consolidated": {
+        "bold": false,
+        "italic": false,
+        "bold_score": 0.45512110762641994,
+        "italic_score": 0.45512110762641994
+      },
+      "truth": {
+        "bold": null,
+        "italic": null
+      },
+      "services": {
+        "pymupdf": {
+          "service": "pymupdf",
+          "page": 0,
+          "text": "NO",
+          "bbox": null,
+          "font": "Times-Roman",
+          "size": 8.456250190734863,
+          "is_bold": false,
+          "is_italic": false,
+          "confidence": 0.6
+        }
+      }
+    },
+    {
+      "id": "pg0-3356059",
+      "page": 0,
+      "text": "return",
+      "bbox": null,
+      "consolidated": {
+        "bold": false,
+        "italic": false,
+        "bold_score": 0.45512110762641994,
+        "italic_score": 0.45512110762641994
+      },
+      "truth": {
+        "bold": null,
+        "italic": null
+      },
+      "services": {
+        "pymupdf": {
+          "service": "pymupdf",
+          "page": 0,
+          "text": "RETURN",
+          "bbox": null,
+          "font": "Times-Roman",
+          "size": 8.63662052154541,
+          "is_bold": false,
+          "is_italic": false,
+          "confidence": 0.6
+        }
+      }
+    },
+    {
+      "id": "pg0-6476509",
+      "page": 0,
+      "text": "or",
+      "bbox": null,
+      "consolidated": {
+        "bold": false,
+        "italic": false,
+        "bold_score": 0.45512110762641994,
+        "italic_score": 0.45512110762641994
+      },
+      "truth": {
+        "bold": null,
+        "italic": null
+      },
+      "services": {
+        "pymupdf": {
+          "service": "pymupdf",
+          "page": 0,
+          "text": "OR",
+          "bbox": null,
+          "font": "Times-Roman",
+          "size": 8.838589668273926,
+          "is_bold": false,
+          "is_italic": false,
+          "confidence": 0.6
+        }
+      }
+    },
+    {
+      "id": "pg0-2854978",
+      "page": 0,
+      "text": "exchange",
+      "bbox": null,
+      "consolidated": {
+        "bold": false,
+        "italic": false,
+        "bold_score": 0.45512110762641994,
+        "italic_score": 0.45512110762641994
+      },
+      "truth": {
+        "bold": null,
+        "italic": null
+      },
+      "services": {
+        "pymupdf": {
+          "service": "pymupdf",
+          "page": 0,
+          "text": "EXCHANGE",
+          "bbox": null,
+          "font": "Times-Roman",
+          "size": 8.595377922058105,
+          "is_bold": false,
+          "is_italic": false,
+          "confidence": 0.6
+        }
+      }
+    },
+    {
+      "id": "pg0-4301579",
+      "page": 0,
+      "text": "on",
+      "bbox": null,
+      "consolidated": {
+        "bold": false,
+        "italic": false,
+        "bold_score": 0.45512110762641994,
+        "italic_score": 0.45512110762641994
+      },
+      "truth": {
+        "bold": null,
+        "italic": null
+      },
+      "services": {
+        "pymupdf": {
+          "service": "pymupdf",
+          "page": 0,
+          "text": "ON",
+          "bbox": null,
+          "font": "Times-Roman",
+          "size": 8.518025398254395,
+          "is_bold": false,
+          "is_italic": false,
+          "confidence": 0.6
+        }
+      }
+    },
+    {
+      "id": "pg0-1980801",
+      "page": 0,
+      "text": "products",
+      "bbox": null,
+      "consolidated": {
+        "bold": false,
+        "italic": false,
+        "bold_score": 0.45512110762641994,
+        "italic_score": 0.45512110762641994
+      },
+      "truth": {
+        "bold": null,
+        "italic": null
+      },
+      "services": {
+        "pymupdf": {
+          "service": "pymupdf",
+          "page": 0,
+          "text": "PRODUCTS",
+          "bbox": null,
+          "font": "Times-Roman",
+          "size": 8.769159317016602,
+          "is_bold": false,
+          "is_italic": false,
+          "confidence": 0.6
+        }
+      }
+    },
+    {
+      "id": "pg0-7037046",
+      "page": 0,
+      "text": "once",
+      "bbox": null,
+      "consolidated": {
+        "bold": false,
+        "italic": false,
+        "bold_score": 0.45512110762641994,
+        "italic_score": 0.45512110762641994
+      },
+      "truth": {
+        "bold": null,
+        "italic": null
+      },
+      "services": {
+        "pymupdf": {
+          "service": "pymupdf",
+          "page": 0,
+          "text": "ONCE",
+          "bbox": null,
+          "font": "Times-Roman",
+          "size": 8.66004753112793,
+          "is_bold": false,
+          "is_italic": false,
+          "confidence": 0.6
+        }
+      }
+    },
+    {
+      "id": "pg0-2330450",
+      "page": 0,
+      "text": "dispensed.",
+      "bbox": [
+        159,
+        2329,
+        238,
+        44
+      ],
+      "consolidated": {
+        "bold": false,
+        "italic": false,
+        "bold_score": 0.45140605159885,
+        "italic_score": 0.45140605159885
+      },
+      "truth": {
+        "bold": null,
+        "italic": null
+      },
+      "services": {
+        "pymupdf": {
+          "service": "pymupdf",
+          "page": 0,
+          "text": "DISPENSED.",
+          "bbox": null,
+          "font": "Times-Roman",
+          "size": 9.583749771118164,
+          "is_bold": false,
+          "is_italic": false,
+          "confidence": 0.6
+        },
+        "vision_pixel": {
+          "service": "vision_pixel",
+          "page": 0,
+          "text": "DISPENSED.",
+          "bbox": [
+            159,
+            2329,
+            238,
+            44
+          ],
+          "fill_ratio": 0.23882734912146678,
+          "stroke_width": 3.0474436283111572,
+          "slant_deg": 0.0,
+          "fill_z": 0.5996510749690614,
+          "bold_hint": false,
+          "italic_hint": false,
+          "confidence": 0.14991276874226536
+        }
+      }
+    },
+    {
+      "id": "pg0-7983389",
+      "page": 0,
+      "text": "item",
+      "bbox": [
+        706,
+        1498,
+        75,
+        36
+      ],
+      "consolidated": {
+        "bold": false,
+        "italic": false,
+        "bold_score": 0.47355525376613955,
+        "italic_score": 0.43680914233775764
+      },
+      "truth": {
+        "bold": null,
+        "italic": null
+      },
+      "services": {
+        "pymupdf": {
+          "service": "pymupdf",
+          "page": 0,
+          "text": "Item",
+          "bbox": null,
+          "font": "Times-Roman",
+          "size": 8.587276458740234,
+          "is_bold": false,
+          "is_italic": false,
+          "confidence": 0.6
+        },
+        "vision_pixel": {
+          "service": "vision_pixel",
+          "page": 0,
+          "text": "Item",
+          "bbox": [
+            706,
+            1498,
+            75,
+            36
+          ],
+          "fill_ratio": 0.37962962962962965,
+          "stroke_width": 3.6659109592437744,
+          "slant_deg": 0.0,
+          "fill_z": 2.9648886958381526,
+          "bold_hint": true,
+          "italic_hint": false,
+          "confidence": 0.7412221739595382
+        }
+      }
+    },
+    {
+      "id": "pg0-3984037",
+      "page": 0,
+      "text": "consultation - follow-up",
+      "bbox": [
+        702,
+        1726,
+        431,
+        43
+      ],
+      "consolidated": {
+        "bold": false,
+        "italic": false,
+        "bold_score": 0.45469750843560625,
+        "italic_score": 0.45469750843560625
+      },
+      "truth": {
+        "bold": null,
+        "italic": null
+      },
+      "services": {
+        "pymupdf": {
+          "service": "pymupdf",
+          "page": 0,
+          "text": "Consultation - Follow-Up",
+          "bbox": null,
+          "font": "Times-Roman",
+          "size": 9.865625381469727,
+          "is_bold": false,
+          "is_italic": false,
+          "confidence": 0.6
+        },
+        "vision_pixel": {
+          "service": "vision_pixel",
+          "page": 0,
+          "text": "Consultation - Follow-Up",
+          "bbox": [
+            702,
+            1726,
+            431,
+            43
+          ],
+          "fill_ratio": 0.20719797118653213,
+          "stroke_width": 2.93479585647583,
+          "slant_deg": 0.0,
+          "fill_z": 0.06833159387545057,
+          "bold_hint": false,
+          "italic_hint": false,
+          "confidence": 0.017082898468862642
+        }
+      }
+    },
+    {
+      "id": "pg0-3849615",
+      "page": 0,
+      "text": "icd10:",
+      "bbox": null,
+      "consolidated": {
+        "bold": false,
+        "italic": false,
+        "bold_score": 0.45512110762641994,
+        "italic_score": 0.45512110762641994
+      },
+      "truth": {
+        "bold": null,
+        "italic": null
+      },
+      "services": {
+        "pymupdf": {
+          "service": "pymupdf",
+          "page": 0,
+          "text": "ICD10:",
+          "bbox": null,
+          "font": "Times-Roman",
+          "size": 9.020000457763672,
+          "is_bold": false,
+          "is_italic": false,
+          "confidence": 0.6
+        }
+      }
+    },
+    {
+      "id": "pg0-3512422",
+      "page": 0,
+      "text": "e27.9",
+      "bbox": null,
+      "consolidated": {
+        "bold": false,
+        "italic": false,
+        "bold_score": 0.45512110762641994,
+        "italic_score": 0.45512110762641994
+      },
+      "truth": {
+        "bold": null,
+        "italic": null
+      },
+      "services": {
+        "pymupdf": {
+          "service": "pymupdf",
+          "page": 0,
+          "text": "E27.9",
+          "bbox": null,
+          "font": "Times-Roman",
+          "size": 9.069183349609375,
+          "is_bold": false,
+          "is_italic": false,
+          "confidence": 0.6
+        }
+      }
+    },
+    {
+      "id": "pg0-7104633",
+      "page": 0,
+      "text": "monday,",
+      "bbox": null,
+      "consolidated": {
+        "bold": false,
+        "italic": false,
+        "bold_score": 0.45512110762641994,
+        "italic_score": 0.45512110762641994
+      },
+      "truth": {
+        "bold": null,
+        "italic": null
+      },
+      "services": {
+        "pymupdf": {
+          "service": "pymupdf",
+          "page": 0,
+          "text": "Monday,",
+          "bbox": null,
+          "font": "Times-Roman",
+          "size": 9.831816673278809,
+          "is_bold": false,
+          "is_italic": false,
+          "confidence": 0.6
+        }
+      }
+    },
+    {
+      "id": "pg0-851546",
+      "page": 0,
+      "text": "25",
+      "bbox": null,
+      "consolidated": {
+        "bold": false,
+        "italic": false,
+        "bold_score": 0.45512110762641994,
+        "italic_score": 0.45512110762641994
+      },
+      "truth": {
+        "bold": null,
+        "italic": null
+      },
+      "services": {
+        "pymupdf": {
+          "service": "pymupdf",
+          "page": 0,
+          "text": "25",
+          "bbox": null,
+          "font": "Times-Roman",
+          "size": 10.078817367553711,
+          "is_bold": false,
+          "is_italic": false,
+          "confidence": 0.6
+        }
+      }
+    },
+    {
+      "id": "pg0-9287150",
+      "page": 0,
+      "text": "august 2025 13:28",
+      "bbox": null,
+      "consolidated": {
+        "bold": false,
+        "italic": false,
+        "bold_score": 0.45512110762641994,
+        "italic_score": 0.45512110762641994
+      },
+      "truth": {
+        "bold": null,
+        "italic": null
+      },
+      "services": {
+        "pymupdf": {
+          "service": "pymupdf",
+          "page": 0,
+          "text": "August 2025 13:28",
+          "bbox": null,
+          "font": "Times-Roman",
+          "size": 10.147500038146973,
+          "is_bold": false,
+          "is_italic": false,
+          "confidence": 0.6
+        }
+      }
+    },
+    {
+      "id": "pg0-2629153",
+      "page": 0,
+      "text": "nb!",
+      "bbox": null,
+      "consolidated": {
+        "bold": false,
+        "italic": false,
+        "bold_score": 0.45512110762641994,
+        "italic_score": 0.45512110762641994
+      },
+      "truth": {
+        "bold": null,
+        "italic": null
+      },
+      "services": {
+        "pymupdf": {
+          "service": "pymupdf",
+          "page": 0,
+          "text": "NB!",
+          "bbox": null,
+          "font": "Times-Roman",
+          "size": 9.042707443237305,
+          "is_bold": false,
+          "is_italic": false,
+          "confidence": 0.6
+        }
+      }
+    },
+    {
+      "id": "pg0-8379059",
+      "page": 0,
+      "text": "price subject",
+      "bbox": null,
+      "consolidated": {
+        "bold": false,
+        "italic": false,
+        "bold_score": 0.45512110762641994,
+        "italic_score": 0.45512110762641994
+      },
+      "truth": {
+        "bold": null,
+        "italic": null
+      },
+      "services": {
+        "pymupdf": {
+          "service": "pymupdf",
+          "page": 0,
+          "text": "PRICE SUBJECT",
+          "bbox": null,
+          "font": "Times-Roman",
+          "size": 10.147500038146973,
+          "is_bold": false,
+          "is_italic": false,
+          "confidence": 0.6
+        }
+      }
+    },
+    {
+      "id": "pg0-5375510",
+      "page": 0,
+      "text": "to",
+      "bbox": null,
+      "consolidated": {
+        "bold": false,
+        "italic": false,
+        "bold_score": 0.45512110762641994,
+        "italic_score": 0.45512110762641994
+      },
+      "truth": {
+        "bold": null,
+        "italic": null
+      },
+      "services": {
+        "pymupdf": {
+          "service": "pymupdf",
+          "page": 0,
+          "text": "TO",
+          "bbox": null,
+          "font": "Times-Roman",
+          "size": 9.8231782913208,
+          "is_bold": false,
+          "is_italic": false,
+          "confidence": 0.6
+        }
+      }
+    },
+    {
+      "id": "pg0-8876397",
+      "page": 0,
+      "text": "change",
+      "bbox": null,
+      "consolidated": {
+        "bold": false,
+        "italic": false,
+        "bold_score": 0.45512110762641994,
+        "italic_score": 0.45512110762641994
+      },
+      "truth": {
+        "bold": null,
+        "italic": null
+      },
+      "services": {
+        "pymupdf": {
+          "service": "pymupdf",
+          "page": 0,
+          "text": "CHANGE",
+          "bbox": null,
+          "font": "Times-Roman",
+          "size": 9.931114196777344,
+          "is_bold": false,
+          "is_italic": false,
+          "confidence": 0.6
+        }
+      }
+    },
+    {
+      "id": "pg0-3279022",
+      "page": 0,
+      "text": "without",
+      "bbox": null,
+      "consolidated": {
+        "bold": false,
+        "italic": false,
+        "bold_score": 0.45512110762641994,
+        "italic_score": 0.45512110762641994
+      },
+      "truth": {
+        "bold": null,
+        "italic": null
+      },
+      "services": {
+        "pymupdf": {
+          "service": "pymupdf",
+          "page": 0,
+          "text": "WITHOUT",
+          "bbox": null,
+          "font": "Times-Roman",
+          "size": 9.915560722351074,
+          "is_bold": false,
+          "is_italic": false,
+          "confidence": 0.6
+        }
+      }
+    },
+    {
+      "id": "pg0-5041891",
+      "page": 0,
+      "text": "prior",
+      "bbox": null,
+      "consolidated": {
+        "bold": false,
+        "italic": false,
+        "bold_score": 0.45512110762641994,
+        "italic_score": 0.45512110762641994
+      },
+      "truth": {
+        "bold": null,
+        "italic": null
+      },
+      "services": {
+        "pymupdf": {
+          "service": "pymupdf",
+          "page": 0,
+          "text": "PRIOR",
+          "bbox": null,
+          "font": "Times-Roman",
+          "size": 10.04814338684082,
+          "is_bold": false,
+          "is_italic": false,
+          "confidence": 0.6
+        }
+      }
+    },
+    {
+      "id": "pg0-1462732",
+      "page": 0,
+      "text": "notification,",
+      "bbox": null,
+      "consolidated": {
+        "bold": false,
+        "italic": false,
+        "bold_score": 0.45512110762641994,
+        "italic_score": 0.45512110762641994
+      },
+      "truth": {
+        "bold": null,
+        "italic": null
+      },
+      "services": {
+        "pymupdf": {
+          "service": "pymupdf",
+          "page": 0,
+          "text": "NOTIFICATION,",
+          "bbox": null,
+          "font": "Times-Roman",
+          "size": 11.177047729492188,
+          "is_bold": false,
+          "is_italic": false,
+          "confidence": 0.6
+        }
+      }
+    },
+    {
+      "id": "pg0-8237483",
+      "page": 0,
+      "text": "confipam",
+      "bbox": null,
+      "consolidated": {
+        "bold": false,
+        "italic": false,
+        "bold_score": 0.45512110762641994,
+        "italic_score": 0.45512110762641994
+      },
+      "truth": {
+        "bold": null,
+        "italic": null
+      },
+      "services": {
+        "pymupdf": {
+          "service": "pymupdf",
+          "page": 0,
+          "text": "CONFIPAM",
+          "bbox": null,
+          "font": "Times-Roman",
+          "size": 10.535760879516602,
+          "is_bold": false,
+          "is_italic": false,
+          "confidence": 0.6
+        }
+      }
+    },
+    {
+      "id": "pg0-7455977",
+      "page": 0,
+      "text": "prices",
+      "bbox": null,
+      "consolidated": {
+        "bold": false,
+        "italic": false,
+        "bold_score": 0.45512110762641994,
+        "italic_score": 0.45512110762641994
+      },
+      "truth": {
+        "bold": null,
+        "italic": null
+      },
+      "services": {
+        "pymupdf": {
+          "service": "pymupdf",
+          "page": 0,
+          "text": "PRICES",
+          "bbox": null,
+          "font": "Times-Roman",
+          "size": 11.595551490783691,
+          "is_bold": false,
+          "is_italic": false,
+          "confidence": 0.6
+        }
+      }
+    },
+    {
+      "id": "pg0-431864",
+      "page": 0,
+      "text": "when",
+      "bbox": null,
+      "consolidated": {
+        "bold": false,
+        "italic": false,
+        "bold_score": 0.45512110762641994,
+        "italic_score": 0.45512110762641994
+      },
+      "truth": {
+        "bold": null,
+        "italic": null
+      },
+      "services": {
+        "pymupdf": {
+          "service": "pymupdf",
+          "page": 0,
+          "text": "WHEN",
+          "bbox": null,
+          "font": "Times-Roman",
+          "size": 11.16439151763916,
+          "is_bold": false,
+          "is_italic": false,
+          "confidence": 0.6
+        }
+      }
+    },
+    {
+      "id": "pg0-6610878",
+      "page": 0,
+      "text": "placing",
+      "bbox": null,
+      "consolidated": {
+        "bold": false,
+        "italic": false,
+        "bold_score": 0.45512110762641994,
+        "italic_score": 0.45512110762641994
+      },
+      "truth": {
+        "bold": null,
+        "italic": null
+      },
+      "services": {
+        "pymupdf": {
+          "service": "pymupdf",
+          "page": 0,
+          "text": "PLACING",
+          "bbox": null,
+          "font": "Times-Roman",
+          "size": 11.163711547851562,
+          "is_bold": false,
+          "is_italic": false,
+          "confidence": 0.6
+        }
+      }
+    },
+    {
+      "id": "pg0-6173969",
+      "page": 0,
+      "text": "an",
+      "bbox": null,
+      "consolidated": {
+        "bold": false,
+        "italic": false,
+        "bold_score": 0.45512110762641994,
+        "italic_score": 0.45512110762641994
+      },
+      "truth": {
+        "bold": null,
+        "italic": null
+      },
+      "services": {
+        "pymupdf": {
+          "service": "pymupdf",
+          "page": 0,
+          "text": "AN",
+          "bbox": null,
+          "font": "Times-Roman",
+          "size": 9.009745597839355,
+          "is_bold": false,
+          "is_italic": false,
+          "confidence": 0.6
+        }
+      }
+    },
+    {
+      "id": "pg0-7022121",
+      "page": 0,
+      "text": "order.",
+      "bbox": null,
+      "consolidated": {
+        "bold": false,
+        "italic": false,
+        "bold_score": 0.45512110762641994,
+        "italic_score": 0.45512110762641994
+      },
+      "truth": {
+        "bold": null,
+        "italic": null
+      },
+      "services": {
+        "pymupdf": {
+          "service": "pymupdf",
+          "page": 0,
+          "text": "ORDER.",
+          "bbox": null,
+          "font": "Times-Roman",
+          "size": 9.033126831054688,
+          "is_bold": false,
+          "is_italic": false,
+          "confidence": 0.6
+        }
+      }
+    },
+    {
+      "id": "pg0-426369",
+      "page": 0,
+      "text": "dr",
+      "bbox": null,
+      "consolidated": {
+        "bold": false,
+        "italic": false,
+        "bold_score": 0.45512110762641994,
+        "italic_score": 0.45512110762641994
+      },
+      "truth": {
+        "bold": null,
+        "italic": null
+      },
+      "services": {
+        "pymupdf": {
+          "service": "pymupdf",
+          "page": 0,
+          "text": "DR",
+          "bbox": null,
+          "font": "Times-Roman",
+          "size": 25.700748443603516,
+          "is_bold": false,
+          "is_italic": false,
+          "confidence": 0.6
+        }
+      }
+    },
+    {
+      "id": "pg0-5945294",
+      "page": 0,
+      "text": "aid",
+      "bbox": null,
+      "consolidated": {
+        "bold": false,
+        "italic": false,
+        "bold_score": 0.45512110762641994,
+        "italic_score": 0.45512110762641994
+      },
+      "truth": {
+        "bold": null,
+        "italic": null
+      },
+      "services": {
+        "pymupdf": {
+          "service": "pymupdf",
+          "page": 0,
+          "text": "Aid",
+          "bbox": null,
+          "font": "Times-Roman",
+          "size": 9.245725631713867,
+          "is_bold": false,
+          "is_italic": false,
+          "confidence": 0.6
+        }
+      }
+    },
+    {
+      "id": "pg0-6774967",
+      "page": 0,
+      "text": "13:25:17",
+      "bbox": [
+        1071,
+        2567,
+        55,
+        164
+      ],
+      "consolidated": {
+        "bold": false,
+        "italic": false,
+        "bold_score": 0.4414623619972364,
+        "italic_score": 0.4414623619972364
+      },
+      "truth": {
+        "bold": null,
+        "italic": null
+      },
+      "services": {
+        "pymupdf": {
+          "service": "pymupdf",
+          "page": 0,
+          "text": "13:25:17",
+          "bbox": null,
+          "font": "Times-Roman",
+          "size": 13.42271900177002,
+          "is_bold": false,
+          "is_italic": false,
+          "confidence": 0.6
+        },
+        "vision_pixel": {
+          "service": "vision_pixel",
+          "page": 0,
+          "text": "13:25:17",
+          "bbox": [
+            1071,
+            2567,
+            55,
+            164
+          ],
+          "fill_ratio": 0.07161862527716187,
+          "stroke_width": 2.6414241790771484,
+          "slant_deg": 0.0,
+          "fill_z": -2.209169653975968,
+          "bold_hint": false,
+          "italic_hint": false,
+          "confidence": 0.552292413493992
+        }
+      }
+    },
+    {
+      "id": "pg0-639522",
+      "page": 0,
+      "text": "member number",
+      "bbox": [
+        1245,
+        898,
+        303,
+        47
+      ],
+      "consolidated": {
+        "bold": false,
+        "italic": false,
+        "bold_score": 0.45375230243198744,
+        "italic_score": 0.45375230243198744
+      },
+      "truth": {
+        "bold": null,
+        "italic": null
+      },
+      "services": {
+        "pymupdf": {
+          "service": "pymupdf",
+          "page": 0,
+          "text": "Member Number",
+          "bbox": null,
+          "font": "Times-Roman",
+          "size": 9.301875114440918,
+          "is_bold": false,
+          "is_italic": false,
+          "confidence": 0.6
+        },
+        "vision_pixel": {
+          "service": "vision_pixel",
+          "page": 0,
+          "text": "Member Number",
+          "bbox": [
+            1245,
+            898,
+            303,
+            47
+          ],
+          "fill_ratio": 0.21627694684362053,
+          "stroke_width": 3.193955421447754,
+          "slant_deg": 0.0,
+          "fill_z": 0.2208428650395226,
+          "bold_hint": false,
+          "italic_hint": false,
+          "confidence": 0.05521071625988065
+        }
+      }
+    },
+    {
+      "id": "pg0-2131130",
+      "page": 0,
+      "text": "of birth",
+      "bbox": null,
+      "consolidated": {
+        "bold": false,
+        "italic": false,
+        "bold_score": 0.45512110762641994,
+        "italic_score": 0.45512110762641994
+      },
+      "truth": {
+        "bold": null,
+        "italic": null
+      },
+      "services": {
+        "pymupdf": {
+          "service": "pymupdf",
+          "page": 0,
+          "text": "Of Birth",
+          "bbox": null,
+          "font": "Times-Roman",
+          "size": 9.020000457763672,
+          "is_bold": false,
+          "is_italic": false,
+          "confidence": 0.6
+        }
+      }
+    },
+    {
+      "id": "pg0-1824675",
+      "page": 0,
+      "text": "kru023",
+      "bbox": [
+        1245,
+        1082,
+        151,
+        45
+      ],
+      "consolidated": {
+        "bold": false,
+        "italic": false,
+        "bold_score": 0.4519085930495816,
+        "italic_score": 0.4519085930495816
+      },
+      "truth": {
+        "bold": null,
+        "italic": null
+      },
+      "services": {
+        "pymupdf": {
+          "service": "pymupdf",
+          "page": 0,
+          "text": "KRU023",
+          "bbox": null,
+          "font": "Times-Roman",
+          "size": 8.73812484741211,
+          "is_bold": false,
+          "is_italic": false,
+          "confidence": 0.6
+        },
+        "vision_pixel": {
+          "service": "vision_pixel",
+          "page": 0,
+          "text": "KRU023",
+          "bbox": [
+            1245,
+            1082,
+            151,
+            45
+          ],
+          "fill_ratio": 0.23399558498896247,
+          "stroke_width": 3.0292978286743164,
+          "slant_deg": 0.0,
+          "fill_z": 0.5184856971064313,
+          "bold_hint": false,
+          "italic_hint": false,
+          "confidence": 0.12962142427660783
+        }
+      }
+    },
+    {
+      "id": "pg0-6454424",
+      "page": 0,
+      "text": "7",
+      "bbox": [
+        1241,
+        2595,
+        25,
+        24
+      ],
+      "consolidated": {
+        "bold": false,
+        "italic": false,
+        "bold_score": 0.4509797263146776,
+        "italic_score": 0.4509797263146776
+      },
+      "truth": {
+        "bold": null,
+        "italic": null
+      },
+      "services": {
+        "pymupdf": {
+          "service": "pymupdf",
+          "page": 0,
+          "text": "7",
+          "bbox": null,
+          "font": "Times-Roman",
+          "size": 3.9462499618530273,
+          "is_bold": false,
+          "is_italic": false,
+          "confidence": 0.6
+        },
+        "vision_pixel": {
+          "service": "vision_pixel",
+          "page": 0,
+          "text": "7",
+          "bbox": [
+            1241,
+            2595,
+            25,
+            24
+          ],
+          "fill_ratio": 0.16333333333333333,
+          "stroke_width": 2.892514228820801,
+          "slant_deg": 0.0,
+          "fill_z": -0.668519338522405,
+          "bold_hint": false,
+          "italic_hint": false,
+          "confidence": 0.16712983463060124
+        }
+      }
+    },
+    {
+      "id": "pg0-5693938",
+      "page": 0,
+      "text": "45789670t+a.",
+      "bbox": null,
+      "consolidated": {
+        "bold": false,
+        "italic": false,
+        "bold_score": 0.45512110762641994,
+        "italic_score": 0.45512110762641994
+      },
+      "truth": {
+        "bold": null,
+        "italic": null
+      },
+      "services": {
+        "pymupdf": {
+          "service": "pymupdf",
+          "page": 0,
+          "text": "45789670t+a.",
+          "bbox": null,
+          "font": "Times-Roman",
+          "size": 5.06308126449585,
+          "is_bold": false,
+          "is_italic": false,
+          "confidence": 0.6
+        }
+      }
+    },
+    {
+      "id": "pg0-2570746",
+      "page": 0,
+      "text": "visa",
+      "bbox": [
+        1264,
+        2584,
+        44,
+        94
+      ],
+      "consolidated": {
+        "bold": false,
+        "italic": false,
+        "bold_score": 0.44616892931186813,
+        "italic_score": 0.44616892931186813
+      },
+      "truth": {
+        "bold": null,
+        "italic": null
+      },
+      "services": {
+        "pymupdf": {
+          "service": "pymupdf",
+          "page": 0,
+          "text": "VISA",
+          "bbox": null,
+          "font": "Times-Roman",
+          "size": 8.491617202758789,
+          "is_bold": false,
+          "is_italic": false,
+          "confidence": 0.6
+        },
+        "vision_pixel": {
+          "service": "vision_pixel",
+          "page": 0,
+          "text": "Visa",
+          "bbox": [
+            1264,
+            2584,
+            44,
+            94
+          ],
+          "fill_ratio": 0.11702127659574468,
+          "stroke_width": 2.8354604244232178,
+          "slant_deg": 0.0,
+          "fill_z": -1.4464827244863,
+          "bold_hint": false,
+          "italic_hint": false,
+          "confidence": 0.361620681121575
+        }
+      }
+    },
+    {
+      "id": "pg0-735050",
+      "page": 0,
+      "text": "fnb1",
+      "bbox": null,
+      "consolidated": {
+        "bold": false,
+        "italic": false,
+        "bold_score": 0.45512110762641994,
+        "italic_score": 0.45512110762641994
+      },
+      "truth": {
+        "bold": null,
+        "italic": null
+      },
+      "services": {
+        "pymupdf": {
+          "service": "pymupdf",
+          "page": 0,
+          "text": "FNB1",
+          "bbox": null,
+          "font": "Times-Roman",
+          "size": 8.409042358398438,
+          "is_bold": false,
+          "is_italic": false,
+          "confidence": 0.6
+        }
+      }
+    },
+    {
+      "id": "pg0-7036571",
+      "page": 0,
+      "text": "debit",
+      "bbox": null,
+      "consolidated": {
+        "bold": false,
+        "italic": false,
+        "bold_score": 0.45512110762641994,
+        "italic_score": 0.45512110762641994
+      },
+      "truth": {
+        "bold": null,
+        "italic": null
+      },
+      "services": {
+        "pymupdf": {
+          "service": "pymupdf",
+          "page": 0,
+          "text": "DEBIT",
+          "bbox": null,
+          "font": "Times-Roman",
+          "size": 7.584622859954834,
+          "is_bold": false,
+          "is_italic": false,
+          "confidence": 0.6
+        }
+      }
+    },
+    {
+      "id": "pg0-7753673",
+      "page": 0,
+      "text": "tactless",
+      "bbox": null,
+      "consolidated": {
+        "bold": true,
+        "italic": false,
+        "bold_score": 0.5560138905446199,
+        "italic_score": 0.44398610945538003
+      },
+      "truth": {
+        "bold": null,
+        "italic": null
+      },
+      "services": {
+        "pymupdf": {
+          "service": "pymupdf",
+          "page": 0,
+          "text": "tactless",
+          "bbox": null,
+          "font": "Times-Roman",
+          "size": 13.506345748901367,
+          "is_bold": true,
+          "is_italic": false,
+          "confidence": 0.75
+        }
+      }
+    },
+    {
+      "id": "pg0-6054863",
+      "page": 0,
+      "text": "1,550.00",
+      "bbox": [
+        2049,
+        2213,
+        157,
+        44
+      ],
+      "consolidated": {
+        "bold": false,
+        "italic": false,
+        "bold_score": 0.4471315010362542,
+        "italic_score": 0.4471315010362542
+      },
+      "truth": {
+        "bold": null,
+        "italic": null
+      },
+      "services": {
+        "pymupdf": {
+          "service": "pymupdf",
+          "page": 0,
+          "text": "1,550.00",
+          "bbox": null,
+          "font": "Times-Roman",
+          "size": 9.301875114440918,
+          "is_bold": false,
+          "is_italic": false,
+          "confidence": 0.6
+        },
+        "vision_pixel": {
+          "service": "vision_pixel",
+          "page": 0,
+          "text": "1,550.00",
+          "bbox": [
+            2049,
+            2213,
+            157,
+            44
+          ],
+          "fill_ratio": 0.27996525767226405,
+          "stroke_width": 3.6153571605682373,
+          "slant_deg": 0.0,
+          "fill_z": 1.29069761623994,
+          "bold_hint": false,
+          "italic_hint": false,
+          "confidence": 0.322674404059985
+        }
+      }
+    },
+    {
+      "id": "pg0-597277",
+      "page": 0,
+      "text": "price",
+      "bbox": [
+        1526,
+        1491,
+        109,
+        42
+      ],
+      "consolidated": {
+        "bold": false,
+        "italic": false,
+        "bold_score": 0.44996057613501006,
+        "italic_score": 0.44996057613501006
+      },
+      "truth": {
+        "bold": null,
+        "italic": null
+      },
+      "services": {
+        "pymupdf": {
+          "service": "pymupdf",
+          "page": 0,
+          "text": "Price",
+          "bbox": null,
+          "font": "Times-Roman",
+          "size": 9.093873023986816,
+          "is_bold": false,
+          "is_italic": false,
+          "confidence": 0.6
+        },
+        "vision_pixel": {
+          "service": "vision_pixel",
+          "page": 0,
+          "text": "Price",
+          "bbox": [
+            1526,
+            1491,
+            109,
+            42
+          ],
+          "fill_ratio": 0.2527304499781564,
+          "stroke_width": 3.6311497688293457,
+          "slant_deg": 0.0,
+          "fill_z": 0.8331994029812146,
+          "bold_hint": false,
+          "italic_hint": false,
+          "confidence": 0.20829985074530366
+        }
+      }
+    },
+    {
+      "id": "pg0-4050500",
+      "page": 0,
+      "text": "sub",
+      "bbox": null,
+      "consolidated": {
+        "bold": false,
+        "italic": false,
+        "bold_score": 0.45512110762641994,
+        "italic_score": 0.45512110762641994
+      },
+      "truth": {
+        "bold": null,
+        "italic": null
+      },
+      "services": {
+        "pymupdf": {
+          "service": "pymupdf",
+          "page": 0,
+          "text": "Sub",
+          "bbox": null,
+          "font": "Times-Roman",
+          "size": 9.073174476623535,
+          "is_bold": false,
+          "is_italic": false,
+          "confidence": 0.6
+        }
+      }
+    },
+    {
+      "id": "pg0-224775",
+      "page": 0,
+      "text": "total",
+      "bbox": [
+        2114,
+        1487,
+        97,
+        41
+      ],
+      "consolidated": {
+        "bold": false,
+        "italic": false,
+        "bold_score": 0.4457594081473835,
+        "italic_score": 0.4457594081473835
+      },
+      "truth": {
+        "bold": null,
+        "italic": null
+      },
+      "services": {
+        "pymupdf": {
+          "service": "pymupdf",
+          "page": 0,
+          "text": "Total",
+          "bbox": null,
+          "font": "Times-Roman",
+          "size": 9.134796142578125,
+          "is_bold": false,
+          "is_italic": false,
+          "confidence": 0.6
+        },
+        "vision_pixel": {
+          "service": "vision_pixel",
+          "page": 0,
+          "text": "Total",
+          "bbox": [
+            2114,
+            1487,
+            97,
+            41
+          ],
+          "fill_ratio": 0.2931858184561227,
+          "stroke_width": 3.9262330532073975,
+          "slant_deg": 0.0,
+          "fill_z": 1.5127804377831333,
+          "bold_hint": false,
+          "italic_hint": false,
+          "confidence": 0.37819510944578333
+        }
+      }
+    },
+    {
+      "id": "pg0-1395128",
+      "page": 0,
+      "text": "discount",
+      "bbox": [
+        1456,
+        2050,
+        157,
+        37
+      ],
+      "consolidated": {
+        "bold": false,
+        "italic": false,
+        "bold_score": 0.4522896748367903,
+        "italic_score": 0.4522896748367903
+      },
+      "truth": {
+        "bold": null,
+        "italic": null
+      },
+      "services": {
+        "pymupdf": {
+          "service": "pymupdf",
+          "page": 0,
+          "text": "Discount",
+          "bbox": null,
+          "font": "Times-Roman",
+          "size": 9.020000457763672,
+          "is_bold": false,
+          "is_italic": false,
+          "confidence": 0.6
+        },
+        "vision_pixel": {
+          "service": "vision_pixel",
+          "page": 0,
+          "text": "Discount",
+          "bbox": [
+            1456,
+            2050,
+            157,
+            37
+          ],
+          "fill_ratio": 0.23033224307109657,
+          "stroke_width": 2.7471466064453125,
+          "slant_deg": 0.0,
+          "fill_z": 0.4569478151135268,
+          "bold_hint": false,
+          "italic_hint": false,
+          "confidence": 0.1142369537783817
+        }
+      }
+    },
+    {
+      "id": "pg0-1446878",
+      "page": 0,
+      "text": "receipts",
+      "bbox": [
+        1450,
+        2131,
+        157,
+        42
+      ],
+      "consolidated": {
+        "bold": false,
+        "italic": false,
+        "bold_score": 0.4512456211334512,
+        "italic_score": 0.4512456211334512
+      },
+      "truth": {
+        "bold": null,
+        "italic": null
+      },
+      "services": {
+        "pymupdf": {
+          "service": "pymupdf",
+          "page": 0,
+          "text": "Receipts",
+          "bbox": null,
+          "font": "Times-Roman",
+          "size": 11.178831100463867,
+          "is_bold": false,
+          "is_italic": false,
+          "confidence": 0.6
+        },
+        "vision_pixel": {
+          "service": "vision_pixel",
+          "page": 0,
+          "text": "Receipts",
+          "bbox": [
+            1450,
+            2131,
+            157,
+            42
+          ],
+          "fill_ratio": 0.24037003336366394,
+          "stroke_width": 2.886796712875366,
+          "slant_deg": 0.0,
+          "fill_z": 0.6255655331269684,
+          "bold_hint": false,
+          "italic_hint": false,
+          "confidence": 0.1563913832817421
+        }
+      }
+    },
+    {
+      "id": "pg0-8983796",
+      "page": 0,
+      "text": "due",
+      "bbox": null,
+      "consolidated": {
+        "bold": false,
+        "italic": false,
+        "bold_score": 0.45512110762641994,
+        "italic_score": 0.45512110762641994
+      },
+      "truth": {
+        "bold": null,
+        "italic": null
+      },
+      "services": {
+        "pymupdf": {
+          "service": "pymupdf",
+          "page": 0,
+          "text": "due",
+          "bbox": null,
+          "font": "Times-Roman",
+          "size": 9.787753105163574,
+          "is_bold": false,
+          "is_italic": false,
+          "confidence": 0.6
+        }
+      }
+    },
+    {
+      "id": "pg0-9850331",
+      "page": 0,
+      "text": "000215028891",
+      "bbox": [
+        1421,
+        2607,
+        64,
+        234
+      ],
+      "consolidated": {
+        "bold": false,
+        "italic": false,
+        "bold_score": 0.4483838026919857,
+        "italic_score": 0.46187488196599946
+      },
+      "truth": {
+        "bold": null,
+        "italic": null
+      },
+      "services": {
+        "pymupdf": {
+          "service": "pymupdf",
+          "page": 0,
+          "text": "000215028891",
+          "bbox": null,
+          "font": "Times-Roman",
+          "size": 13.643383026123047,
+          "is_bold": false,
+          "is_italic": false,
+          "confidence": 0.6
+        },
+        "vision_pixel": {
+          "service": "vision_pixel",
+          "page": 0,
+          "text": "000215028891",
+          "bbox": [
+            1421,
+            2607,
+            64,
+            234
+          ],
+          "fill_ratio": 0.13835470085470086,
+          "stroke_width": 2.8072640895843506,
+          "slant_deg": 14.990819684424658,
+          "fill_z": -1.0881176649351574,
+          "bold_hint": false,
+          "italic_hint": true,
+          "confidence": 0.27202941623378935
+        }
+      }
+    },
+    {
+      "id": "pg0-6173526",
+      "page": 0,
+      "text": "a03883",
+      "bbox": null,
+      "consolidated": {
+        "bold": false,
+        "italic": false,
+        "bold_score": 0.45512110762641994,
+        "italic_score": 0.45512110762641994
+      },
+      "truth": {
+        "bold": null,
+        "italic": null
+      },
+      "services": {
+        "pymupdf": {
+          "service": "pymupdf",
+          "page": 0,
+          "text": "A03883",
+          "bbox": null,
+          "font": "Times-Roman",
+          "size": 11.939123153686523,
+          "is_bold": false,
+          "is_italic": false,
+          "confidence": 0.6
+        }
+      }
+    },
+    {
+      "id": "pg0-2422723",
+      "page": 0,
+      "text": "bankmed",
+      "bbox": [
+        1642,
+        816,
+        167,
+        40
+      ],
+      "consolidated": {
+        "bold": false,
+        "italic": false,
+        "bold_score": 0.4478024800457867,
+        "italic_score": 0.4478024800457867
+      },
+      "truth": {
+        "bold": null,
+        "italic": null
+      },
+      "services": {
+        "pymupdf": {
+          "service": "pymupdf",
+          "page": 0,
+          "text": "Bankmed",
+          "bbox": null,
+          "font": "Times-Roman",
+          "size": 9.093920707702637,
+          "is_bold": false,
+          "is_italic": false,
+          "confidence": 0.6
+        },
+        "vision_pixel": {
+          "service": "vision_pixel",
+          "page": 0,
+          "text": "Bankmed",
+          "bbox": [
+            1642,
+            816,
+            167,
+            40
+          ],
+          "fill_ratio": 0.27350299401197603,
+          "stroke_width": 3.115041494369507,
+          "slant_deg": 0.0,
+          "fill_z": 1.1821426335356484,
+          "bold_hint": false,
+          "italic_hint": false,
+          "confidence": 0.2955356583839121
+        }
+      }
+    },
+    {
+      "id": "pg0-248000",
+      "page": 0,
+      "text": "510675770",
+      "bbox": [
+        1638,
+        899,
+        200,
+        43
+      ],
+      "consolidated": {
+        "bold": false,
+        "italic": false,
+        "bold_score": 0.45317117121136213,
+        "italic_score": 0.45317117121136213
+      },
+      "truth": {
+        "bold": null,
+        "italic": null
+      },
+      "services": {
+        "pymupdf": {
+          "service": "pymupdf",
+          "page": 0,
+          "text": "510675770",
+          "bbox": null,
+          "font": "Times-Roman",
+          "size": 9.022017478942871,
+          "is_bold": false,
+          "is_italic": false,
+          "confidence": 0.6
+        },
+        "vision_pixel": {
+          "service": "vision_pixel",
+          "page": 0,
+          "text": "510675770",
+          "bbox": [
+            1638,
+            899,
+            200,
+            43
+          ],
+          "fill_ratio": 0.22186046511627908,
+          "stroke_width": 2.8789772987365723,
+          "slant_deg": 0.0,
+          "fill_z": 0.3146364273855271,
+          "bold_hint": false,
+          "italic_hint": false,
+          "confidence": 0.07865910684638178
+        }
+      }
+    },
+    {
+      "id": "pg0-3810513",
+      "page": 0,
+      "text": "1980/05/25",
+      "bbox": null,
+      "consolidated": {
+        "bold": false,
+        "italic": false,
+        "bold_score": 0.45512110762641994,
+        "italic_score": 0.45512110762641994
+      },
+      "truth": {
+        "bold": null,
+        "italic": null
+      },
+      "services": {
+        "pymupdf": {
+          "service": "pymupdf",
+          "page": 0,
+          "text": "1980/05/25",
+          "bbox": null,
+          "font": "Times-Roman",
+          "size": 9.035906791687012,
+          "is_bold": false,
+          "is_italic": false,
+          "confidence": 0.6
+        }
+      }
+    },
+    {
+      "id": "pg0-209183",
+      "page": 0,
+      "text": "00:00:00",
+      "bbox": null,
+      "consolidated": {
+        "bold": false,
+        "italic": false,
+        "bold_score": 0.45512110762641994,
+        "italic_score": 0.45512110762641994
+      },
+      "truth": {
+        "bold": null,
+        "italic": null
+      },
+      "services": {
+        "pymupdf": {
+          "service": "pymupdf",
+          "page": 0,
+          "text": "00:00:00",
+          "bbox": null,
+          "font": "Times-Roman",
+          "size": 9.098191261291504,
+          "is_bold": false,
+          "is_italic": false,
+          "confidence": 0.6
+        }
+      }
+    },
+    {
+      "id": "pg0-1427746",
+      "page": 0,
+      "text": "86",
+      "bbox": [
+        1652,
+        2644,
+        31,
+        43
+      ],
+      "consolidated": {
+        "bold": false,
+        "italic": false,
+        "bold_score": 0.4677434060501794,
+        "italic_score": 0.4425562132415011
+      },
+      "truth": {
+        "bold": null,
+        "italic": null
+      },
+      "services": {
+        "pymupdf": {
+          "service": "pymupdf",
+          "page": 0,
+          "text": "86",
+          "bbox": null,
+          "font": "Times-Roman",
+          "size": 5.837004661560059,
+          "is_bold": false,
+          "is_italic": false,
+          "confidence": 0.6
+        },
+        "vision_pixel": {
+          "service": "vision_pixel",
+          "page": 0,
+          "text": "86",
+          "bbox": [
+            1652,
+            2644,
+            31,
+            43
+          ],
+          "fill_ratio": 0.32408102025506375,
+          "stroke_width": 3.489572286605835,
+          "slant_deg": 0.0,
+          "fill_z": 2.031767014814898,
+          "bold_hint": true,
+          "italic_hint": false,
+          "confidence": 0.5079417537037245
+        }
+      }
+    },
+    {
+      "id": "pg0-8430748",
+      "page": 0,
+      "text": "0-",
+      "bbox": null,
+      "consolidated": {
+        "bold": true,
+        "italic": false,
+        "bold_score": 0.5560138905446199,
+        "italic_score": 0.44398610945538003
+      },
+      "truth": {
+        "bold": null,
+        "italic": null
+      },
+      "services": {
+        "pymupdf": {
+          "service": "pymupdf",
+          "page": 0,
+          "text": "0-",
+          "bbox": null,
+          "font": "Times-Roman",
+          "size": 22.629404067993164,
+          "is_bold": true,
+          "is_italic": false,
+          "confidence": 0.75
+        }
+      }
+    },
+    {
+      "id": "pg0-7743415",
+      "page": 0,
+      "text": "approved",
+      "bbox": null,
+      "consolidated": {
+        "bold": false,
+        "italic": false,
+        "bold_score": 0.45512110762641994,
+        "italic_score": 0.45512110762641994
+      },
+      "truth": {
+        "bold": null,
+        "italic": null
+      },
+      "services": {
+        "pymupdf": {
+          "service": "pymupdf",
+          "page": 0,
+          "text": "Approved",
+          "bbox": null,
+          "font": "Times-Roman",
+          "size": 12.187829971313477,
+          "is_bold": false,
+          "is_italic": false,
+          "confidence": 0.6
+        }
+      }
+    },
+    {
+      "id": "pg0-4767058",
+      "page": 0,
+      "text": "qty",
+      "bbox": [
+        1779,
+        1489,
+        73,
+        46
+      ],
+      "consolidated": {
+        "bold": false,
+        "italic": false,
+        "bold_score": 0.448526940976875,
+        "italic_score": 0.448526940976875
+      },
+      "truth": {
+        "bold": null,
+        "italic": null
+      },
+      "services": {
+        "pymupdf": {
+          "service": "pymupdf",
+          "page": 0,
+          "text": "Qty",
+          "bbox": null,
+          "font": "Times-Roman",
+          "size": 10.4816312789917,
+          "is_bold": false,
+          "is_italic": false,
+          "confidence": 0.6
+        },
+        "vision_pixel": {
+          "service": "vision_pixel",
+          "page": 0,
+          "text": "Qty",
+          "bbox": [
+            1779,
+            1489,
+            73,
+            46
+          ],
+          "fill_ratio": 0.2665276950565813,
+          "stroke_width": 3.665921688079834,
+          "slant_deg": 0.0,
+          "fill_z": 1.0649695348715824,
+          "bold_hint": false,
+          "italic_hint": false,
+          "confidence": 0.2662423837178956
+        }
+      }
+    },
+    {
+      "id": "pg0-9586016",
+      "page": 0,
+      "text": "1.00",
+      "bbox": [
+        1765,
+        1726,
+        85,
+        40
+      ],
+      "consolidated": {
+        "bold": false,
+        "italic": false,
+        "bold_score": 0.45338666939819844,
+        "italic_score": 0.45338666939819844
+      },
+      "truth": {
+        "bold": null,
+        "italic": null
+      },
+      "services": {
+        "pymupdf": {
+          "service": "pymupdf",
+          "page": 0,
+          "text": "1.00",
+          "bbox": null,
+          "font": "Times-Roman",
+          "size": 8.69505786895752,
+          "is_bold": false,
+          "is_italic": false,
+          "confidence": 0.6
+        },
+        "vision_pixel": {
+          "service": "vision_pixel",
+          "page": 0,
+          "text": "1.00",
+          "bbox": [
+            1765,
+            1726,
+            85,
+            40
+          ],
+          "fill_ratio": 0.1864705882352941,
+          "stroke_width": 2.8203859329223633,
+          "slant_deg": 0.0,
+          "fill_z": -0.2798530076913301,
+          "bold_hint": false,
+          "italic_hint": false,
+          "confidence": 0.06996325192283252
+        }
+      }
+    },
+    {
+      "id": "pg0-2218013",
+      "page": 0,
+      "text": "a0000ouer",
+      "bbox": null,
+      "consolidated": {
+        "bold": false,
+        "italic": false,
+        "bold_score": 0.45512110762641994,
+        "italic_score": 0.45512110762641994
+      },
+      "truth": {
+        "bold": null,
+        "italic": null
+      },
+      "services": {
+        "pymupdf": {
+          "service": "pymupdf",
+          "page": 0,
+          "text": "A0000ouer",
+          "bbox": null,
+          "font": "Times-Roman",
+          "size": 11.003089904785156,
+          "is_bold": false,
+          "is_italic": false,
+          "confidence": 0.6
+        }
+      }
+    },
+    {
+      "id": "pg0-4139672",
+      "page": 0,
+      "text": "0000000000",
+      "bbox": [
+        1826,
+        2659,
+        59,
+        196
+      ],
+      "consolidated": {
+        "bold": false,
+        "italic": false,
+        "bold_score": 0.45465282277822594,
+        "italic_score": 0.4555894718597132
+      },
+      "truth": {
+        "bold": null,
+        "italic": null
+      },
+      "services": {
+        "pymupdf": {
+          "service": "pymupdf",
+          "page": 0,
+          "text": "0000000000",
+          "bbox": null,
+          "font": "Times-Roman",
+          "size": 13.270354270935059,
+          "is_bold": false,
+          "is_italic": false,
+          "confidence": 0.6
+        },
+        "vision_pixel": {
+          "service": "vision_pixel",
+          "page": 0,
+          "text": "0000000000",
+          "bbox": [
+            1826,
+            2659,
+            59,
+            196
+          ],
+          "fill_ratio": 0.2076271186440678,
+          "stroke_width": 2.878833055496216,
+          "slant_deg": 10.885527054658724,
+          "fill_z": 0.07554053756443319,
+          "bold_hint": false,
+          "italic_hint": true,
+          "confidence": 0.018885134391108296
+        }
+      }
+    },
+    {
+      "id": "pg0-8907828",
+      "page": 0,
+      "text": "o000",
+      "bbox": null,
+      "consolidated": {
+        "bold": false,
+        "italic": false,
+        "bold_score": 0.45512110762641994,
+        "italic_score": 0.45512110762641994
+      },
+      "truth": {
+        "bold": null,
+        "italic": null
+      },
+      "services": {
+        "pymupdf": {
+          "service": "pymupdf",
+          "page": 0,
+          "text": "O000",
+          "bbox": null,
+          "font": "Times-Roman",
+          "size": 8.775707244873047,
+          "is_bold": false,
+          "is_italic": false,
+          "confidence": 0.6
+        }
+      }
+    },
+    {
+      "id": "pg0-1162793",
+      "page": 0,
+      "text": "1,347.83",
+      "bbox": [
+        2057,
+        1876,
+        155,
+        40
+      ],
+      "consolidated": {
+        "bold": false,
+        "italic": false,
+        "bold_score": 0.4531832632700874,
+        "italic_score": 0.4531832632700874
+      },
+      "truth": {
+        "bold": null,
+        "italic": null
+      },
+      "services": {
+        "pymupdf": {
+          "service": "pymupdf",
+          "page": 0,
+          "text": "1,347.83",
+          "bbox": null,
+          "font": "Times-Roman",
+          "size": 8.815712928771973,
+          "is_bold": false,
+          "is_italic": false,
+          "confidence": 0.6
+        },
+        "vision_pixel": {
+          "service": "vision_pixel",
+          "page": 0,
+          "text": "1,347.83",
+          "bbox": [
+            2057,
+            1876,
+            155,
+            40
+          ],
+          "fill_ratio": 0.18451612903225806,
+          "stroke_width": 2.8607518672943115,
+          "slant_deg": 0.0,
+          "fill_z": -0.3126845812907839,
+          "bold_hint": false,
+          "italic_hint": false,
+          "confidence": 0.07817114532269598
+        }
+      }
+    },
+    {
+      "id": "pg0-5669828",
+      "page": 0,
+      "text": "202.17",
+      "bbox": [
+        2081,
+        1959,
+        125,
+        42
+      ],
+      "consolidated": {
+        "bold": false,
+        "italic": false,
+        "bold_score": 0.4511678878976343,
+        "italic_score": 0.4511678878976343
+      },
+      "truth": {
+        "bold": null,
+        "italic": null
+      },
+      "services": {
+        "pymupdf": {
+          "service": "pymupdf",
+          "page": 0,
+          "text": "202.17",
+          "bbox": null,
+          "font": "Times-Roman",
+          "size": 8.977580070495605,
+          "is_bold": false,
+          "is_italic": false,
+          "confidence": 0.6
+        },
+        "vision_pixel": {
+          "service": "vision_pixel",
+          "page": 0,
+          "text": "202.17",
+          "bbox": [
+            2081,
+            1959,
+            125,
+            42
+          ],
+          "fill_ratio": 0.16514285714285715,
+          "stroke_width": 2.84501051902771,
+          "slant_deg": 0.0,
+          "fill_z": -0.6381224317770205,
+          "bold_hint": false,
+          "italic_hint": false,
+          "confidence": 0.15953060794425514
+        }
+      }
+    },
+    {
+      "id": "pg0-4801886",
+      "page": 0,
+      "text": "0.00",
+      "bbox": [
+        2125,
+        2130,
+        77,
+        41
+      ],
+      "consolidated": {
+        "bold": false,
+        "italic": false,
+        "bold_score": 0.4550314488084565,
+        "italic_score": 0.4550314488084565
+      },
+      "truth": {
+        "bold": null,
+        "italic": null
+      },
+      "services": {
+        "pymupdf": {
+          "service": "pymupdf",
+          "page": 0,
+          "text": "0.00",
+          "bbox": null,
+          "font": "Times-Roman",
+          "size": 8.95534610748291,
+          "is_bold": false,
+          "is_italic": false,
+          "confidence": 0.6
+        },
+        "vision_pixel": {
+          "service": "vision_pixel",
+          "page": 0,
+          "text": "0.00",
+          "bbox": [
+            2125,
+            2130,
+            77,
+            41
+          ],
+          "fill_ratio": 0.2039911308203991,
+          "stroke_width": 2.7377517223358154,
+          "slant_deg": 0.0,
+          "fill_z": 0.014462157594127546,
+          "bold_hint": false,
+          "italic_hint": false,
+          "confidence": 0.0036155393985318864
+        }
+      }
+    },
+    {
+      "id": "pg0-3830720",
+      "page": 0,
+      "text": "0129",
+      "bbox": [
+        2092,
+        2700,
+        39,
+        77
+      ],
+      "consolidated": {
+        "bold": false,
+        "italic": false,
+        "bold_score": 0.4551211073530489,
+        "italic_score": 0.4551211073530489
+      },
+      "truth": {
+        "bold": null,
+        "italic": null
+      },
+      "services": {
+        "pymupdf": {
+          "service": "pymupdf",
+          "page": 0,
+          "text": "0129",
+          "bbox": null,
+          "font": "Times-Roman",
+          "size": 10.129265785217285,
+          "is_bold": false,
+          "is_italic": false,
+          "confidence": 0.6
+        },
+        "vision_pixel": {
+          "service": "vision_pixel",
+          "page": 0,
+          "text": "0129",
+          "bbox": [
+            2092,
+            2700,
+            39,
+            77
+          ],
+          "fill_ratio": 0.20313020313020314,
+          "stroke_width": 2.9855713844299316,
+          "slant_deg": 0.0,
+          "fill_z": 4.4094613741560495e-08,
+          "bold_hint": false,
+          "italic_hint": false,
+          "confidence": 1.1023653435390124e-08
+        }
+      }
+    },
+    {
+      "id": "pgNA-7439806",
+      "page": null,
+      "text": "-",
+      "bbox": null,
+      "consolidated": {
+        "bold": false,
+        "italic": false,
+        "bold_score": 0.46008511544443426,
+        "italic_score": 0.46008511544443426
+      },
+      "truth": {
+        "bold": null,
+        "italic": null
+      },
+      "services": {
+        "azure": {
+          "service": "azure",
+          "page": null,
+          "text": "-",
+          "bbox": null,
+          "fontStyle": null,
+          "fontWeight": null,
+          "isHandwritten": true,
+          "is_bold": false,
+          "is_italic": false,
+          "confidence": 0.4
+        }
+      }
+    },
+    {
+      "id": "pgNA-6454424",
+      "page": null,
+      "text": "7",
+      "bbox": null,
+      "consolidated": {
+        "bold": false,
+        "italic": false,
+        "bold_score": 0.43045377606077095,
+        "italic_score": 0.43045377606077095
+      },
+      "truth": {
+        "bold": null,
+        "italic": null
+      },
+      "services": {
+        "azure": {
+          "service": "azure",
+          "page": null,
+          "text": "7",
+          "bbox": null,
+          "fontStyle": null,
+          "fontWeight": null,
+          "isHandwritten": true,
+          "is_bold": false,
+          "is_italic": false,
+          "confidence": 0.7
+        }
+      }
+    },
+    {
+      "id": "pg0-7838306",
+      "page": 0,
+      "text": "tax invoice",
+      "bbox": [
+        150,
+        174,
+        438,
+        73
+      ],
+      "consolidated": {
+        "bold": false,
+        "italic": false,
+        "bold_score": 0.49894231000660355,
+        "italic_score": 0.49894231000660355
+      },
+      "truth": {
+        "bold": null,
+        "italic": null
+      },
+      "services": {
+        "vision_pixel": {
+          "service": "vision_pixel",
+          "page": 0,
+          "text": "Tax Invoice",
+          "bbox": [
+            150,
+            174,
+            438,
+            73
+          ],
+          "fill_ratio": 0.2132044786388941,
+          "stroke_width": 4.398209571838379,
+          "slant_deg": 0.0,
+          "fill_z": 0.16923065137000215,
+          "bold_hint": false,
+          "italic_hint": false,
+          "confidence": 0.04230766284250054
+        }
+      }
+    },
+    {
+      "id": "pg0-752197",
+      "page": 0,
+      "text": "g",
+      "bbox": [
+        1544,
+        164,
+        414,
+        387
+      ],
+      "consolidated": {
+        "bold": true,
+        "italic": false,
+        "bold_score": 0.516170127381507,
+        "italic_score": 0.4838298726184931
+      },
+      "truth": {
+        "bold": null,
+        "italic": null
+      },
+      "services": {
+        "vision_pixel": {
+          "service": "vision_pixel",
+          "page": 0,
+          "text": "G",
+          "bbox": [
+            1544,
+            164,
+            414,
+            387
+          ],
+          "fill_ratio": 0.3572008138910734,
+          "stroke_width": 21.155330657958984,
+          "slant_deg": 0.0,
+          "fill_z": 2.5881229319249854,
+          "bold_hint": true,
+          "italic_hint": false,
+          "confidence": 0.6470307329812464
+        }
+      }
+    },
+    {
+      "id": "pg0-5777789",
+      "page": 0,
+      "text": "dr. craige golding medical practice",
+      "bbox": [
+        150,
+        304,
+        690,
+        50
+      ],
+      "consolidated": {
+        "bold": false,
+        "italic": false,
+        "bold_score": 0.49480547353282245,
+        "italic_score": 0.49480547353282245
+      },
+      "truth": {
+        "bold": null,
+        "italic": null
+      },
+      "services": {
+        "vision_pixel": {
+          "service": "vision_pixel",
+          "page": 0,
+          "text": "Dr. Craige Golding Medical Practice",
+          "bbox": [
+            150,
+            304,
+            690,
+            50
+          ],
+          "fill_ratio": 0.2526086956521739,
+          "stroke_width": 3.955944299697876,
+          "slant_deg": 0.0,
+          "fill_z": 0.8311541384352285,
+          "bold_hint": false,
+          "italic_hint": false,
+          "confidence": 0.2077885346088071
+        }
+      }
+    },
+    {
+      "id": "pg0-3251707",
+      "page": 0,
+      "text": "65 central street",
+      "bbox": [
+        152,
+        366,
+        308,
+        44
+      ],
+      "consolidated": {
+        "bold": false,
+        "italic": false,
+        "bold_score": 0.4973800980033325,
+        "italic_score": 0.4973800980033325
+      },
+      "truth": {
+        "bold": null,
+        "italic": null
+      },
+      "services": {
+        "vision_pixel": {
+          "service": "vision_pixel",
+          "page": 0,
+          "text": "65 Central Street",
+          "bbox": [
+            152,
+            366,
+            308,
+            44
+          ],
+          "fill_ratio": 0.22808441558441558,
+          "stroke_width": 2.996098756790161,
+          "slant_deg": 0.0,
+          "fill_z": 0.41918815584143676,
+          "bold_hint": false,
+          "italic_hint": false,
+          "confidence": 0.10479703896035919
+        }
+      }
+    },
+    {
+      "id": "pg0-241024",
+      "page": 0,
+      "text": "houghton estate",
+      "bbox": [
+        153,
+        414,
+        303,
+        44
+      ],
+      "consolidated": {
+        "bold": false,
+        "italic": false,
+        "bold_score": 0.4952525641758435,
+        "italic_score": 0.4952525641758435
+      },
+      "truth": {
+        "bold": null,
+        "italic": null
+      },
+      "services": {
+        "vision_pixel": {
+          "service": "vision_pixel",
+          "page": 0,
+          "text": "Houghton Estate",
+          "bbox": [
+            153,
+            414,
+            303,
+            44
+          ],
+          "fill_ratio": 0.24834983498349836,
+          "stroke_width": 3.1513662338256836,
+          "slant_deg": 0.0,
+          "fill_z": 0.7596125594264485,
+          "bold_hint": false,
+          "italic_hint": false,
+          "confidence": 0.1899031398566121
+        }
+      }
+    },
+    {
+      "id": "pg0-2520772",
+      "page": 0,
+      "text": "please retain invoices for tax purposes!",
+      "bbox": [
+        152,
+        588,
+        937,
+        52
+      ],
+      "consolidated": {
+        "bold": false,
+        "italic": false,
+        "bold_score": 0.49932918433013695,
+        "italic_score": 0.49932918433013695
+      },
+      "truth": {
+        "bold": null,
+        "italic": null
+      },
+      "services": {
+        "vision_pixel": {
+          "service": "vision_pixel",
+          "page": 0,
+          "text": "PLEASE RETAIN INVOICES FOR TAX PURPOSES!",
+          "bbox": [
+            152,
+            588,
+            937,
+            52
+          ],
+          "fill_ratio": 0.19674082587636482,
+          "stroke_width": 3.1108314990997314,
+          "slant_deg": 0.0,
+          "fill_z": -0.10733057157554575,
+          "bold_hint": false,
+          "italic_hint": false,
+          "confidence": 0.026832642893886437
+        }
+      }
+    },
+    {
+      "id": "pg0-5435856",
+      "page": 0,
+      "text": "practice no: 1811479 | mp no: 0412104",
+      "bbox": [
+        149,
+        648,
+        729,
+        46
+      ],
+      "consolidated": {
+        "bold": false,
+        "italic": false,
+        "bold_score": 0.4999836199376773,
+        "italic_score": 0.4999836199376773
+      },
+      "truth": {
+        "bold": null,
+        "italic": null
+      },
+      "services": {
+        "vision_pixel": {
+          "service": "vision_pixel",
+          "page": 0,
+          "text": "Practice No: 1811479 | MP No: 0412104",
+          "bbox": [
+            149,
+            648,
+            729,
+            46
+          ],
+          "fill_ratio": 0.20328621697381763,
+          "stroke_width": 3.2686197757720947,
+          "slant_deg": 0.0,
+          "fill_z": 0.0026208099725641043,
+          "bold_hint": false,
+          "italic_hint": false,
+          "confidence": 0.0006552024931410261
+        }
+      }
+    },
+    {
+      "id": "pg0-8307142",
+      "page": 0,
+      "text": "tax no: 4670187568",
+      "bbox": [
+        153,
+        703,
+        376,
+        45
+      ],
+      "consolidated": {
+        "bold": false,
+        "italic": false,
+        "bold_score": 0.4984857446705663,
+        "italic_score": 0.4984857446705663
+      },
+      "truth": {
+        "bold": null,
+        "italic": null
+      },
+      "services": {
+        "vision_pixel": {
+          "service": "vision_pixel",
+          "page": 0,
+          "text": "Tax No: 4670187568",
+          "bbox": [
+            153,
+            703,
+            376,
+            45
+          ],
+          "fill_ratio": 0.2175531914893617,
+          "stroke_width": 3.1092472076416016,
+          "slant_deg": 0.0,
+          "fill_z": 0.24228159343685668,
+          "bold_hint": false,
+          "italic_hint": false,
+          "confidence": 0.06057039835921417
+        }
+      }
+    },
+    {
+      "id": "pg0-2340261",
+      "page": 0,
+      "text": "medical aid",
+      "bbox": [
+        1249,
+        811,
+        206,
+        43
+      ],
+      "consolidated": {
+        "bold": false,
+        "italic": false,
+        "bold_score": 0.49532228423683183,
+        "italic_score": 0.49532228423683183
+      },
+      "truth": {
+        "bold": null,
+        "italic": null
+      },
+      "services": {
+        "vision_pixel": {
+          "service": "vision_pixel",
+          "page": 0,
+          "text": "Medical Aid",
+          "bbox": [
+            1249,
+            811,
+            206,
+            43
+          ],
+          "fill_ratio": 0.24768570783472568,
+          "stroke_width": 3.196943521499634,
+          "slant_deg": 0.0,
+          "fill_z": 0.7484563586060605,
+          "bold_hint": false,
+          "italic_hint": false,
+          "confidence": 0.18711408965151513
+        }
+      }
+    },
+    {
+      "id": "pg0-8839826",
+      "page": 0,
+      "text": "date of birth",
+      "bbox": [
+        1242,
+        983,
+        233,
+        44
+      ],
+      "consolidated": {
+        "bold": false,
+        "italic": false,
+        "bold_score": 0.4982128831546963,
+        "italic_score": 0.4982128831546963
+      },
+      "truth": {
+        "bold": null,
+        "italic": null
+      },
+      "services": {
+        "vision_pixel": {
+          "service": "vision_pixel",
+          "page": 0,
+          "text": "Date Of Birth",
+          "bbox": [
+            1242,
+            983,
+            233,
+            44
+          ],
+          "fill_ratio": 0.2201521654311354,
+          "stroke_width": 2.9749317169189453,
+          "slant_deg": 0.0,
+          "fill_z": 0.28593991289415543,
+          "bold_hint": false,
+          "italic_hint": false,
+          "confidence": 0.07148497822353886
+        }
+      }
+    },
+    {
+      "id": "pg0-5159852",
+      "page": 0,
+      "text": "1980/05/25 00:00:00",
+      "bbox": [
+        1648,
+        987,
+        352,
+        40
+      ],
+      "consolidated": {
+        "bold": false,
+        "italic": false,
+        "bold_score": 0.4947065382112952,
+        "italic_score": 0.4947065382112952
+      },
+      "truth": {
+        "bold": null,
+        "italic": null
+      },
+      "services": {
+        "vision_pixel": {
+          "service": "vision_pixel",
+          "page": 0,
+          "text": "1980/05/25 00:00:00",
+          "bbox": [
+            1648,
+            987,
+            352,
+            40
+          ],
+          "fill_ratio": 0.25355113636363635,
+          "stroke_width": 2.858811140060425,
+          "slant_deg": 0.0,
+          "fill_z": 0.8469855313512,
+          "bold_hint": false,
+          "italic_hint": false,
+          "confidence": 0.2117463828378
+        }
+      }
+    },
+    {
+      "id": "pg0-9749523",
+      "page": 0,
+      "text": "pieter h kruger",
+      "bbox": [
+        553,
+        1099,
+        287,
+        46
+      ],
+      "consolidated": {
+        "bold": false,
+        "italic": false,
+        "bold_score": 0.49987494718951475,
+        "italic_score": 0.49987494718951475
+      },
+      "truth": {
+        "bold": null,
+        "italic": null
+      },
+      "services": {
+        "vision_pixel": {
+          "service": "vision_pixel",
+          "page": 0,
+          "text": "Pieter H Kruger",
+          "bbox": [
+            553,
+            1099,
+            287,
+            46
+          ],
+          "fill_ratio": 0.20193910013634297,
+          "stroke_width": 3.0794854164123535,
+          "slant_deg": 0.0,
+          "fill_z": -0.02000845009482895,
+          "bold_hint": false,
+          "italic_hint": false,
+          "confidence": 0.005002112523707238
+        }
+      }
+    },
+    {
+      "id": "pg0-933178",
+      "page": 0,
+      "text": "269 herder drive",
+      "bbox": [
+        551,
+        1188,
+        311,
+        46
+      ],
+      "consolidated": {
+        "bold": false,
+        "italic": false,
+        "bold_score": 0.4982458845732573,
+        "italic_score": 0.4982458845732573
+      },
+      "truth": {
+        "bold": null,
+        "italic": null
+      },
+      "services": {
+        "vision_pixel": {
+          "service": "vision_pixel",
+          "page": 0,
+          "text": "269 Herder Drive",
+          "bbox": [
+            551,
+            1188,
+            311,
+            46
+          ],
+          "fill_ratio": 0.21983783028100098,
+          "stroke_width": 3.0897767543792725,
+          "slant_deg": 0.0,
+          "fill_z": 0.2806596197058905,
+          "bold_hint": false,
+          "italic_hint": false,
+          "confidence": 0.07016490492647262
+        }
+      }
+    },
+    {
+      "id": "pg0-6019099",
+      "page": 0,
+      "text": "south africa",
+      "bbox": [
+        554,
+        1322,
+        216,
+        45
+      ],
+      "consolidated": {
+        "bold": false,
+        "italic": false,
+        "bold_score": 0.4976715174318236,
+        "italic_score": 0.4976715174318236
+      },
+      "truth": {
+        "bold": null,
+        "italic": null
+      },
+      "services": {
+        "vision_pixel": {
+          "service": "vision_pixel",
+          "page": 0,
+          "text": "South Africa",
+          "bbox": [
+            554,
+            1322,
+            216,
+            45
+          ],
+          "fill_ratio": 0.22530864197530864,
+          "stroke_width": 3.0679078102111816,
+          "slant_deg": 0.0,
+          "fill_z": 0.3725599041996269,
+          "bold_hint": false,
+          "italic_hint": false,
+          "confidence": 0.09313997604990673
+        }
+      }
+    },
+    {
+      "id": "pg0-620894",
+      "page": 0,
+      "text": "kruger pieter h 1980/05/25",
+      "bbox": [
+        150,
+        1632,
+        514,
+        46
+      ],
+      "consolidated": {
+        "bold": false,
+        "italic": false,
+        "bold_score": 0.4934188344176269,
+        "italic_score": 0.4934188344176269
+      },
+      "truth": {
+        "bold": null,
+        "italic": null
+      },
+      "services": {
+        "vision_pixel": {
+          "service": "vision_pixel",
+          "page": 0,
+          "text": "Kruger Pieter H 1980/05/25",
+          "bbox": [
+            150,
+            1632,
+            514,
+            46
+          ],
+          "fill_ratio": 0.2658179665031298,
+          "stroke_width": 3.759690761566162,
+          "slant_deg": 0.0,
+          "fill_z": 1.0530473084050074,
+          "bold_hint": false,
+          "italic_hint": false,
+          "confidence": 0.26326182710125184
+        }
+      }
+    },
+    {
+      "id": "pg0-4487976",
+      "page": 0,
+      "text": "icd10: e27.9",
+      "bbox": [
+        701,
+        1770,
+        250,
+        41
+      ],
+      "consolidated": {
+        "bold": false,
+        "italic": false,
+        "bold_score": 0.4990875203769153,
+        "italic_score": 0.4990875203769153
+      },
+      "truth": {
+        "bold": null,
+        "italic": null
+      },
+      "services": {
+        "vision_pixel": {
+          "service": "vision_pixel",
+          "page": 0,
+          "text": "ICD10: E27.9",
+          "bbox": [
+            701,
+            1770,
+            250,
+            41
+          ],
+          "fill_ratio": 0.1944390243902439,
+          "stroke_width": 2.8426826000213623,
+          "slant_deg": 0.0,
+          "fill_z": -0.14599690177344293,
+          "bold_hint": false,
+          "italic_hint": false,
+          "confidence": 0.03649922544336073
+        }
+      }
+    },
+    {
+      "id": "pg0-4843360",
+      "page": 0,
+      "text": "011 483 1080 | 011 718 3004",
+      "bbox": [
+        155,
+        1858,
+        515,
+        47
+      ],
+      "consolidated": {
+        "bold": false,
+        "italic": false,
+        "bold_score": 0.4978279362959723,
+        "italic_score": 0.4978279362959723
+      },
+      "truth": {
+        "bold": null,
+        "italic": null
+      },
+      "services": {
+        "vision_pixel": {
+          "service": "vision_pixel",
+          "page": 0,
+          "text": "011 483 1080 | 011 718 3004",
+          "bbox": [
+            155,
+            1858,
+            515,
+            47
+          ],
+          "fill_ratio": 0.18244164428837017,
+          "stroke_width": 3.0031189918518066,
+          "slant_deg": 0.0,
+          "fill_z": -0.3475323788012663,
+          "bold_hint": false,
+          "italic_hint": false,
+          "confidence": 0.08688309470031658
+        }
+      }
+    },
+    {
+      "id": "pg0-9804277",
+      "page": 0,
+      "text": "patients@craigegolding.co.za | http://www.drcgolding.co.za",
+      "bbox": [
+        155,
+        1900,
+        1033,
+        50
+      ],
+      "consolidated": {
+        "bold": false,
+        "italic": false,
+        "bold_score": 0.4990798456943465,
+        "italic_score": 0.4990798456943465
+      },
+      "truth": {
+        "bold": null,
+        "italic": null
+      },
+      "services": {
+        "vision_pixel": {
+          "service": "vision_pixel",
+          "page": 0,
+          "text": "patients@craigegolding.co.za | http://www.drcgolding.co.za",
+          "bbox": [
+            155,
+            1900,
+            1033,
+            50
+          ],
+          "fill_ratio": 0.19436592449177154,
+          "stroke_width": 2.9582245349884033,
+          "slant_deg": 0.0,
+          "fill_z": -0.14722485510860603,
+          "bold_hint": false,
+          "italic_hint": false,
+          "confidence": 0.03680621377715151
+        }
+      }
+    },
+    {
+      "id": "pg0-1168963",
+      "page": 0,
+      "text": "sub total",
+      "bbox": [
+        1454,
+        1877,
+        159,
+        41
+      ],
+      "consolidated": {
+        "bold": false,
+        "italic": false,
+        "bold_score": 0.49670181108487427,
+        "italic_score": 0.49670181108487427
+      },
+      "truth": {
+        "bold": null,
+        "italic": null
+      },
+      "services": {
+        "vision_pixel": {
+          "service": "vision_pixel",
+          "page": 0,
+          "text": "Sub total",
+          "bbox": [
+            1454,
+            1877,
+            159,
+            41
+          ],
+          "fill_ratio": 0.23454517564043564,
+          "stroke_width": 2.8950531482696533,
+          "slant_deg": 0.0,
+          "fill_z": 0.527717880564333,
+          "bold_hint": false,
+          "italic_hint": false,
+          "confidence": 0.13192947014108325
+        }
+      }
+    },
+    {
+      "id": "pg0-3649043",
+      "page": 0,
+      "text": "whatsapp: 0838042903",
+      "bbox": [
+        154,
+        1945,
+        432,
+        51
+      ],
+      "consolidated": {
+        "bold": false,
+        "italic": false,
+        "bold_score": 0.49856738285156516,
+        "italic_score": 0.49856738285156516
+      },
+      "truth": {
+        "bold": null,
+        "italic": null
+      },
+      "services": {
+        "vision_pixel": {
+          "service": "vision_pixel",
+          "page": 0,
+          "text": "WhatsApp: 0838042903",
+          "bbox": [
+            154,
+            1945,
+            432,
+            51
+          ],
+          "fill_ratio": 0.2167755991285403,
+          "stroke_width": 3.0420446395874023,
+          "slant_deg": 0.0,
+          "fill_z": 0.2292193710149084,
+          "bold_hint": false,
+          "italic_hint": false,
+          "confidence": 0.0573048427537271
+        }
+      }
+    },
+    {
+      "id": "pg0-1843079",
+      "page": 0,
+      "text": "banking details:",
+      "bbox": [
+        157,
+        2068,
+        291,
+        44
+      ],
+      "consolidated": {
+        "bold": false,
+        "italic": false,
+        "bold_score": 0.49616161129536074,
+        "italic_score": 0.49616161129536074
+      },
+      "truth": {
+        "bold": null,
+        "italic": null
+      },
+      "services": {
+        "vision_pixel": {
+          "service": "vision_pixel",
+          "page": 0,
+          "text": "Banking Details:",
+          "bbox": [
+            157,
+            2068,
+            291,
+            44
+          ],
+          "fill_ratio": 0.23969072164948454,
+          "stroke_width": 3.1325652599334717,
+          "slant_deg": 0.0,
+          "fill_z": 0.614154257564702,
+          "bold_hint": false,
+          "italic_hint": false,
+          "confidence": 0.1535385643911755
+        }
+      }
+    },
+    {
+      "id": "pg0-1610744",
+      "page": 0,
+      "text": "dr. craige golding",
+      "bbox": [
+        157,
+        2111,
+        329,
+        47
+      ],
+      "consolidated": {
+        "bold": false,
+        "italic": false,
+        "bold_score": 0.49898831874709654,
+        "italic_score": 0.49898831874709654
+      },
+      "truth": {
+        "bold": null,
+        "italic": null
+      },
+      "services": {
+        "vision_pixel": {
+          "service": "vision_pixel",
+          "page": 0,
+          "text": "Dr. Craige Golding",
+          "bbox": [
+            157,
+            2111,
+            329,
+            47
+          ],
+          "fill_ratio": 0.19349414731940762,
+          "stroke_width": 2.903052568435669,
+          "slant_deg": 0.0,
+          "fill_z": -0.16186922136210913,
+          "bold_hint": false,
+          "italic_hint": false,
+          "confidence": 0.04046730534052728
+        }
+      }
+    },
+    {
+      "id": "pg0-9017151",
+      "page": 0,
+      "text": "nedbank killarney",
+      "bbox": [
+        155,
+        2157,
+        327,
+        43
+      ],
+      "consolidated": {
+        "bold": false,
+        "italic": false,
+        "bold_score": 0.49802292991413233,
+        "italic_score": 0.49802292991413233
+      },
+      "truth": {
+        "bold": null,
+        "italic": null
+      },
+      "services": {
+        "vision_pixel": {
+          "service": "vision_pixel",
+          "page": 0,
+          "text": "Nedbank Killarney",
+          "bbox": [
+            155,
+            2157,
+            327,
+            43
+          ],
+          "fill_ratio": 0.22196145366616885,
+          "stroke_width": 3.052846670150757,
+          "slant_deg": 0.0,
+          "fill_z": 0.3163328623908,
+          "bold_hint": false,
+          "italic_hint": false,
+          "confidence": 0.0790832155977
+        }
+      }
+    },
+    {
+      "id": "pg0-5724285",
+      "page": 0,
+      "text": "total due",
+      "bbox": [
+        1456,
+        2216,
+        171,
+        40
+      ],
+      "consolidated": {
+        "bold": false,
+        "italic": false,
+        "bold_score": 0.4904448420620575,
+        "italic_score": 0.4904448420620575
+      },
+      "truth": {
+        "bold": null,
+        "italic": null
+      },
+      "services": {
+        "vision_pixel": {
+          "service": "vision_pixel",
+          "page": 0,
+          "text": "Total due",
+          "bbox": [
+            1456,
+            2216,
+            171,
+            40
+          ],
+          "fill_ratio": 0.2941520467836257,
+          "stroke_width": 3.701852560043335,
+          "slant_deg": 0.0,
+          "fill_z": 1.5290114219853184,
+          "bold_hint": false,
+          "italic_hint": false,
+          "confidence": 0.3822528554963296
+        }
+      }
+    },
+    {
+      "id": "pg0-7560693",
+      "page": 0,
+      "text": "no return or exchange on products once",
+      "bbox": [
+        155,
+        2276,
+        963,
+        51
+      ],
+      "consolidated": {
+        "bold": false,
+        "italic": false,
+        "bold_score": 0.49856275031373815,
+        "italic_score": 0.49856275031373815
+      },
+      "truth": {
+        "bold": null,
+        "italic": null
+      },
+      "services": {
+        "vision_pixel": {
+          "service": "vision_pixel",
+          "page": 0,
+          "text": "NO RETURN OR EXCHANGE ON PRODUCTS ONCE",
+          "bbox": [
+            155,
+            2276,
+            963,
+            51
+          ],
+          "fill_ratio": 0.18944067762099648,
+          "stroke_width": 3.077831745147705,
+          "slant_deg": 0.0,
+          "fill_z": -0.22996058317197055,
+          "bold_hint": false,
+          "italic_hint": false,
+          "confidence": 0.057490145792992636
+        }
+      }
+    },
+    {
+      "id": "pg0-4561103",
+      "page": 0,
+      "text": "nb! price subject to change without prior",
+      "bbox": [
+        159,
+        2409,
+        959,
+        52
+      ],
+      "consolidated": {
+        "bold": false,
+        "italic": false,
+        "bold_score": 0.49756477400848764,
+        "italic_score": 0.49756477400848764
+      },
+      "truth": {
+        "bold": null,
+        "italic": null
+      },
+      "services": {
+        "vision_pixel": {
+          "service": "vision_pixel",
+          "page": 0,
+          "text": "NB! PRICE SUBJECT TO CHANGE WITHOUT PRIOR",
+          "bbox": [
+            159,
+            2409,
+            959,
+            52
+          ],
+          "fill_ratio": 0.17993502847517445,
+          "stroke_width": 3.011760711669922,
+          "slant_deg": 0.0,
+          "fill_z": -0.3896392395782278,
+          "bold_hint": false,
+          "italic_hint": false,
+          "confidence": 0.09740980989455696
+        }
+      }
+    },
+    {
+      "id": "pg0-360765",
+      "page": 0,
+      "text": "notification, please confirm prices when placing",
+      "bbox": [
+        159,
+        2453,
+        1105,
+        54
+      ],
+      "consolidated": {
+        "bold": false,
+        "italic": false,
+        "bold_score": 0.4970163135440888,
+        "italic_score": 0.4970163135440888
+      },
+      "truth": {
+        "bold": null,
+        "italic": null
+      },
+      "services": {
+        "vision_pixel": {
+          "service": "vision_pixel",
+          "page": 0,
+          "text": "NOTIFICATION, PLEASE CONFIRM PRICES WHEN PLACING",
+          "bbox": [
+            159,
+            2453,
+            1105,
+            54
+          ],
+          "fill_ratio": 0.17471091000502764,
+          "stroke_width": 3.0639517307281494,
+          "slant_deg": 0.0,
+          "fill_z": -0.47739549961090516,
+          "bold_hint": false,
+          "italic_hint": false,
+          "confidence": 0.11934887490272629
+        }
+      }
+    },
+    {
+      "id": "pg0-8739110",
+      "page": 0,
+      "text": "an order.",
+      "bbox": [
+        154,
+        2506,
+        220,
+        43
+      ],
+      "consolidated": {
+        "bold": false,
+        "italic": false,
+        "bold_score": 0.49863061086945504,
+        "italic_score": 0.49863061086945504
+      },
+      "truth": {
+        "bold": null,
+        "italic": null
+      },
+      "services": {
+        "vision_pixel": {
+          "service": "vision_pixel",
+          "page": 0,
+          "text": "AN ORDER.",
+          "bbox": [
+            154,
+            2506,
+            220,
+            43
+          ],
+          "fill_ratio": 0.21617336152219874,
+          "stroke_width": 3.000324249267578,
+          "slant_deg": 0.0,
+          "fill_z": 0.21910280871151133,
+          "bold_hint": false,
+          "italic_hint": false,
+          "confidence": 0.05477570217787783
+        }
+      }
+    },
+    {
+      "id": "pg0-3946610",
+      "page": 0,
+      "text": "00",
+      "bbox": [
+        2022,
+        2682,
+        37,
+        59
+      ],
+      "consolidated": {
+        "bold": false,
+        "italic": false,
+        "bold_score": 0.49290981393935696,
+        "italic_score": 0.49290981393935696
+      },
+      "truth": {
+        "bold": null,
+        "italic": null
+      },
+      "services": {
+        "vision_pixel": {
+          "service": "vision_pixel",
+          "page": 0,
+          "text": "00",
+          "bbox": [
+            2022,
+            2682,
+            37,
+            59
+          ],
+          "fill_ratio": 0.13559322033898305,
+          "stroke_width": 2.6229283809661865,
+          "slant_deg": 0.0,
+          "fill_z": -1.1345058170410751,
+          "bold_hint": false,
+          "italic_hint": false,
+          "confidence": 0.2836264542602688
+        }
+      }
+    },
+    {
+      "id": "pg0-7692975",
+      "page": 0,
+      "text": "086008",
+      "bbox": [
+        1538,
+        2620,
+        50,
+        127
+      ],
+      "consolidated": {
+        "bold": false,
+        "italic": true,
+        "bold_score": 0.4989108115868754,
+        "italic_score": 0.5010891884131246
+      },
+      "truth": {
+        "bold": null,
+        "italic": null
+      },
+      "services": {
+        "vision_pixel": {
+          "service": "vision_pixel",
+          "page": 0,
+          "text": "086008",
+          "bbox": [
+            1538,
+            2620,
+            50,
+            127
+          ],
+          "fill_ratio": 0.19275590551181102,
+          "stroke_width": 2.8130109310150146,
+          "slant_deg": 15.65497519126724,
+          "fill_z": -0.17427042175690424,
+          "bold_hint": false,
+          "italic_hint": true,
+          "confidence": 0.04356760543922606
+        }
+      }
+    },
+    {
+      "id": "pg0-1884992",
+      "page": 0,
+      "text": "403883",
+      "bbox": [
+        1579,
+        2634,
+        42,
+        120
+      ],
+      "consolidated": {
+        "bold": false,
+        "italic": false,
+        "bold_score": 0.4982756779209547,
+        "italic_score": 0.4982756779209547
+      },
+      "truth": {
+        "bold": null,
+        "italic": null
+      },
+      "services": {
+        "vision_pixel": {
+          "service": "vision_pixel",
+          "page": 0,
+          "text": "403883",
+          "bbox": [
+            1579,
+            2634,
+            42,
+            120
+          ],
+          "fill_ratio": 0.1867063492063492,
+          "stroke_width": 2.7554080486297607,
+          "slant_deg": 0.0,
+          "fill_z": -0.27589262639452417,
+          "bold_hint": false,
+          "italic_hint": false,
+          "confidence": 0.06897315659863104
+        }
+      }
+    },
+    {
+      "id": "pg0-3193621",
+      "page": 0,
+      "text": "0000",
+      "bbox": [
+        1982,
+        2676,
+        50,
+        80
+      ],
+      "consolidated": {
+        "bold": false,
+        "italic": false,
+        "bold_score": 0.49644300092810606,
+        "italic_score": 0.49644300092810606
+      },
+      "truth": {
+        "bold": null,
+        "italic": null
+      },
+      "services": {
+        "vision_pixel": {
+          "service": "vision_pixel",
+          "page": 0,
+          "text": "0000",
+          "bbox": [
+            1982,
+            2676,
+            50,
+            80
+          ],
+          "fill_ratio": 0.16925,
+          "stroke_width": 2.7623965740203857,
+          "slant_deg": 0.0,
+          "fill_z": -0.5691294526509836,
+          "bold_hint": false,
+          "italic_hint": false,
+          "confidence": 0.1422823631627459
+        }
+      }
+    },
+    {
+      "id": "pg0-6461696",
+      "page": 0,
+      "text": "issuer",
+      "bbox": [
+        1768,
+        2650,
+        48,
+        129
+      ],
+      "consolidated": {
+        "bold": false,
+        "italic": true,
+        "bold_score": 0.49493413023297195,
+        "italic_score": 0.505065869767028
+      },
+      "truth": {
+        "bold": null,
+        "italic": null
+      },
+      "services": {
+        "vision_pixel": {
+          "service": "vision_pixel",
+          "page": 0,
+          "text": "Issuer",
+          "bbox": [
+            1768,
+            2650,
+            48,
+            129
+          ],
+          "fill_ratio": 0.15487726098191215,
+          "stroke_width": 3.1468923091888428,
+          "slant_deg": 10.124671655397805,
+          "fill_z": -0.810566898960979,
+          "bold_hint": false,
+          "italic_hint": true,
+          "confidence": 0.20264172474024475
+        }
+      }
+    },
+    {
+      "id": "pg0-470645",
+      "page": 0,
+      "text": "contactless",
+      "bbox": [
+        1348,
+        2602,
+        65,
+        216
+      ],
+      "consolidated": {
+        "bold": false,
+        "italic": true,
+        "bold_score": 0.49512497099722974,
+        "italic_score": 0.5048750290027704
+      },
+      "truth": {
+        "bold": null,
+        "italic": null
+      },
+      "services": {
+        "vision_pixel": {
+          "service": "vision_pixel",
+          "page": 0,
+          "text": "Contactless",
+          "bbox": [
+            1348,
+            2602,
+            65,
+            216
+          ],
+          "fill_ratio": 0.15669515669515668,
+          "stroke_width": 2.8352322578430176,
+          "slant_deg": 12.094757077012105,
+          "fill_z": -0.7800293585442715,
+          "bold_hint": false,
+          "italic_hint": true,
+          "confidence": 0.19500733963606787
+        }
+      }
+    },
+    {
+      "id": "pg0-1281641",
+      "page": 0,
+      "text": "0 - approved",
+      "bbox": [
+        1663,
+        2641,
+        61,
+        231
+      ],
+      "consolidated": {
+        "bold": false,
+        "italic": true,
+        "bold_score": 0.4910502449660125,
+        "italic_score": 0.5089497550339875
+      },
+      "truth": {
+        "bold": null,
+        "italic": null
+      },
+      "services": {
+        "vision_pixel": {
+          "service": "vision_pixel",
+          "page": 0,
+          "text": "0 - Approved",
+          "bbox": [
+            1663,
+            2641,
+            61,
+            231
+          ],
+          "fill_ratio": 0.11787665886026542,
+          "stroke_width": 3.029360294342041,
+          "slant_deg": 12.380756928807173,
+          "fill_z": -1.432113764658612,
+          "bold_hint": false,
+          "italic_hint": true,
+          "confidence": 0.358028441164653
+        }
+      }
+    },
+    {
+      "id": "pg0-1242529",
+      "page": 0,
+      "text": "fnb1 debit visa",
+      "bbox": [
+        1308,
+        2601,
+        66,
+        289
+      ],
+      "consolidated": {
+        "bold": false,
+        "italic": true,
+        "bold_score": 0.4938161867546405,
+        "italic_score": 0.5061838132453594
+      },
+      "truth": {
+        "bold": null,
+        "italic": null
+      },
+      "services": {
+        "vision_pixel": {
+          "service": "vision_pixel",
+          "page": 0,
+          "text": "FNB1 DEBIT VISA",
+          "bbox": [
+            1308,
+            2601,
+            66,
+            289
+          ],
+          "fill_ratio": 0.14422774457376533,
+          "stroke_width": 3.012613296508789,
+          "slant_deg": 11.539110703020427,
+          "fill_z": -0.9894605700130701,
+          "bold_hint": false,
+          "italic_hint": true,
+          "confidence": 0.24736514250326752
+        }
+      }
+    },
+    {
+      "id": "pg0-7156623",
+      "page": 0,
+      "text": "visa card",
+      "bbox": [
+        2100,
+        2736,
+        61,
+        160
+      ],
+      "consolidated": {
+        "bold": false,
+        "italic": true,
+        "bold_score": 0.4942715478178485,
+        "italic_score": 0.5057284521821515
+      },
+      "truth": {
+        "bold": null,
+        "italic": null
+      },
+      "services": {
+        "vision_pixel": {
+          "service": "vision_pixel",
+          "page": 0,
+          "text": "Visa Card",
+          "bbox": [
+            2100,
+            2736,
+            61,
+            160
+          ],
+          "fill_ratio": 0.14856557377049182,
+          "stroke_width": 3.1459689140319824,
+          "slant_deg": 15.837734369054608,
+          "fill_z": -0.9165924547242199,
+          "bold_hint": false,
+          "italic_hint": true,
+          "confidence": 0.22914811368105498
+        }
+      }
+    },
+    {
+      "id": "pg0-4190772",
+      "page": 0,
+      "text": "45789670 ****** 06",
+      "bbox": [
+        1270,
+        2594,
+        69,
+        304
+      ],
+      "consolidated": {
+        "bold": false,
+        "italic": true,
+        "bold_score": 0.4929588382531643,
+        "italic_score": 0.5070411617468357
+      },
+      "truth": {
+        "bold": null,
+        "italic": null
+      },
+      "services": {
+        "vision_pixel": {
+          "service": "vision_pixel",
+          "page": 0,
+          "text": "45789670 ****** 06",
+          "bbox": [
+            1270,
+            2594,
+            69,
+            304
+          ],
+          "fill_ratio": 0.1360602593440122,
+          "stroke_width": 2.8953070640563965,
+          "slant_deg": 11.768288932020639,
+          "fill_z": -1.126660360127157,
+          "bold_hint": false,
+          "italic_hint": true,
+          "confidence": 0.28166509003178924
+        }
+      }
+    },
+    {
+      "id": "pg0-9942219",
+      "page": 0,
+      "text": "a0000000031010",
+      "bbox": [
+        1778,
+        2653,
+        74,
+        263
+      ],
+      "consolidated": {
+        "bold": false,
+        "italic": true,
+        "bold_score": 0.4982288591044317,
+        "italic_score": 0.5017711408955683
+      },
+      "truth": {
+        "bold": null,
+        "italic": null
+      },
+      "services": {
+        "vision_pixel": {
+          "service": "vision_pixel",
+          "page": 0,
+          "text": "A0000000031010",
+          "bbox": [
+            1778,
+            2653,
+            74,
+            263
+          ],
+          "fill_ratio": 0.1862604048915836,
+          "stroke_width": 2.9115872383117676,
+          "slant_deg": 12.409556381217236,
+          "fill_z": -0.2833837285719151,
+          "bold_hint": false,
+          "italic_hint": true,
+          "confidence": 0.07084593214297877
+        }
+      }
+    },
+    {
+      "id": "pg0-8783793",
+      "page": 0,
+      "text": "r1,550.00",
+      "bbox": [
+        2229,
+        2712,
+        83,
+        233
+      ],
+      "consolidated": {
+        "bold": false,
+        "italic": true,
+        "bold_score": 0.4891638129258193,
+        "italic_score": 0.5108361870741807
+      },
+      "truth": {
+        "bold": null,
+        "italic": null
+      },
+      "services": {
+        "vision_pixel": {
+          "service": "vision_pixel",
+          "page": 0,
+          "text": "R1,550.00",
+          "bbox": [
+            2229,
+            2712,
+            83,
+            233
+          ],
+          "fill_ratio": 0.09990175293448472,
+          "stroke_width": 3.0916967391967773,
+          "slant_deg": 14.036243467926468,
+          "fill_z": -1.7340614573650133,
+          "bold_hint": false,
+          "italic_hint": true,
+          "confidence": 0.4335153643412533
+        }
+      }
+    },
+    {
+      "id": "pg0-3207752",
+      "page": 0,
+      "text": "17fa584cfdeb2071",
+      "bbox": [
+        2017,
+        2692,
+        83,
+        293
+      ],
+      "consolidated": {
+        "bold": false,
+        "italic": true,
+        "bold_score": 0.48958018550904936,
+        "italic_score": 0.5104198144909506
+      },
+      "truth": {
+        "bold": null,
+        "italic": null
+      },
+      "services": {
+        "vision_pixel": {
+          "service": "vision_pixel",
+          "page": 0,
+          "text": "17FA584CFDEB2071",
+          "bbox": [
+            2017,
+            2692,
+            83,
+            293
+          ],
+          "fill_ratio": 0.10386940252477486,
+          "stroke_width": 2.954362392425537,
+          "slant_deg": 13.392497753751101,
+          "fill_z": -1.6674117266681014,
+          "bold_hint": false,
+          "italic_hint": true,
+          "confidence": 0.41685293166702536
+        }
+      }
+    },
+    {
+      "id": "pg0-1666534",
+      "page": 0,
+      "text": "dr golding",
+      "bbox": [
+        875,
+        2634,
+        105,
+        363
+      ],
+      "consolidated": {
+        "bold": false,
+        "italic": true,
+        "bold_score": 0.49826655361421557,
+        "italic_score": 0.5017334463857845
+      },
+      "truth": {
+        "bold": null,
+        "italic": null
+      },
+      "services": {
+        "vision_pixel": {
+          "service": "vision_pixel",
+          "page": 0,
+          "text": "DR GOLDING",
+          "bbox": [
+            875,
+            2634,
+            105,
+            363
+          ],
+          "fill_ratio": 0.1866194411648957,
+          "stroke_width": 5.202019691467285,
+          "slant_deg": 23.82709775670331,
+          "fill_z": -0.2773525329277139,
+          "bold_hint": false,
+          "italic_hint": true,
+          "confidence": 0.06933813323192847
+        }
+      }
+    },
+    {
+      "id": "pg0-409363",
+      "page": 0,
+      "text": "08/25/2025",
+      "bbox": [
+        1017,
+        2909,
+        64,
+        197
+      ],
+      "consolidated": {
+        "bold": false,
+        "italic": true,
+        "bold_score": 0.48708684162133936,
+        "italic_score": 0.5129131583786606
+      },
+      "truth": {
+        "bold": null,
+        "italic": null
+      },
+      "services": {
+        "vision_pixel": {
+          "service": "vision_pixel",
+          "page": 0,
+          "text": "08/25/2025",
+          "bbox": [
+            1017,
+            2909,
+            64,
+            197
+          ],
+          "fill_ratio": 0.08010786802030456,
+          "stroke_width": 2.647371530532837,
+          "slant_deg": 14.208389055327586,
+          "fill_z": -2.0665648876589415,
+          "bold_hint": false,
+          "italic_hint": true,
+          "confidence": 0.5166412219147354
+        }
+      }
+    },
+    {
+      "id": "pg0-3331949",
+      "page": 0,
+      "text": "pin verified",
+      "bbox": [
+        2144,
+        2861,
+        57,
+        243
+      ],
+      "consolidated": {
+        "bold": false,
+        "italic": true,
+        "bold_score": 0.49214364366782065,
+        "italic_score": 0.5078563563321793
+      },
+      "truth": {
+        "bold": null,
+        "italic": null
+      },
+      "services": {
+        "vision_pixel": {
+          "service": "vision_pixel",
+          "page": 0,
+          "text": "PIN VERIFIED",
+          "bbox": [
+            2144,
+            2861,
+            57,
+            243
+          ],
+          "fill_ratio": 0.12829398599379105,
+          "stroke_width": 3.0130279064178467,
+          "slant_deg": 10.30484646876603,
+          "fill_z": -1.257120476508803,
+          "bold_hint": false,
+          "italic_hint": true,
+          "confidence": 0.3142801191272008
+        }
+      }
+    },
+    {
+      "id": "pg0-7171703",
+      "page": 0,
+      "text": "monday, 25 august 2025 13:28",
+      "bbox": [
+        157,
+        3103,
+        548,
+        48
+      ],
+      "consolidated": {
+        "bold": false,
+        "italic": false,
+        "bold_score": 0.4953735741288748,
+        "italic_score": 0.4953735741288748
+      },
+      "truth": {
+        "bold": null,
+        "italic": null
+      },
+      "services": {
+        "vision_pixel": {
+          "service": "vision_pixel",
+          "page": 0,
+          "text": "Monday, 25 August 2025 13:28",
+          "bbox": [
+            157,
+            3103,
+            548,
+            48
+          ],
+          "fill_ratio": 0.1590632603406326,
+          "stroke_width": 2.7928688526153564,
+          "slant_deg": 0.0,
+          "fill_z": -0.7402492654081227,
+          "bold_hint": false,
+          "italic_hint": false,
+          "confidence": 0.1850623163520307
+        }
+      }
+    },
+    {
+      "id": "pg0-134401",
+      "page": 0,
+      "text": "customer copy",
+      "bbox": [
+        2284,
+        2893,
+        58,
+        218
+      ],
+      "consolidated": {
+        "bold": false,
+        "italic": true,
+        "bold_score": 0.4897497681247728,
+        "italic_score": 0.5102502318752272
+      },
+      "truth": {
+        "bold": null,
+        "italic": null
+      },
+      "services": {
+        "vision_pixel": {
+          "service": "vision_pixel",
+          "page": 0,
+          "text": "CUSTOMER COPY",
+          "bbox": [
+            2284,
+            2893,
+            58,
+            218
+          ],
+          "fill_ratio": 0.30077507118000635,
+          "stroke_width": 16.436691284179688,
+          "slant_deg": 10.544572168164315,
+          "fill_z": 1.6402669102467113,
+          "bold_hint": false,
+          "italic_hint": true,
+          "confidence": 0.41006672756167784
+        }
+      }
+    },
+    {
+      "id": "pg0-5007503",
+      "page": 0,
+      "text": "purchase",
+      "bbox": [
+        1084,
+        2902,
+        73,
+        217
+      ],
+      "consolidated": {
+        "bold": false,
+        "italic": true,
+        "bold_score": 0.4906972115218893,
+        "italic_score": 0.5093027884781107
+      },
+      "truth": {
+        "bold": null,
+        "italic": null
+      },
+      "services": {
+        "vision_pixel": {
+          "service": "vision_pixel",
+          "page": 0,
+          "text": "Purchase",
+          "bbox": [
+            1084,
+            2902,
+            73,
+            217
+          ],
+          "fill_ratio": 0.11451297266586706,
+          "stroke_width": 3.123661756515503,
+          "slant_deg": 10.007979801441337,
+          "fill_z": -1.4886179427378,
+          "bold_hint": false,
+          "italic_hint": true,
+          "confidence": 0.37215448568445
+        }
+      }
+    },
+    {
+      "id": "pg0-7918974",
+      "page": 0,
+      "text": "transaction #:",
+      "bbox": [
+        1159,
+        2871,
+        70,
+        258
+      ],
+      "consolidated": {
+        "bold": false,
+        "italic": true,
+        "bold_score": 0.48820378867608794,
+        "italic_score": 0.5117962113239121
+      },
+      "truth": {
+        "bold": null,
+        "italic": null
+      },
+      "services": {
+        "vision_pixel": {
+          "service": "vision_pixel",
+          "page": 0,
+          "text": "Transaction #:",
+          "bbox": [
+            1159,
+            2871,
+            70,
+            258
+          ],
+          "fill_ratio": 0.0907530454042082,
+          "stroke_width": 2.767598867416382,
+          "slant_deg": 11.888658039627984,
+          "fill_z": -1.887744104796877,
+          "bold_hint": false,
+          "italic_hint": true,
+          "confidence": 0.47193602619921926
+        }
+      }
+    },
+    {
+      "id": "pg0-5981386",
+      "page": 0,
+      "text": "card type :",
+      "bbox": [
+        1201,
+        2948,
+        59,
+        181
+      ],
+      "consolidated": {
+        "bold": false,
+        "italic": true,
+        "bold_score": 0.4931653802718216,
+        "italic_score": 0.5068346197281783
+      },
+      "truth": {
+        "bold": null,
+        "italic": null
+      },
+      "services": {
+        "vision_pixel": {
+          "service": "vision_pixel",
+          "page": 0,
+          "text": "Card Type :",
+          "bbox": [
+            1201,
+            2948,
+            59,
+            181
+          ],
+          "fill_ratio": 0.13802790523457253,
+          "stroke_width": 2.861130952835083,
+          "slant_deg": 15.255118703057775,
+          "fill_z": -1.093607272719017,
+          "bold_hint": false,
+          "italic_hint": true,
+          "confidence": 0.27340181817975423
+        }
+      }
+    },
+    {
+      "id": "pg0-1563293",
+      "page": 0,
+      "text": "description",
+      "bbox": [
+        1269,
+        2925,
+        62,
+        210
+      ],
+      "consolidated": {
+        "bold": false,
+        "italic": true,
+        "bold_score": 0.48910964383588407,
+        "italic_score": 0.5108903561641159
+      },
+      "truth": {
+        "bold": null,
+        "italic": null
+      },
+      "services": {
+        "vision_pixel": {
+          "service": "vision_pixel",
+          "page": 0,
+          "text": "Description",
+          "bbox": [
+            1269,
+            2925,
+            62,
+            210
+          ],
+          "fill_ratio": 0.09938556067588325,
+          "stroke_width": 2.64219331741333,
+          "slant_deg": 10.46225087246058,
+          "fill_z": -1.7427326049148912,
+          "bold_hint": false,
+          "italic_hint": true,
+          "confidence": 0.4356831512287228
+        }
+      }
+    },
+    {
+      "id": "pg0-8988043",
+      "page": 0,
+      "text": "account :",
+      "bbox": [
+        1233,
+        2990,
+        54,
+        149
+      ],
+      "consolidated": {
+        "bold": false,
+        "italic": true,
+        "bold_score": 0.4918142059395423,
+        "italic_score": 0.5081857940604577
+      },
+      "truth": {
+        "bold": null,
+        "italic": null
+      },
+      "services": {
+        "vision_pixel": {
+          "service": "vision_pixel",
+          "page": 0,
+          "text": "Account :",
+          "bbox": [
+            1233,
+            2990,
+            54,
+            149
+          ],
+          "fill_ratio": 0.12515535669898087,
+          "stroke_width": 2.951704740524292,
+          "slant_deg": 10.30484646876603,
+          "fill_z": -1.3098440833939662,
+          "bold_hint": false,
+          "italic_hint": true,
+          "confidence": 0.32746102084849155
+        }
+      }
+    },
+    {
+      "id": "pg0-8348418",
+      "page": 0,
+      "text": "1851624733202508251325179714",
+      "bbox": [
+        1447,
+        2617,
+        110,
+        524
+      ],
+      "consolidated": {
+        "bold": false,
+        "italic": true,
+        "bold_score": 0.48847684995531565,
+        "italic_score": 0.5115231500446843
+      },
+      "truth": {
+        "bold": null,
+        "italic": null
+      },
+      "services": {
+        "vision_pixel": {
+          "service": "vision_pixel",
+          "page": 0,
+          "text": "1851624733202508251325179714",
+          "bbox": [
+            1447,
+            2617,
+            110,
+            524
+          ],
+          "fill_ratio": 0.09335530881332409,
+          "stroke_width": 2.837921380996704,
+          "slant_deg": 12.804266065286754,
+          "fill_z": -1.844030527911344,
+          "bold_hint": false,
+          "italic_hint": true,
+          "confidence": 0.461007631977836
+        }
+      }
+    },
+    {
+      "id": "pg0-4875702",
+      "page": 0,
+      "text": "entry:",
+      "bbox": [
+        1304,
+        3030,
+        54,
+        115
+      ],
+      "consolidated": {
+        "bold": false,
+        "italic": false,
+        "bold_score": 0.4916584591415449,
+        "italic_score": 0.4916584591415449
+      },
+      "truth": {
+        "bold": null,
+        "italic": null
+      },
+      "services": {
+        "vision_pixel": {
+          "service": "vision_pixel",
+          "page": 0,
+          "text": "Entry:",
+          "bbox": [
+            1304,
+            3030,
+            54,
+            115
+          ],
+          "fill_ratio": 0.12367149758454106,
+          "stroke_width": 2.740229845046997,
+          "slant_deg": 0.0,
+          "fill_z": -1.3347703799629984,
+          "bold_hint": false,
+          "italic_hint": false,
+          "confidence": 0.3336925949907496
+        }
+      }
+    },
+    {
+      "id": "pg0-6406373",
+      "page": 0,
+      "text": "trace id:",
+      "bbox": [
+        1379,
+        2968,
+        52,
+        179
+      ],
+      "consolidated": {
+        "bold": false,
+        "italic": true,
+        "bold_score": 0.4931116579018855,
+        "italic_score": 0.5068883420981145
+      },
+      "truth": {
+        "bold": null,
+        "italic": null
+      },
+      "services": {
+        "vision_pixel": {
+          "service": "vision_pixel",
+          "page": 0,
+          "text": "Trace ID:",
+          "bbox": [
+            1379,
+            2968,
+            52,
+            179
+          ],
+          "fill_ratio": 0.13751611516974646,
+          "stroke_width": 2.810962677001953,
+          "slant_deg": 18.43494882292201,
+          "fill_z": -1.102204470938711,
+          "bold_hint": false,
+          "italic_hint": true,
+          "confidence": 0.2755511177346778
+        }
+      }
+    },
+    {
+      "id": "pg0-2825224",
+      "page": 0,
+      "text": "ref. number:",
+      "bbox": [
+        1338,
+        2926,
+        65,
+        226
+      ],
+      "consolidated": {
+        "bold": false,
+        "italic": true,
+        "bold_score": 0.4909101515000506,
+        "italic_score": 0.5090898484999494
+      },
+      "truth": {
+        "bold": null,
+        "italic": null
+      },
+      "services": {
+        "vision_pixel": {
+          "service": "vision_pixel",
+          "page": 0,
+          "text": "Ref. Number:",
+          "bbox": [
+            1338,
+            2926,
+            65,
+            226
+          ],
+          "fill_ratio": 0.11654186521443159,
+          "stroke_width": 2.986786127090454,
+          "slant_deg": 10.156413135103683,
+          "fill_z": -1.454536016172075,
+          "bold_hint": false,
+          "italic_hint": true,
+          "confidence": 0.36363400404301877
+        }
+      }
+    },
+    {
+      "id": "pg0-8382839",
+      "page": 0,
+      "text": "global uid:",
+      "bbox": [
+        1412,
+        2953,
+        58,
+        199
+      ],
+      "consolidated": {
+        "bold": false,
+        "italic": false,
+        "bold_score": 0.4937008945091575,
+        "italic_score": 0.4937008945091575
+      },
+      "truth": {
+        "bold": null,
+        "italic": null
+      },
+      "services": {
+        "vision_pixel": {
+          "service": "vision_pixel",
+          "page": 0,
+          "text": "Global UID:",
+          "bbox": [
+            1412,
+            2953,
+            58,
+            199
+          ],
+          "fill_ratio": 0.14312944030497315,
+          "stroke_width": 2.8297362327575684,
+          "slant_deg": 0.0,
+          "fill_z": -1.0079102042543122,
+          "bold_hint": false,
+          "italic_hint": false,
+          "confidence": 0.25197755106357805
+        }
+      }
+    },
+    {
+      "id": "pg0-2469150",
+      "page": 0,
+      "text": "stan :",
+      "bbox": [
+        1483,
+        3076,
+        41,
+        89
+      ],
+      "consolidated": {
+        "bold": false,
+        "italic": false,
+        "bold_score": 0.4986125534458763,
+        "italic_score": 0.4986125534458763
+      },
+      "truth": {
+        "bold": null,
+        "italic": null
+      },
+      "services": {
+        "vision_pixel": {
+          "service": "vision_pixel",
+          "page": 0,
+          "text": "STAN :",
+          "bbox": [
+            1483,
+            3076,
+            41,
+            89
+          ],
+          "fill_ratio": 0.18991504521786792,
+          "stroke_width": 3.2987661361694336,
+          "slant_deg": 0.0,
+          "fill_z": -0.22199201844281788,
+          "bold_hint": false,
+          "italic_hint": false,
+          "confidence": 0.05549800461070447
+        }
+      }
+    },
+    {
+      "id": "pg0-1686092",
+      "page": 0,
+      "text": "auth. code:",
+      "bbox": [
+        1520,
+        2967,
+        57,
+        204
+      ],
+      "consolidated": {
+        "bold": false,
+        "italic": true,
+        "bold_score": 0.48885104055846795,
+        "italic_score": 0.5111489594415322
+      },
+      "truth": {
+        "bold": null,
+        "italic": null
+      },
+      "services": {
+        "vision_pixel": {
+          "service": "vision_pixel",
+          "page": 0,
+          "text": "Auth. Code:",
+          "bbox": [
+            1520,
+            2967,
+            57,
+            204
+          ],
+          "fill_ratio": 0.09692122463020296,
+          "stroke_width": 2.9283039569854736,
+          "slant_deg": 10.30484646876603,
+          "fill_z": -1.7841292378719042,
+          "bold_hint": false,
+          "italic_hint": true,
+          "confidence": 0.44603230946797606
+        }
+      }
+    },
+    {
+      "id": "pg0-1670991",
+      "page": 0,
+      "text": "batch #:",
+      "bbox": [
+        1579,
+        3030,
+        52,
+        152
+      ],
+      "consolidated": {
+        "bold": false,
+        "italic": false,
+        "bold_score": 0.49259468889389213,
+        "italic_score": 0.49259468889389213
+      },
+      "truth": {
+        "bold": null,
+        "italic": null
+      },
+      "services": {
+        "vision_pixel": {
+          "service": "vision_pixel",
+          "page": 0,
+          "text": "Batch #:",
+          "bbox": [
+            1579,
+            3030,
+            52,
+            152
+          ],
+          "fill_ratio": 0.1325910931174089,
+          "stroke_width": 3.0007636547088623,
+          "slant_deg": 0.0,
+          "fill_z": -1.184936422436637,
+          "bold_hint": false,
+          "italic_hint": false,
+          "confidence": 0.29623410560915925
+        }
+      }
+    },
+    {
+      "id": "pg0-7702222",
+      "page": 0,
+      "text": "response:",
+      "bbox": [
+        1614,
+        3022,
+        53,
+        158
+      ],
+      "consolidated": {
+        "bold": false,
+        "italic": true,
+        "bold_score": 0.49626372998800544,
+        "italic_score": 0.5037362700119946
+      },
+      "truth": {
+        "bold": null,
+        "italic": null
+      },
+      "services": {
+        "vision_pixel": {
+          "service": "vision_pixel",
+          "page": 0,
+          "text": "Response:",
+          "bbox": [
+            1614,
+            3022,
+            53,
+            158
+          ],
+          "fill_ratio": 0.16754239312156674,
+          "stroke_width": 2.969874858856201,
+          "slant_deg": 13.240519915187207,
+          "fill_z": -0.597814329173925,
+          "bold_hint": false,
+          "italic_hint": true,
+          "confidence": 0.14945358229348124
+        }
+      }
+    },
+    {
+      "id": "pg0-3322623",
+      "page": 0,
+      "text": "tvr :",
+      "bbox": [
+        1776,
+        3125,
+        36,
+        65
+      ],
+      "consolidated": {
+        "bold": false,
+        "italic": false,
+        "bold_score": 0.49664957497272516,
+        "italic_score": 0.49664957497272516
+      },
+      "truth": {
+        "bold": null,
+        "italic": null
+      },
+      "services": {
+        "vision_pixel": {
+          "service": "vision_pixel",
+          "page": 0,
+          "text": "TVR :",
+          "bbox": [
+            1776,
+            3125,
+            36,
+            65
+          ],
+          "fill_ratio": 0.23504273504273504,
+          "stroke_width": 3.3272550106048584,
+          "slant_deg": 0.0,
+          "fill_z": 0.5360760279799031,
+          "bold_hint": false,
+          "italic_hint": false,
+          "confidence": 0.13401900699497576
+        }
+      }
+    },
+    {
+      "id": "pg0-6956885",
+      "page": 0,
+      "text": "mode :",
+      "bbox": [
+        1707,
+        3100,
+        41,
+        91
+      ],
+      "consolidated": {
+        "bold": false,
+        "italic": true,
+        "bold_score": 0.49566317987331143,
+        "italic_score": 0.5043368201266886
+      },
+      "truth": {
+        "bold": null,
+        "italic": null
+      },
+      "services": {
+        "vision_pixel": {
+          "service": "vision_pixel",
+          "page": 0,
+          "text": "Mode :",
+          "bbox": [
+            1707,
+            3100,
+            41,
+            91
+          ],
+          "fill_ratio": 0.24443848834092738,
+          "stroke_width": 3.915412664413452,
+          "slant_deg": 10.30484646876603,
+          "fill_z": 0.6939086220052605,
+          "bold_hint": false,
+          "italic_hint": true,
+          "confidence": 0.17347715550131512
+        }
+      }
+    },
+    {
+      "id": "pg0-9360152",
+      "page": 0,
+      "text": "aid:",
+      "bbox": [
+        1742,
+        3125,
+        37,
+        66
+      ],
+      "consolidated": {
+        "bold": false,
+        "italic": false,
+        "bold_score": 0.4966914638941889,
+        "italic_score": 0.4966914638941889
+      },
+      "truth": {
+        "bold": null,
+        "italic": null
+      },
+      "services": {
+        "vision_pixel": {
+          "service": "vision_pixel",
+          "page": 0,
+          "text": "AID:",
+          "bbox": [
+            1742,
+            3125,
+            37,
+            66
+          ],
+          "fill_ratio": 0.23464373464373464,
+          "stroke_width": 3.42455792427063,
+          "slant_deg": 0.0,
+          "fill_z": 0.5293735033400212,
+          "bold_hint": false,
+          "italic_hint": false,
+          "confidence": 0.1323433758350053
+        }
+      }
+    },
+    {
+      "id": "pg0-5830308",
+      "page": 0,
+      "text": "cvr :",
+      "bbox": [
+        1811,
+        3121,
+        39,
+        78
+      ],
+      "consolidated": {
+        "bold": false,
+        "italic": false,
+        "bold_score": 0.499968176366892,
+        "italic_score": 0.499968176366892
+      },
+      "truth": {
+        "bold": null,
+        "italic": null
+      },
+      "services": {
+        "vision_pixel": {
+          "service": "vision_pixel",
+          "page": 0,
+          "text": "CVR :",
+          "bbox": [
+            1811,
+            3121,
+            39,
+            78
+          ],
+          "fill_ratio": 0.20282708744247205,
+          "stroke_width": 3.4167253971099854,
+          "slant_deg": 0.0,
+          "fill_z": -0.005091781304163167,
+          "bold_hint": false,
+          "italic_hint": false,
+          "confidence": 0.0012729453260407917
+        }
+      }
+    },
+    {
+      "id": "pg0-7391547",
+      "page": 0,
+      "text": "06011203a000000f030000000100",
+      "bbox": [
+        1846,
+        2689,
+        109,
+        511
+      ],
+      "consolidated": {
+        "bold": false,
+        "italic": true,
+        "bold_score": 0.49272059218841247,
+        "italic_score": 0.5072794078115875
+      },
+      "truth": {
+        "bold": null,
+        "italic": null
+      },
+      "services": {
+        "vision_pixel": {
+          "service": "vision_pixel",
+          "page": 0,
+          "text": "06011203A000000F030000000100",
+          "bbox": [
+            1846,
+            2689,
+            109,
+            511
+          ],
+          "fill_ratio": 0.13379055279268928,
+          "stroke_width": 2.7355570793151855,
+          "slant_deg": 10.491477012331586,
+          "fill_z": -1.164787550284498,
+          "bold_hint": false,
+          "italic_hint": true,
+          "confidence": 0.2911968875711245
+        }
+      }
+    },
+    {
+      "id": "pg0-8911919",
+      "page": 0,
+      "text": "000000000015116095",
+      "bbox": [
+        1879,
+        2870,
+        77,
+        340
+      ],
+      "consolidated": {
+        "bold": false,
+        "italic": true,
+        "bold_score": 0.49412941541462,
+        "italic_score": 0.5058705845853799
+      },
+      "truth": {
+        "bold": null,
+        "italic": null
+      },
+      "services": {
+        "vision_pixel": {
+          "service": "vision_pixel",
+          "page": 0,
+          "text": "000000000015116095",
+          "bbox": [
+            1879,
+            2870,
+            77,
+            340
+          ],
+          "fill_ratio": 0.14721161191749427,
+          "stroke_width": 2.6144793033599854,
+          "slant_deg": 10.7842978675626,
+          "fill_z": -0.9393366993513215,
+          "bold_hint": false,
+          "italic_hint": true,
+          "confidence": 0.23483417483783037
+        }
+      }
+    },
+    {
+      "id": "pg0-6340521",
+      "page": 0,
+      "text": "tsi :",
+      "bbox": [
+        1916,
+        3129,
+        38,
+        79
+      ],
+      "consolidated": {
+        "bold": false,
+        "italic": false,
+        "bold_score": 0.49231362282493046,
+        "italic_score": 0.49231362282493046
+      },
+      "truth": {
+        "bold": null,
+        "italic": null
+      },
+      "services": {
+        "vision_pixel": {
+          "service": "vision_pixel",
+          "page": 0,
+          "text": "TSI :",
+          "bbox": [
+            1916,
+            3129,
+            38,
+            79
+          ],
+          "fill_ratio": 0.12991339107261826,
+          "stroke_width": 2.7489733695983887,
+          "slant_deg": 0.0,
+          "fill_z": -1.229917239444425,
+          "bold_hint": false,
+          "italic_hint": false,
+          "confidence": 0.3074793098611063
+        }
+      }
+    },
+    {
+      "id": "pg0-5360760",
+      "page": 0,
+      "text": "respcode :",
+      "bbox": [
+        1952,
+        3038,
+        53,
+        178
+      ],
+      "consolidated": {
+        "bold": false,
+        "italic": true,
+        "bold_score": 0.49347520416155527,
+        "italic_score": 0.5065247958384448
+      },
+      "truth": {
+        "bold": null,
+        "italic": null
+      },
+      "services": {
+        "vision_pixel": {
+          "service": "vision_pixel",
+          "page": 0,
+          "text": "RespCode :",
+          "bbox": [
+            1952,
+            3038,
+            53,
+            178
+          ],
+          "fill_ratio": 0.14097943608225566,
+          "stroke_width": 2.887913465499878,
+          "slant_deg": 12.673087970973341,
+          "fill_z": -1.0440265999138556,
+          "bold_hint": false,
+          "italic_hint": true,
+          "confidence": 0.2610066499784639
+        }
+      }
+    },
+    {
+      "id": "pg0-7922004",
+      "page": 0,
+      "text": "ac:",
+      "bbox": [
+        1988,
+        3166,
+        35,
+        56
+      ],
+      "consolidated": {
+        "bold": false,
+        "italic": false,
+        "bold_score": 0.4938865414871776,
+        "italic_score": 0.4938865414871776
+      },
+      "truth": {
+        "bold": null,
+        "italic": null
+      },
+      "services": {
+        "vision_pixel": {
+          "service": "vision_pixel",
+          "page": 0,
+          "text": "AC:",
+          "bbox": [
+            1988,
+            3166,
+            35,
+            56
+          ],
+          "fill_ratio": 0.14489795918367346,
+          "stroke_width": 3.2533388137817383,
+          "slant_deg": 0.0,
+          "fill_z": -0.9782021102516963,
+          "bold_hint": false,
+          "italic_hint": false,
+          "confidence": 0.24455052756292409
+        }
+      }
+    },
+    {
+      "id": "pg0-180902",
+      "page": 0,
+      "text": "atc:",
+      "bbox": [
+        2019,
+        3158,
+        42,
+        72
+      ],
+      "consolidated": {
+        "bold": false,
+        "italic": false,
+        "bold_score": 0.4946443010385662,
+        "italic_score": 0.4946443010385662
+      },
+      "truth": {
+        "bold": null,
+        "italic": null
+      },
+      "services": {
+        "vision_pixel": {
+          "service": "vision_pixel",
+          "page": 0,
+          "text": "ATC:",
+          "bbox": [
+            2019,
+            3158,
+            42,
+            72
+          ],
+          "fill_ratio": 0.15211640211640212,
+          "stroke_width": 3.259455680847168,
+          "slant_deg": 0.0,
+          "fill_z": -0.8569446084060736,
+          "bold_hint": false,
+          "italic_hint": false,
+          "confidence": 0.2142361521015184
+        }
+      }
+    },
+    {
+      "id": "pg0-9809175",
+      "page": 0,
+      "text": "appn:",
+      "bbox": [
+        2059,
+        3144,
+        49,
+        101
+      ],
+      "consolidated": {
+        "bold": false,
+        "italic": false,
+        "bold_score": 0.49165739360158994,
+        "italic_score": 0.49165739360158994
+      },
+      "truth": {
+        "bold": null,
+        "italic": null
+      },
+      "services": {
+        "vision_pixel": {
+          "service": "vision_pixel",
+          "page": 0,
+          "text": "APPN:",
+          "bbox": [
+            2059,
+            3144,
+            49,
+            101
+          ],
+          "fill_ratio": 0.12366134572640937,
+          "stroke_width": 3.2396695613861084,
+          "slant_deg": 0.0,
+          "fill_z": -1.3349409138257182,
+          "bold_hint": false,
+          "italic_hint": false,
+          "confidence": 0.33373522845642956
+        }
+      }
+    },
+    {
+      "id": "pg0-5963196",
+      "page": 0,
+      "text": "amount :",
+      "bbox": [
+        2193,
+        3078,
+        65,
+        183
+      ],
+      "consolidated": {
+        "bold": false,
+        "italic": true,
+        "bold_score": 0.49354624077032333,
+        "italic_score": 0.5064537592296767
+      },
+      "truth": {
+        "bold": null,
+        "italic": null
+      },
+      "services": {
+        "vision_pixel": {
+          "service": "vision_pixel",
+          "page": 0,
+          "text": "Amount :",
+          "bbox": [
+            2193,
+            3078,
+            65,
+            183
+          ],
+          "fill_ratio": 0.14165615804960066,
+          "stroke_width": 3.519479990005493,
+          "slant_deg": 10.30484646876603,
+          "fill_z": -1.0326588276714155,
+          "bold_hint": false,
+          "italic_hint": true,
+          "confidence": 0.25816470691785387
+        }
+      }
+    }
+  ],
+  "summary": {
+    "toggles": {
+      "pymupdf": true,
+      "azure": true,
+      "tesseract": true,
+      "vision_pixel": true
+    },
+    "weights": {
+      "pymupdf": 0.3,
+      "azure": 0.4,
+      "tesseract": 0.2,
+      "vision_pixel": 0.1
+    },
+    "errors": {},
+    "counts": {
+      "pymupdf_spans": 152,
+      "azure_style_spans": 2,
+      "tesseract_words": 0,
+      "vision_word_rois": 121,
+      "items": 201
+    },
+    "notes": [
+      "Consolidation key is (page, normalized_text). Multiple occurrences of the same word on a page will merge.",
+      "Tune weights in this module or via the Step 2 UI sliders."
+    ]
+  },
+  "instructions": "Fill in truth.bold and truth.italic for as many items as you can. Use true/false; leave null if unsure. Re-upload in Step 2 to score accuracy."
+}

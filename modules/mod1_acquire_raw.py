@@ -146,7 +146,11 @@ def run(
 
     # Persist combined
     combined_path = os.path.join(out_dir, "raw_signals.step1.json")
-    save_json(combined_path, payload.model_dump())
+    combined = payload.model_dump()
+    if source_path:
+        # Make Step-2 (and any offline rerun) able to find the original source file
+        combined["source_file_path"] = source_path
+    save_json(combined_path, combined)
 
     artifacts = {
         "combined": combined_path,

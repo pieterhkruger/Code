@@ -1,0 +1,25 @@
+{
+  "pages": [
+    {
+      "page_index": 0,
+      "line_count": 121,
+      "accepted": true,
+      "boundary_index": 50,
+      "debug": {
+        "method": "kmeans_fallback",
+        "centroids": [
+          1222.97,
+          2778.239436619718
+        ],
+        "cluster_sizes": [
+          50,
+          71
+        ],
+        "separation_norm_span": 0.5021858045268706,
+        "kmeans_boundary_index": 50,
+        "page_span": 3097.0,
+        "note": "Accepted by k-means fallback"
+      }
+    }
+  ]
+}

@@ -1,0 +1,3017 @@
+{
+  "items": [
+    {
+      "id": "pg0-1635153",
+      "page": 0,
+      "text": "tax",
+      "bbox": [
+        1452,
+        1964,
+        73,
+        39
+      ],
+      "consolidated": {
+        "bold": false,
+        "italic": false,
+        "bold_score": 0.45440100179537696,
+        "italic_score": 0.45440100179537696
+      }
+    },
+    {
+      "id": "pg0-9586252",
+      "page": 0,
+      "text": "invoice",
+      "bbox": null,
+      "consolidated": {
+        "bold": false,
+        "italic": false,
+        "bold_score": 0.45512110762641994,
+        "italic_score": 0.45512110762641994
+      }
+    },
+    {
+      "id": "pg0-4348756",
+      "page": 0,
+      "text": "dr.",
+      "bbox": null,
+      "consolidated": {
+        "bold": false,
+        "italic": false,
+        "bold_score": 0.45512110762641994,
+        "italic_score": 0.45512110762641994
+      }
+    },
+    {
+      "id": "pg0-9047395",
+      "page": 0,
+      "text": "craige",
+      "bbox": [
+        952,
+        2710,
+        80,
+        219
+      ],
+      "consolidated": {
+        "bold": false,
+        "italic": false,
+        "bold_score": 0.4520012292500502,
+        "italic_score": 0.4582445130493062
+      }
+    },
+    {
+      "id": "pg0-9139224",
+      "page": 0,
+      "text": "golding",
+      "bbox": null,
+      "consolidated": {
+        "bold": false,
+        "italic": false,
+        "bold_score": 0.45512110762641994,
+        "italic_score": 0.45512110762641994
+      }
+    },
+    {
+      "id": "pg0-1099033",
+      "page": 0,
+      "text": "medical",
+      "bbox": null,
+      "consolidated": {
+        "bold": false,
+        "italic": false,
+        "bold_score": 0.45512110762641994,
+        "italic_score": 0.45512110762641994
+      }
+    },
+    {
+      "id": "pg0-8594096",
+      "page": 0,
+      "text": "practice",
+      "bbox": null,
+      "consolidated": {
+        "bold": false,
+        "italic": false,
+        "bold_score": 0.45512110762641994,
+        "italic_score": 0.45512110762641994
+      }
+    },
+    {
+      "id": "pg0-2430171",
+      "page": 0,
+      "text": "65",
+      "bbox": null,
+      "consolidated": {
+        "bold": false,
+        "italic": false,
+        "bold_score": 0.45512110762641994,
+        "italic_score": 0.45512110762641994
+      }
+    },
+    {
+      "id": "pg0-8957636",
+      "page": 0,
+      "text": "central",
+      "bbox": null,
+      "consolidated": {
+        "bold": false,
+        "italic": false,
+        "bold_score": 0.45512110762641994,
+        "italic_score": 0.45512110762641994
+      }
+    },
+    {
+      "id": "pg0-1194727",
+      "page": 0,
+      "text": "street",
+      "bbox": null,
+      "consolidated": {
+        "bold": false,
+        "italic": false,
+        "bold_score": 0.45512110762641994,
+        "italic_score": 0.45512110762641994
+      }
+    },
+    {
+      "id": "pg0-5181291",
+      "page": 0,
+      "text": "houghton",
+      "bbox": null,
+      "consolidated": {
+        "bold": false,
+        "italic": false,
+        "bold_score": 0.45512110762641994,
+        "italic_score": 0.45512110762641994
+      }
+    },
+    {
+      "id": "pg0-8507076",
+      "page": 0,
+      "text": "estate",
+      "bbox": null,
+      "consolidated": {
+        "bold": false,
+        "italic": false,
+        "bold_score": 0.45512110762641994,
+        "italic_score": 0.45512110762641994
+      }
+    },
+    {
+      "id": "pg0-5188132",
+      "page": 0,
+      "text": "johannesburg",
+      "bbox": [
+        152,
+        457,
+        261,
+        47
+      ],
+      "consolidated": {
+        "bold": false,
+        "italic": false,
+        "bold_score": 0.45442332516388123,
+        "italic_score": 0.45442332516388123
+      }
+    },
+    {
+      "id": "pg0-5654910",
+      "page": 0,
+      "text": "2187",
+      "bbox": [
+        150,
+        501,
+        95,
+        44
+      ],
+      "consolidated": {
+        "bold": false,
+        "italic": false,
+        "bold_score": 0.45504426580780466,
+        "italic_score": 0.45504426580780466
+      }
+    },
+    {
+      "id": "pg0-4789964",
+      "page": 0,
+      "text": "please",
+      "bbox": null,
+      "consolidated": {
+        "bold": false,
+        "italic": false,
+        "bold_score": 0.45512110762641994,
+        "italic_score": 0.45512110762641994
+      }
+    },
+    {
+      "id": "pg0-9368902",
+      "page": 0,
+      "text": "retain",
+      "bbox": null,
+      "consolidated": {
+        "bold": false,
+        "italic": false,
+        "bold_score": 0.45512110762641994,
+        "italic_score": 0.45512110762641994
+      }
+    },
+    {
+      "id": "pg0-2212052",
+      "page": 0,
+      "text": "invoices",
+      "bbox": null,
+      "consolidated": {
+        "bold": false,
+        "italic": false,
+        "bold_score": 0.45512110762641994,
+        "italic_score": 0.45512110762641994
+      }
+    },
+    {
+      "id": "pg0-2512319",
+      "page": 0,
+      "text": "for",
+      "bbox": null,
+      "consolidated": {
+        "bold": false,
+        "italic": false,
+        "bold_score": 0.45512110762641994,
+        "italic_score": 0.45512110762641994
+      }
+    },
+    {
+      "id": "pg0-7680146",
+      "page": 0,
+      "text": "purposes!",
+      "bbox": null,
+      "consolidated": {
+        "bold": false,
+        "italic": false,
+        "bold_score": 0.45512110762641994,
+        "italic_score": 0.45512110762641994
+      }
+    },
+    {
+      "id": "pg0-7135186",
+      "page": 0,
+      "text": "no:",
+      "bbox": null,
+      "consolidated": {
+        "bold": false,
+        "italic": false,
+        "bold_score": 0.45512110762641994,
+        "italic_score": 0.45512110762641994
+      }
+    },
+    {
+      "id": "pg0-9221272",
+      "page": 0,
+      "text": "1811479",
+      "bbox": null,
+      "consolidated": {
+        "bold": false,
+        "italic": false,
+        "bold_score": 0.45512110762641994,
+        "italic_score": 0.45512110762641994
+      }
+    },
+    {
+      "id": "pg0-2935187",
+      "page": 0,
+      "text": "|",
+      "bbox": null,
+      "consolidated": {
+        "bold": false,
+        "italic": false,
+        "bold_score": 0.45512110762641994,
+        "italic_score": 0.45512110762641994
+      }
+    },
+    {
+      "id": "pg0-561248",
+      "page": 0,
+      "text": "mp",
+      "bbox": null,
+      "consolidated": {
+        "bold": false,
+        "italic": false,
+        "bold_score": 0.45512110762641994,
+        "italic_score": 0.45512110762641994
+      }
+    },
+    {
+      "id": "pg0-5439662",
+      "page": 0,
+      "text": "0412104",
+      "bbox": null,
+      "consolidated": {
+        "bold": false,
+        "italic": false,
+        "bold_score": 0.45512110762641994,
+        "italic_score": 0.45512110762641994
+      }
+    },
+    {
+      "id": "pg0-3050707",
+      "page": 0,
+      "text": "4670187568",
+      "bbox": null,
+      "consolidated": {
+        "bold": false,
+        "italic": false,
+        "bold_score": 0.45512110762641994,
+        "italic_score": 0.45512110762641994
+      }
+    },
+    {
+      "id": "pg0-1492249",
+      "page": 0,
+      "text": "date",
+      "bbox": [
+        578,
+        2690,
+        93,
+        40
+      ],
+      "consolidated": {
+        "bold": false,
+        "italic": false,
+        "bold_score": 0.45060768066882445,
+        "italic_score": 0.45060768066882445
+      }
+    },
+    {
+      "id": "pg0-5961733",
+      "page": 0,
+      "text": "number",
+      "bbox": [
+        147,
+        893,
+        150,
+        44
+      ],
+      "consolidated": {
+        "bold": false,
+        "italic": false,
+        "bold_score": 0.45297059601570316,
+        "italic_score": 0.45297059601570316
+      }
+    },
+    {
+      "id": "pg0-6701971",
+      "page": 0,
+      "text": "reference",
+      "bbox": [
+        149,
+        978,
+        192,
+        46
+      ],
+      "consolidated": {
+        "bold": false,
+        "italic": false,
+        "bold_score": 0.45292929434168083,
+        "italic_score": 0.45292929434168083
+      }
+    },
+    {
+      "id": "pg0-1372089",
+      "page": 0,
+      "text": "client",
+      "bbox": [
+        146,
+        1096,
+        114,
+        45
+      ],
+      "consolidated": {
+        "bold": false,
+        "italic": false,
+        "bold_score": 0.4545539176820259,
+        "italic_score": 0.4545539176820259
+      }
+    },
+    {
+      "id": "pg0-5340069",
+      "page": 0,
+      "text": "2025/08/25",
+      "bbox": [
+        152,
+        1730,
+        212,
+        42
+      ],
+      "consolidated": {
+        "bold": false,
+        "italic": false,
+        "bold_score": 0.45044286350284507,
+        "italic_score": 0.45044286350284507
+      }
+    },
+    {
+      "id": "pg0-5881948",
+      "page": 0,
+      "text": "code",
+      "bbox": [
+        410,
+        1497,
+        108,
+        39
+      ],
+      "consolidated": {
+        "bold": false,
+        "italic": false,
+        "bold_score": 0.4446733251146574,
+        "italic_score": 0.4446733251146574
+      }
+    },
+    {
+      "id": "pg0-4627566",
+      "page": 0,
+      "text": "0192",
+      "bbox": [
+        397,
+        1728,
+        107,
+        43
+      ],
+      "consolidated": {
+        "bold": false,
+        "italic": false,
+        "bold_score": 0.454931026927694,
+        "italic_score": 0.454931026927694
+      }
+    },
+    {
+      "id": "pg0-7905839",
+      "page": 0,
+      "text": "banking",
+      "bbox": null,
+      "consolidated": {
+        "bold": false,
+        "italic": false,
+        "bold_score": 0.45512110762641994,
+        "italic_score": 0.45512110762641994
+      }
+    },
+    {
+      "id": "pg0-5024166",
+      "page": 0,
+      "text": "details:",
+      "bbox": null,
+      "consolidated": {
+        "bold": false,
+        "italic": false,
+        "bold_score": 0.45512110762641994,
+        "italic_score": 0.45512110762641994
+      }
+    },
+    {
+      "id": "pg0-8993857",
+      "page": 0,
+      "text": "nedbank",
+      "bbox": null,
+      "consolidated": {
+        "bold": false,
+        "italic": false,
+        "bold_score": 0.45512110762641994,
+        "italic_score": 0.45512110762641994
+      }
+    },
+    {
+      "id": "pg0-8605420",
+      "page": 0,
+      "text": "killarney",
+      "bbox": null,
+      "consolidated": {
+        "bold": false,
+        "italic": false,
+        "bold_score": 0.45512110762641994,
+        "italic_score": 0.45512110762641994
+      }
+    },
+    {
+      "id": "pg0-8143399",
+      "page": 0,
+      "text": "1096610833",
+      "bbox": [
+        161,
+        2200,
+        222,
+        41
+      ],
+      "consolidated": {
+        "bold": false,
+        "italic": false,
+        "bold_score": 0.45044425654938014,
+        "italic_score": 0.45044425654938014
+      }
+    },
+    {
+      "id": "pg0-2720943",
+      "page": 0,
+      "text": "2025/08/25 13:28:17",
+      "bbox": [
+        553,
+        809,
+        371,
+        44
+      ],
+      "consolidated": {
+        "bold": false,
+        "italic": false,
+        "bold_score": 0.4530924404406652,
+        "italic_score": 0.4530924404406652
+      }
+    },
+    {
+      "id": "pg0-9268070",
+      "page": 0,
+      "text": "receipt",
+      "bbox": [
+        159,
+        2699,
+        145,
+        38
+      ],
+      "consolidated": {
+        "bold": false,
+        "italic": false,
+        "bold_score": 0.46809092214147974,
+        "italic_score": 0.44221189396161537
+      }
+    },
+    {
+      "id": "pg0-6450330",
+      "page": 0,
+      "text": "in148507",
+      "bbox": [
+        553,
+        893,
+        178,
+        46
+      ],
+      "consolidated": {
+        "bold": false,
+        "italic": false,
+        "bold_score": 0.45297536378293196,
+        "italic_score": 0.45297536378293196
+      }
+    },
+    {
+      "id": "pg0-188614",
+      "page": 0,
+      "text": "kruger",
+      "bbox": null,
+      "consolidated": {
+        "bold": false,
+        "italic": false,
+        "bold_score": 0.45512110762641994,
+        "italic_score": 0.45512110762641994
+      }
+    },
+    {
+      "id": "pg0-6263540",
+      "page": 0,
+      "text": "pieter",
+      "bbox": null,
+      "consolidated": {
+        "bold": false,
+        "italic": false,
+        "bold_score": 0.45512110762641994,
+        "italic_score": 0.45512110762641994
+      }
+    },
+    {
+      "id": "pg0-7211234",
+      "page": 0,
+      "text": "h 1980/05/25",
+      "bbox": null,
+      "consolidated": {
+        "bold": false,
+        "italic": false,
+        "bold_score": 0.45512110762641994,
+        "italic_score": 0.45512110762641994
+      }
+    },
+    {
+      "id": "pg0-3864532",
+      "page": 0,
+      "text": "notes",
+      "bbox": [
+        157,
+        2884,
+        117,
+        34
+      ],
+      "consolidated": {
+        "bold": false,
+        "italic": false,
+        "bold_score": 0.4699466558239957,
+        "italic_score": 0.4403746896652952
+      }
+    },
+    {
+      "id": "pg0-6133376",
+      "page": 0,
+      "text": "pieter h",
+      "bbox": null,
+      "consolidated": {
+        "bold": false,
+        "italic": false,
+        "bold_score": 0.45512110762641994,
+        "italic_score": 0.45512110762641994
+      }
+    },
+    {
+      "id": "pg0-3174325",
+      "page": 0,
+      "text": "269",
+      "bbox": null,
+      "consolidated": {
+        "bold": false,
+        "italic": false,
+        "bold_score": 0.45512110762641994,
+        "italic_score": 0.45512110762641994
+      }
+    },
+    {
+      "id": "pg0-2477893",
+      "page": 0,
+      "text": "herder",
+      "bbox": null,
+      "consolidated": {
+        "bold": false,
+        "italic": false,
+        "bold_score": 0.45512110762641994,
+        "italic_score": 0.45512110762641994
+      }
+    },
+    {
+      "id": "pg0-1050372",
+      "page": 0,
+      "text": "drive",
+      "bbox": null,
+      "consolidated": {
+        "bold": false,
+        "italic": false,
+        "bold_score": 0.45512110762641994,
+        "italic_score": 0.45512110762641994
+      }
+    },
+    {
+      "id": "pg0-2649027",
+      "page": 0,
+      "text": "northcliff",
+      "bbox": [
+        553,
+        1233,
+        167,
+        43
+      ],
+      "consolidated": {
+        "bold": false,
+        "italic": false,
+        "bold_score": 0.45094293710888894,
+        "italic_score": 0.45094293710888894
+      }
+    },
+    {
+      "id": "pg0-94269",
+      "page": 0,
+      "text": "randburg",
+      "bbox": [
+        555,
+        1279,
+        180,
+        43
+      ],
+      "consolidated": {
+        "bold": false,
+        "italic": false,
+        "bold_score": 0.45033840235826716,
+        "italic_score": 0.45033840235826716
+      }
+    },
+    {
+      "id": "pg0-2597652",
+      "page": 0,
+      "text": "south",
+      "bbox": null,
+      "consolidated": {
+        "bold": false,
+        "italic": false,
+        "bold_score": 0.45512110762641994,
+        "italic_score": 0.45512110762641994
+      }
+    },
+    {
+      "id": "pg0-8976239",
+      "page": 0,
+      "text": "africa",
+      "bbox": null,
+      "consolidated": {
+        "bold": false,
+        "italic": false,
+        "bold_score": 0.45512110762641994,
+        "italic_score": 0.45512110762641994
+      }
+    },
+    {
+      "id": "pg0-1449058",
+      "page": 0,
+      "text": "pieterhkruger@gmail.com",
+      "bbox": [
+        557,
+        1378,
+        463,
+        45
+      ],
+      "consolidated": {
+        "bold": false,
+        "italic": false,
+        "bold_score": 0.45289378395072505,
+        "italic_score": 0.45289378395072505
+      }
+    },
+    {
+      "id": "pg0-6702885",
+      "page": 0,
+      "text": "011",
+      "bbox": null,
+      "consolidated": {
+        "bold": false,
+        "italic": false,
+        "bold_score": 0.45512110762641994,
+        "italic_score": 0.45512110762641994
+      }
+    },
+    {
+      "id": "pg0-834840",
+      "page": 0,
+      "text": "483",
+      "bbox": null,
+      "consolidated": {
+        "bold": false,
+        "italic": false,
+        "bold_score": 0.45512110762641994,
+        "italic_score": 0.45512110762641994
+      }
+    },
+    {
+      "id": "pg0-5984103",
+      "page": 0,
+      "text": "1080",
+      "bbox": null,
+      "consolidated": {
+        "bold": false,
+        "italic": false,
+        "bold_score": 0.45512110762641994,
+        "italic_score": 0.45512110762641994
+      }
+    },
+    {
+      "id": "pg0-1552524",
+      "page": 0,
+      "text": "718",
+      "bbox": null,
+      "consolidated": {
+        "bold": false,
+        "italic": false,
+        "bold_score": 0.45512110762641994,
+        "italic_score": 0.45512110762641994
+      }
+    },
+    {
+      "id": "pg0-6352736",
+      "page": 0,
+      "text": "3004",
+      "bbox": null,
+      "consolidated": {
+        "bold": false,
+        "italic": false,
+        "bold_score": 0.45512110762641994,
+        "italic_score": 0.45512110762641994
+      }
+    },
+    {
+      "id": "pg0-6861355",
+      "page": 0,
+      "text": "patients@craigegolding.co.za",
+      "bbox": null,
+      "consolidated": {
+        "bold": false,
+        "italic": false,
+        "bold_score": 0.45512110762641994,
+        "italic_score": 0.45512110762641994
+      }
+    },
+    {
+      "id": "pg0-9959484",
+      "page": 0,
+      "text": "| http://www.drcgolding.co.za",
+      "bbox": null,
+      "consolidated": {
+        "bold": false,
+        "italic": false,
+        "bold_score": 0.45512110762641994,
+        "italic_score": 0.45512110762641994
+      }
+    },
+    {
+      "id": "pg0-3620515",
+      "page": 0,
+      "text": "whatsapp:",
+      "bbox": null,
+      "consolidated": {
+        "bold": false,
+        "italic": false,
+        "bold_score": 0.45512110762641994,
+        "italic_score": 0.45512110762641994
+      }
+    },
+    {
+      "id": "pg0-7076340",
+      "page": 0,
+      "text": "0838042903",
+      "bbox": null,
+      "consolidated": {
+        "bold": false,
+        "italic": false,
+        "bold_score": 0.45512110762641994,
+        "italic_score": 0.45512110762641994
+      }
+    },
+    {
+      "id": "pg0-4832413",
+      "page": 0,
+      "text": "no",
+      "bbox": null,
+      "consolidated": {
+        "bold": false,
+        "italic": false,
+        "bold_score": 0.45512110762641994,
+        "italic_score": 0.45512110762641994
+      }
+    },
+    {
+      "id": "pg0-3356059",
+      "page": 0,
+      "text": "return",
+      "bbox": null,
+      "consolidated": {
+        "bold": false,
+        "italic": false,
+        "bold_score": 0.45512110762641994,
+        "italic_score": 0.45512110762641994
+      }
+    },
+    {
+      "id": "pg0-6476509",
+      "page": 0,
+      "text": "or",
+      "bbox": null,
+      "consolidated": {
+        "bold": false,
+        "italic": false,
+        "bold_score": 0.45512110762641994,
+        "italic_score": 0.45512110762641994
+      }
+    },
+    {
+      "id": "pg0-2854978",
+      "page": 0,
+      "text": "exchange",
+      "bbox": null,
+      "consolidated": {
+        "bold": false,
+        "italic": false,
+        "bold_score": 0.45512110762641994,
+        "italic_score": 0.45512110762641994
+      }
+    },
+    {
+      "id": "pg0-4301579",
+      "page": 0,
+      "text": "on",
+      "bbox": null,
+      "consolidated": {
+        "bold": false,
+        "italic": false,
+        "bold_score": 0.45512110762641994,
+        "italic_score": 0.45512110762641994
+      }
+    },
+    {
+      "id": "pg0-1980801",
+      "page": 0,
+      "text": "products",
+      "bbox": null,
+      "consolidated": {
+        "bold": false,
+        "italic": false,
+        "bold_score": 0.45512110762641994,
+        "italic_score": 0.45512110762641994
+      }
+    },
+    {
+      "id": "pg0-7037046",
+      "page": 0,
+      "text": "once",
+      "bbox": null,
+      "consolidated": {
+        "bold": false,
+        "italic": false,
+        "bold_score": 0.45512110762641994,
+        "italic_score": 0.45512110762641994
+      }
+    },
+    {
+      "id": "pg0-2330450",
+      "page": 0,
+      "text": "dispensed.",
+      "bbox": [
+        159,
+        2329,
+        238,
+        44
+      ],
+      "consolidated": {
+        "bold": false,
+        "italic": false,
+        "bold_score": 0.45140605159885,
+        "italic_score": 0.45140605159885
+      }
+    },
+    {
+      "id": "pg0-7983389",
+      "page": 0,
+      "text": "item",
+      "bbox": [
+        706,
+        1498,
+        75,
+        36
+      ],
+      "consolidated": {
+        "bold": false,
+        "italic": false,
+        "bold_score": 0.47355525376613955,
+        "italic_score": 0.43680914233775764
+      }
+    },
+    {
+      "id": "pg0-3984037",
+      "page": 0,
+      "text": "consultation - follow-up",
+      "bbox": [
+        702,
+        1726,
+        431,
+        43
+      ],
+      "consolidated": {
+        "bold": false,
+        "italic": false,
+        "bold_score": 0.45469750843560625,
+        "italic_score": 0.45469750843560625
+      }
+    },
+    {
+      "id": "pg0-3849615",
+      "page": 0,
+      "text": "icd10:",
+      "bbox": null,
+      "consolidated": {
+        "bold": false,
+        "italic": false,
+        "bold_score": 0.45512110762641994,
+        "italic_score": 0.45512110762641994
+      }
+    },
+    {
+      "id": "pg0-3512422",
+      "page": 0,
+      "text": "e27.9",
+      "bbox": null,
+      "consolidated": {
+        "bold": false,
+        "italic": false,
+        "bold_score": 0.45512110762641994,
+        "italic_score": 0.45512110762641994
+      }
+    },
+    {
+      "id": "pg0-7104633",
+      "page": 0,
+      "text": "monday,",
+      "bbox": null,
+      "consolidated": {
+        "bold": false,
+        "italic": false,
+        "bold_score": 0.45512110762641994,
+        "italic_score": 0.45512110762641994
+      }
+    },
+    {
+      "id": "pg0-851546",
+      "page": 0,
+      "text": "25",
+      "bbox": null,
+      "consolidated": {
+        "bold": false,
+        "italic": false,
+        "bold_score": 0.45512110762641994,
+        "italic_score": 0.45512110762641994
+      }
+    },
+    {
+      "id": "pg0-9287150",
+      "page": 0,
+      "text": "august 2025 13:28",
+      "bbox": null,
+      "consolidated": {
+        "bold": false,
+        "italic": false,
+        "bold_score": 0.45512110762641994,
+        "italic_score": 0.45512110762641994
+      }
+    },
+    {
+      "id": "pg0-2629153",
+      "page": 0,
+      "text": "nb!",
+      "bbox": null,
+      "consolidated": {
+        "bold": false,
+        "italic": false,
+        "bold_score": 0.45512110762641994,
+        "italic_score": 0.45512110762641994
+      }
+    },
+    {
+      "id": "pg0-8379059",
+      "page": 0,
+      "text": "price subject",
+      "bbox": null,
+      "consolidated": {
+        "bold": false,
+        "italic": false,
+        "bold_score": 0.45512110762641994,
+        "italic_score": 0.45512110762641994
+      }
+    },
+    {
+      "id": "pg0-5375510",
+      "page": 0,
+      "text": "to",
+      "bbox": null,
+      "consolidated": {
+        "bold": false,
+        "italic": false,
+        "bold_score": 0.45512110762641994,
+        "italic_score": 0.45512110762641994
+      }
+    },
+    {
+      "id": "pg0-8876397",
+      "page": 0,
+      "text": "change",
+      "bbox": null,
+      "consolidated": {
+        "bold": false,
+        "italic": false,
+        "bold_score": 0.45512110762641994,
+        "italic_score": 0.45512110762641994
+      }
+    },
+    {
+      "id": "pg0-3279022",
+      "page": 0,
+      "text": "without",
+      "bbox": null,
+      "consolidated": {
+        "bold": false,
+        "italic": false,
+        "bold_score": 0.45512110762641994,
+        "italic_score": 0.45512110762641994
+      }
+    },
+    {
+      "id": "pg0-5041891",
+      "page": 0,
+      "text": "prior",
+      "bbox": null,
+      "consolidated": {
+        "bold": false,
+        "italic": false,
+        "bold_score": 0.45512110762641994,
+        "italic_score": 0.45512110762641994
+      }
+    },
+    {
+      "id": "pg0-1462732",
+      "page": 0,
+      "text": "notification,",
+      "bbox": null,
+      "consolidated": {
+        "bold": false,
+        "italic": false,
+        "bold_score": 0.45512110762641994,
+        "italic_score": 0.45512110762641994
+      }
+    },
+    {
+      "id": "pg0-8237483",
+      "page": 0,
+      "text": "confipam",
+      "bbox": null,
+      "consolidated": {
+        "bold": false,
+        "italic": false,
+        "bold_score": 0.45512110762641994,
+        "italic_score": 0.45512110762641994
+      }
+    },
+    {
+      "id": "pg0-7455977",
+      "page": 0,
+      "text": "prices",
+      "bbox": null,
+      "consolidated": {
+        "bold": false,
+        "italic": false,
+        "bold_score": 0.45512110762641994,
+        "italic_score": 0.45512110762641994
+      }
+    },
+    {
+      "id": "pg0-431864",
+      "page": 0,
+      "text": "when",
+      "bbox": null,
+      "consolidated": {
+        "bold": false,
+        "italic": false,
+        "bold_score": 0.45512110762641994,
+        "italic_score": 0.45512110762641994
+      }
+    },
+    {
+      "id": "pg0-6610878",
+      "page": 0,
+      "text": "placing",
+      "bbox": null,
+      "consolidated": {
+        "bold": false,
+        "italic": false,
+        "bold_score": 0.45512110762641994,
+        "italic_score": 0.45512110762641994
+      }
+    },
+    {
+      "id": "pg0-6173969",
+      "page": 0,
+      "text": "an",
+      "bbox": null,
+      "consolidated": {
+        "bold": false,
+        "italic": false,
+        "bold_score": 0.45512110762641994,
+        "italic_score": 0.45512110762641994
+      }
+    },
+    {
+      "id": "pg0-7022121",
+      "page": 0,
+      "text": "order.",
+      "bbox": null,
+      "consolidated": {
+        "bold": false,
+        "italic": false,
+        "bold_score": 0.45512110762641994,
+        "italic_score": 0.45512110762641994
+      }
+    },
+    {
+      "id": "pg0-426369",
+      "page": 0,
+      "text": "dr",
+      "bbox": null,
+      "consolidated": {
+        "bold": false,
+        "italic": false,
+        "bold_score": 0.45512110762641994,
+        "italic_score": 0.45512110762641994
+      }
+    },
+    {
+      "id": "pg0-5945294",
+      "page": 0,
+      "text": "aid",
+      "bbox": null,
+      "consolidated": {
+        "bold": false,
+        "italic": false,
+        "bold_score": 0.45512110762641994,
+        "italic_score": 0.45512110762641994
+      }
+    },
+    {
+      "id": "pg0-6774967",
+      "page": 0,
+      "text": "13:25:17",
+      "bbox": [
+        1071,
+        2567,
+        55,
+        164
+      ],
+      "consolidated": {
+        "bold": false,
+        "italic": false,
+        "bold_score": 0.4414623619972364,
+        "italic_score": 0.4414623619972364
+      }
+    },
+    {
+      "id": "pg0-639522",
+      "page": 0,
+      "text": "member number",
+      "bbox": [
+        1245,
+        898,
+        303,
+        47
+      ],
+      "consolidated": {
+        "bold": false,
+        "italic": false,
+        "bold_score": 0.45375230243198744,
+        "italic_score": 0.45375230243198744
+      }
+    },
+    {
+      "id": "pg0-2131130",
+      "page": 0,
+      "text": "of birth",
+      "bbox": null,
+      "consolidated": {
+        "bold": false,
+        "italic": false,
+        "bold_score": 0.45512110762641994,
+        "italic_score": 0.45512110762641994
+      }
+    },
+    {
+      "id": "pg0-1824675",
+      "page": 0,
+      "text": "kru023",
+      "bbox": [
+        1245,
+        1082,
+        151,
+        45
+      ],
+      "consolidated": {
+        "bold": false,
+        "italic": false,
+        "bold_score": 0.4519085930495816,
+        "italic_score": 0.4519085930495816
+      }
+    },
+    {
+      "id": "pg0-6454424",
+      "page": 0,
+      "text": "7",
+      "bbox": [
+        1241,
+        2595,
+        25,
+        24
+      ],
+      "consolidated": {
+        "bold": false,
+        "italic": false,
+        "bold_score": 0.4509797263146776,
+        "italic_score": 0.4509797263146776
+      }
+    },
+    {
+      "id": "pg0-5693938",
+      "page": 0,
+      "text": "45789670t+a.",
+      "bbox": null,
+      "consolidated": {
+        "bold": false,
+        "italic": false,
+        "bold_score": 0.45512110762641994,
+        "italic_score": 0.45512110762641994
+      }
+    },
+    {
+      "id": "pg0-2570746",
+      "page": 0,
+      "text": "visa",
+      "bbox": [
+        1264,
+        2584,
+        44,
+        94
+      ],
+      "consolidated": {
+        "bold": false,
+        "italic": false,
+        "bold_score": 0.44616892931186813,
+        "italic_score": 0.44616892931186813
+      }
+    },
+    {
+      "id": "pg0-735050",
+      "page": 0,
+      "text": "fnb1",
+      "bbox": null,
+      "consolidated": {
+        "bold": false,
+        "italic": false,
+        "bold_score": 0.45512110762641994,
+        "italic_score": 0.45512110762641994
+      }
+    },
+    {
+      "id": "pg0-7036571",
+      "page": 0,
+      "text": "debit",
+      "bbox": null,
+      "consolidated": {
+        "bold": false,
+        "italic": false,
+        "bold_score": 0.45512110762641994,
+        "italic_score": 0.45512110762641994
+      }
+    },
+    {
+      "id": "pg0-7753673",
+      "page": 0,
+      "text": "tactless",
+      "bbox": null,
+      "consolidated": {
+        "bold": true,
+        "italic": false,
+        "bold_score": 0.5560138905446199,
+        "italic_score": 0.44398610945538003
+      }
+    },
+    {
+      "id": "pg0-6054863",
+      "page": 0,
+      "text": "1,550.00",
+      "bbox": [
+        2049,
+        2213,
+        157,
+        44
+      ],
+      "consolidated": {
+        "bold": false,
+        "italic": false,
+        "bold_score": 0.4471315010362542,
+        "italic_score": 0.4471315010362542
+      }
+    },
+    {
+      "id": "pg0-597277",
+      "page": 0,
+      "text": "price",
+      "bbox": [
+        1526,
+        1491,
+        109,
+        42
+      ],
+      "consolidated": {
+        "bold": false,
+        "italic": false,
+        "bold_score": 0.44996057613501006,
+        "italic_score": 0.44996057613501006
+      }
+    },
+    {
+      "id": "pg0-4050500",
+      "page": 0,
+      "text": "sub",
+      "bbox": null,
+      "consolidated": {
+        "bold": false,
+        "italic": false,
+        "bold_score": 0.45512110762641994,
+        "italic_score": 0.45512110762641994
+      }
+    },
+    {
+      "id": "pg0-224775",
+      "page": 0,
+      "text": "total",
+      "bbox": [
+        2114,
+        1487,
+        97,
+        41
+      ],
+      "consolidated": {
+        "bold": false,
+        "italic": false,
+        "bold_score": 0.4457594081473835,
+        "italic_score": 0.4457594081473835
+      }
+    },
+    {
+      "id": "pg0-1395128",
+      "page": 0,
+      "text": "discount",
+      "bbox": [
+        1456,
+        2050,
+        157,
+        37
+      ],
+      "consolidated": {
+        "bold": false,
+        "italic": false,
+        "bold_score": 0.4522896748367903,
+        "italic_score": 0.4522896748367903
+      }
+    },
+    {
+      "id": "pg0-1446878",
+      "page": 0,
+      "text": "receipts",
+      "bbox": [
+        1450,
+        2131,
+        157,
+        42
+      ],
+      "consolidated": {
+        "bold": false,
+        "italic": false,
+        "bold_score": 0.4512456211334512,
+        "italic_score": 0.4512456211334512
+      }
+    },
+    {
+      "id": "pg0-8983796",
+      "page": 0,
+      "text": "due",
+      "bbox": null,
+      "consolidated": {
+        "bold": false,
+        "italic": false,
+        "bold_score": 0.45512110762641994,
+        "italic_score": 0.45512110762641994
+      }
+    },
+    {
+      "id": "pg0-9850331",
+      "page": 0,
+      "text": "000215028891",
+      "bbox": [
+        1421,
+        2607,
+        64,
+        234
+      ],
+      "consolidated": {
+        "bold": false,
+        "italic": false,
+        "bold_score": 0.4483838026919857,
+        "italic_score": 0.46187488196599946
+      }
+    },
+    {
+      "id": "pg0-6173526",
+      "page": 0,
+      "text": "a03883",
+      "bbox": null,
+      "consolidated": {
+        "bold": false,
+        "italic": false,
+        "bold_score": 0.45512110762641994,
+        "italic_score": 0.45512110762641994
+      }
+    },
+    {
+      "id": "pg0-2422723",
+      "page": 0,
+      "text": "bankmed",
+      "bbox": [
+        1642,
+        816,
+        167,
+        40
+      ],
+      "consolidated": {
+        "bold": false,
+        "italic": false,
+        "bold_score": 0.4478024800457867,
+        "italic_score": 0.4478024800457867
+      }
+    },
+    {
+      "id": "pg0-248000",
+      "page": 0,
+      "text": "510675770",
+      "bbox": [
+        1638,
+        899,
+        200,
+        43
+      ],
+      "consolidated": {
+        "bold": false,
+        "italic": false,
+        "bold_score": 0.45317117121136213,
+        "italic_score": 0.45317117121136213
+      }
+    },
+    {
+      "id": "pg0-3810513",
+      "page": 0,
+      "text": "1980/05/25",
+      "bbox": null,
+      "consolidated": {
+        "bold": false,
+        "italic": false,
+        "bold_score": 0.45512110762641994,
+        "italic_score": 0.45512110762641994
+      }
+    },
+    {
+      "id": "pg0-209183",
+      "page": 0,
+      "text": "00:00:00",
+      "bbox": null,
+      "consolidated": {
+        "bold": false,
+        "italic": false,
+        "bold_score": 0.45512110762641994,
+        "italic_score": 0.45512110762641994
+      }
+    },
+    {
+      "id": "pg0-1427746",
+      "page": 0,
+      "text": "86",
+      "bbox": [
+        1652,
+        2644,
+        31,
+        43
+      ],
+      "consolidated": {
+        "bold": false,
+        "italic": false,
+        "bold_score": 0.4677434060501794,
+        "italic_score": 0.4425562132415011
+      }
+    },
+    {
+      "id": "pg0-8430748",
+      "page": 0,
+      "text": "0-",
+      "bbox": null,
+      "consolidated": {
+        "bold": true,
+        "italic": false,
+        "bold_score": 0.5560138905446199,
+        "italic_score": 0.44398610945538003
+      }
+    },
+    {
+      "id": "pg0-7743415",
+      "page": 0,
+      "text": "approved",
+      "bbox": null,
+      "consolidated": {
+        "bold": false,
+        "italic": false,
+        "bold_score": 0.45512110762641994,
+        "italic_score": 0.45512110762641994
+      }
+    },
+    {
+      "id": "pg0-4767058",
+      "page": 0,
+      "text": "qty",
+      "bbox": [
+        1779,
+        1489,
+        73,
+        46
+      ],
+      "consolidated": {
+        "bold": false,
+        "italic": false,
+        "bold_score": 0.448526940976875,
+        "italic_score": 0.448526940976875
+      }
+    },
+    {
+      "id": "pg0-9586016",
+      "page": 0,
+      "text": "1.00",
+      "bbox": [
+        1765,
+        1726,
+        85,
+        40
+      ],
+      "consolidated": {
+        "bold": false,
+        "italic": false,
+        "bold_score": 0.45338666939819844,
+        "italic_score": 0.45338666939819844
+      }
+    },
+    {
+      "id": "pg0-2218013",
+      "page": 0,
+      "text": "a0000ouer",
+      "bbox": null,
+      "consolidated": {
+        "bold": false,
+        "italic": false,
+        "bold_score": 0.45512110762641994,
+        "italic_score": 0.45512110762641994
+      }
+    },
+    {
+      "id": "pg0-4139672",
+      "page": 0,
+      "text": "0000000000",
+      "bbox": [
+        1826,
+        2659,
+        59,
+        196
+      ],
+      "consolidated": {
+        "bold": false,
+        "italic": false,
+        "bold_score": 0.45465282277822594,
+        "italic_score": 0.4555894718597132
+      }
+    },
+    {
+      "id": "pg0-8907828",
+      "page": 0,
+      "text": "o000",
+      "bbox": null,
+      "consolidated": {
+        "bold": false,
+        "italic": false,
+        "bold_score": 0.45512110762641994,
+        "italic_score": 0.45512110762641994
+      }
+    },
+    {
+      "id": "pg0-1162793",
+      "page": 0,
+      "text": "1,347.83",
+      "bbox": [
+        2057,
+        1876,
+        155,
+        40
+      ],
+      "consolidated": {
+        "bold": false,
+        "italic": false,
+        "bold_score": 0.4531832632700874,
+        "italic_score": 0.4531832632700874
+      }
+    },
+    {
+      "id": "pg0-5669828",
+      "page": 0,
+      "text": "202.17",
+      "bbox": [
+        2081,
+        1959,
+        125,
+        42
+      ],
+      "consolidated": {
+        "bold": false,
+        "italic": false,
+        "bold_score": 0.4511678878976343,
+        "italic_score": 0.4511678878976343
+      }
+    },
+    {
+      "id": "pg0-4801886",
+      "page": 0,
+      "text": "0.00",
+      "bbox": [
+        2125,
+        2130,
+        77,
+        41
+      ],
+      "consolidated": {
+        "bold": false,
+        "italic": false,
+        "bold_score": 0.4550314488084565,
+        "italic_score": 0.4550314488084565
+      }
+    },
+    {
+      "id": "pg0-3830720",
+      "page": 0,
+      "text": "0129",
+      "bbox": [
+        2092,
+        2700,
+        39,
+        77
+      ],
+      "consolidated": {
+        "bold": false,
+        "italic": false,
+        "bold_score": 0.4551211073530489,
+        "italic_score": 0.4551211073530489
+      }
+    },
+    {
+      "id": "pgNA-7439806",
+      "page": null,
+      "text": "-",
+      "bbox": null,
+      "consolidated": {
+        "bold": false,
+        "italic": false,
+        "bold_score": 0.46008511544443426,
+        "italic_score": 0.46008511544443426
+      }
+    },
+    {
+      "id": "pgNA-6454424",
+      "page": null,
+      "text": "7",
+      "bbox": null,
+      "consolidated": {
+        "bold": false,
+        "italic": false,
+        "bold_score": 0.43045377606077095,
+        "italic_score": 0.43045377606077095
+      }
+    },
+    {
+      "id": "pg0-7838306",
+      "page": 0,
+      "text": "tax invoice",
+      "bbox": [
+        150,
+        174,
+        438,
+        73
+      ],
+      "consolidated": {
+        "bold": false,
+        "italic": false,
+        "bold_score": 0.49894231000660355,
+        "italic_score": 0.49894231000660355
+      }
+    },
+    {
+      "id": "pg0-752197",
+      "page": 0,
+      "text": "g",
+      "bbox": [
+        1544,
+        164,
+        414,
+        387
+      ],
+      "consolidated": {
+        "bold": true,
+        "italic": false,
+        "bold_score": 0.516170127381507,
+        "italic_score": 0.4838298726184931
+      }
+    },
+    {
+      "id": "pg0-5777789",
+      "page": 0,
+      "text": "dr. craige golding medical practice",
+      "bbox": [
+        150,
+        304,
+        690,
+        50
+      ],
+      "consolidated": {
+        "bold": false,
+        "italic": false,
+        "bold_score": 0.49480547353282245,
+        "italic_score": 0.49480547353282245
+      }
+    },
+    {
+      "id": "pg0-3251707",
+      "page": 0,
+      "text": "65 central street",
+      "bbox": [
+        152,
+        366,
+        308,
+        44
+      ],
+      "consolidated": {
+        "bold": false,
+        "italic": false,
+        "bold_score": 0.4973800980033325,
+        "italic_score": 0.4973800980033325
+      }
+    },
+    {
+      "id": "pg0-241024",
+      "page": 0,
+      "text": "houghton estate",
+      "bbox": [
+        153,
+        414,
+        303,
+        44
+      ],
+      "consolidated": {
+        "bold": false,
+        "italic": false,
+        "bold_score": 0.4952525641758435,
+        "italic_score": 0.4952525641758435
+      }
+    },
+    {
+      "id": "pg0-2520772",
+      "page": 0,
+      "text": "please retain invoices for tax purposes!",
+      "bbox": [
+        152,
+        588,
+        937,
+        52
+      ],
+      "consolidated": {
+        "bold": false,
+        "italic": false,
+        "bold_score": 0.49932918433013695,
+        "italic_score": 0.49932918433013695
+      }
+    },
+    {
+      "id": "pg0-5435856",
+      "page": 0,
+      "text": "practice no: 1811479 | mp no: 0412104",
+      "bbox": [
+        149,
+        648,
+        729,
+        46
+      ],
+      "consolidated": {
+        "bold": false,
+        "italic": false,
+        "bold_score": 0.4999836199376773,
+        "italic_score": 0.4999836199376773
+      }
+    },
+    {
+      "id": "pg0-8307142",
+      "page": 0,
+      "text": "tax no: 4670187568",
+      "bbox": [
+        153,
+        703,
+        376,
+        45
+      ],
+      "consolidated": {
+        "bold": false,
+        "italic": false,
+        "bold_score": 0.4984857446705663,
+        "italic_score": 0.4984857446705663
+      }
+    },
+    {
+      "id": "pg0-2340261",
+      "page": 0,
+      "text": "medical aid",
+      "bbox": [
+        1249,
+        811,
+        206,
+        43
+      ],
+      "consolidated": {
+        "bold": false,
+        "italic": false,
+        "bold_score": 0.49532228423683183,
+        "italic_score": 0.49532228423683183
+      }
+    },
+    {
+      "id": "pg0-8839826",
+      "page": 0,
+      "text": "date of birth",
+      "bbox": [
+        1242,
+        983,
+        233,
+        44
+      ],
+      "consolidated": {
+        "bold": false,
+        "italic": false,
+        "bold_score": 0.4982128831546963,
+        "italic_score": 0.4982128831546963
+      }
+    },
+    {
+      "id": "pg0-5159852",
+      "page": 0,
+      "text": "1980/05/25 00:00:00",
+      "bbox": [
+        1648,
+        987,
+        352,
+        40
+      ],
+      "consolidated": {
+        "bold": false,
+        "italic": false,
+        "bold_score": 0.4947065382112952,
+        "italic_score": 0.4947065382112952
+      }
+    },
+    {
+      "id": "pg0-9749523",
+      "page": 0,
+      "text": "pieter h kruger",
+      "bbox": [
+        553,
+        1099,
+        287,
+        46
+      ],
+      "consolidated": {
+        "bold": false,
+        "italic": false,
+        "bold_score": 0.49987494718951475,
+        "italic_score": 0.49987494718951475
+      }
+    },
+    {
+      "id": "pg0-933178",
+      "page": 0,
+      "text": "269 herder drive",
+      "bbox": [
+        551,
+        1188,
+        311,
+        46
+      ],
+      "consolidated": {
+        "bold": false,
+        "italic": false,
+        "bold_score": 0.4982458845732573,
+        "italic_score": 0.4982458845732573
+      }
+    },
+    {
+      "id": "pg0-6019099",
+      "page": 0,
+      "text": "south africa",
+      "bbox": [
+        554,
+        1322,
+        216,
+        45
+      ],
+      "consolidated": {
+        "bold": false,
+        "italic": false,
+        "bold_score": 0.4976715174318236,
+        "italic_score": 0.4976715174318236
+      }
+    },
+    {
+      "id": "pg0-620894",
+      "page": 0,
+      "text": "kruger pieter h 1980/05/25",
+      "bbox": [
+        150,
+        1632,
+        514,
+        46
+      ],
+      "consolidated": {
+        "bold": false,
+        "italic": false,
+        "bold_score": 0.4934188344176269,
+        "italic_score": 0.4934188344176269
+      }
+    },
+    {
+      "id": "pg0-4487976",
+      "page": 0,
+      "text": "icd10: e27.9",
+      "bbox": [
+        701,
+        1770,
+        250,
+        41
+      ],
+      "consolidated": {
+        "bold": false,
+        "italic": false,
+        "bold_score": 0.4990875203769153,
+        "italic_score": 0.4990875203769153
+      }
+    },
+    {
+      "id": "pg0-4843360",
+      "page": 0,
+      "text": "011 483 1080 | 011 718 3004",
+      "bbox": [
+        155,
+        1858,
+        515,
+        47
+      ],
+      "consolidated": {
+        "bold": false,
+        "italic": false,
+        "bold_score": 0.4978279362959723,
+        "italic_score": 0.4978279362959723
+      }
+    },
+    {
+      "id": "pg0-9804277",
+      "page": 0,
+      "text": "patients@craigegolding.co.za | http://www.drcgolding.co.za",
+      "bbox": [
+        155,
+        1900,
+        1033,
+        50
+      ],
+      "consolidated": {
+        "bold": false,
+        "italic": false,
+        "bold_score": 0.4990798456943465,
+        "italic_score": 0.4990798456943465
+      }
+    },
+    {
+      "id": "pg0-1168963",
+      "page": 0,
+      "text": "sub total",
+      "bbox": [
+        1454,
+        1877,
+        159,
+        41
+      ],
+      "consolidated": {
+        "bold": false,
+        "italic": false,
+        "bold_score": 0.49670181108487427,
+        "italic_score": 0.49670181108487427
+      }
+    },
+    {
+      "id": "pg0-3649043",
+      "page": 0,
+      "text": "whatsapp: 0838042903",
+      "bbox": [
+        154,
+        1945,
+        432,
+        51
+      ],
+      "consolidated": {
+        "bold": false,
+        "italic": false,
+        "bold_score": 0.49856738285156516,
+        "italic_score": 0.49856738285156516
+      }
+    },
+    {
+      "id": "pg0-1843079",
+      "page": 0,
+      "text": "banking details:",
+      "bbox": [
+        157,
+        2068,
+        291,
+        44
+      ],
+      "consolidated": {
+        "bold": false,
+        "italic": false,
+        "bold_score": 0.49616161129536074,
+        "italic_score": 0.49616161129536074
+      }
+    },
+    {
+      "id": "pg0-1610744",
+      "page": 0,
+      "text": "dr. craige golding",
+      "bbox": [
+        157,
+        2111,
+        329,
+        47
+      ],
+      "consolidated": {
+        "bold": false,
+        "italic": false,
+        "bold_score": 0.49898831874709654,
+        "italic_score": 0.49898831874709654
+      }
+    },
+    {
+      "id": "pg0-9017151",
+      "page": 0,
+      "text": "nedbank killarney",
+      "bbox": [
+        155,
+        2157,
+        327,
+        43
+      ],
+      "consolidated": {
+        "bold": false,
+        "italic": false,
+        "bold_score": 0.49802292991413233,
+        "italic_score": 0.49802292991413233
+      }
+    },
+    {
+      "id": "pg0-5724285",
+      "page": 0,
+      "text": "total due",
+      "bbox": [
+        1456,
+        2216,
+        171,
+        40
+      ],
+      "consolidated": {
+        "bold": false,
+        "italic": false,
+        "bold_score": 0.4904448420620575,
+        "italic_score": 0.4904448420620575
+      }
+    },
+    {
+      "id": "pg0-7560693",
+      "page": 0,
+      "text": "no return or exchange on products once",
+      "bbox": [
+        155,
+        2276,
+        963,
+        51
+      ],
+      "consolidated": {
+        "bold": false,
+        "italic": false,
+        "bold_score": 0.49856275031373815,
+        "italic_score": 0.49856275031373815
+      }
+    },
+    {
+      "id": "pg0-4561103",
+      "page": 0,
+      "text": "nb! price subject to change without prior",
+      "bbox": [
+        159,
+        2409,
+        959,
+        52
+      ],
+      "consolidated": {
+        "bold": false,
+        "italic": false,
+        "bold_score": 0.49756477400848764,
+        "italic_score": 0.49756477400848764
+      }
+    },
+    {
+      "id": "pg0-360765",
+      "page": 0,
+      "text": "notification, please confirm prices when placing",
+      "bbox": [
+        159,
+        2453,
+        1105,
+        54
+      ],
+      "consolidated": {
+        "bold": false,
+        "italic": false,
+        "bold_score": 0.4970163135440888,
+        "italic_score": 0.4970163135440888
+      }
+    },
+    {
+      "id": "pg0-8739110",
+      "page": 0,
+      "text": "an order.",
+      "bbox": [
+        154,
+        2506,
+        220,
+        43
+      ],
+      "consolidated": {
+        "bold": false,
+        "italic": false,
+        "bold_score": 0.49863061086945504,
+        "italic_score": 0.49863061086945504
+      }
+    },
+    {
+      "id": "pg0-3946610",
+      "page": 0,
+      "text": "00",
+      "bbox": [
+        2022,
+        2682,
+        37,
+        59
+      ],
+      "consolidated": {
+        "bold": false,
+        "italic": false,
+        "bold_score": 0.49290981393935696,
+        "italic_score": 0.49290981393935696
+      }
+    },
+    {
+      "id": "pg0-7692975",
+      "page": 0,
+      "text": "086008",
+      "bbox": [
+        1538,
+        2620,
+        50,
+        127
+      ],
+      "consolidated": {
+        "bold": false,
+        "italic": true,
+        "bold_score": 0.4989108115868754,
+        "italic_score": 0.5010891884131246
+      }
+    },
+    {
+      "id": "pg0-1884992",
+      "page": 0,
+      "text": "403883",
+      "bbox": [
+        1579,
+        2634,
+        42,
+        120
+      ],
+      "consolidated": {
+        "bold": false,
+        "italic": false,
+        "bold_score": 0.4982756779209547,
+        "italic_score": 0.4982756779209547
+      }
+    },
+    {
+      "id": "pg0-3193621",
+      "page": 0,
+      "text": "0000",
+      "bbox": [
+        1982,
+        2676,
+        50,
+        80
+      ],
+      "consolidated": {
+        "bold": false,
+        "italic": false,
+        "bold_score": 0.49644300092810606,
+        "italic_score": 0.49644300092810606
+      }
+    },
+    {
+      "id": "pg0-6461696",
+      "page": 0,
+      "text": "issuer",
+      "bbox": [
+        1768,
+        2650,
+        48,
+        129
+      ],
+      "consolidated": {
+        "bold": false,
+        "italic": true,
+        "bold_score": 0.49493413023297195,
+        "italic_score": 0.505065869767028
+      }
+    },
+    {
+      "id": "pg0-470645",
+      "page": 0,
+      "text": "contactless",
+      "bbox": [
+        1348,
+        2602,
+        65,
+        216
+      ],
+      "consolidated": {
+        "bold": false,
+        "italic": true,
+        "bold_score": 0.49512497099722974,
+        "italic_score": 0.5048750290027704
+      }
+    },
+    {
+      "id": "pg0-1281641",
+      "page": 0,
+      "text": "0 - approved",
+      "bbox": [
+        1663,
+        2641,
+        61,
+        231
+      ],
+      "consolidated": {
+        "bold": false,
+        "italic": true,
+        "bold_score": 0.4910502449660125,
+        "italic_score": 0.5089497550339875
+      }
+    },
+    {
+      "id": "pg0-1242529",
+      "page": 0,
+      "text": "fnb1 debit visa",
+      "bbox": [
+        1308,
+        2601,
+        66,
+        289
+      ],
+      "consolidated": {
+        "bold": false,
+        "italic": true,
+        "bold_score": 0.4938161867546405,
+        "italic_score": 0.5061838132453594
+      }
+    },
+    {
+      "id": "pg0-7156623",
+      "page": 0,
+      "text": "visa card",
+      "bbox": [
+        2100,
+        2736,
+        61,
+        160
+      ],
+      "consolidated": {
+        "bold": false,
+        "italic": true,
+        "bold_score": 0.4942715478178485,
+        "italic_score": 0.5057284521821515
+      }
+    },
+    {
+      "id": "pg0-4190772",
+      "page": 0,
+      "text": "45789670 ****** 06",
+      "bbox": [
+        1270,
+        2594,
+        69,
+        304
+      ],
+      "consolidated": {
+        "bold": false,
+        "italic": true,
+        "bold_score": 0.4929588382531643,
+        "italic_score": 0.5070411617468357
+      }
+    },
+    {
+      "id": "pg0-9942219",
+      "page": 0,
+      "text": "a0000000031010",
+      "bbox": [
+        1778,
+        2653,
+        74,
+        263
+      ],
+      "consolidated": {
+        "bold": false,
+        "italic": true,
+        "bold_score": 0.4982288591044317,
+        "italic_score": 0.5017711408955683
+      }
+    },
+    {
+      "id": "pg0-8783793",
+      "page": 0,
+      "text": "r1,550.00",
+      "bbox": [
+        2229,
+        2712,
+        83,
+        233
+      ],
+      "consolidated": {
+        "bold": false,
+        "italic": true,
+        "bold_score": 0.4891638129258193,
+        "italic_score": 0.5108361870741807
+      }
+    },
+    {
+      "id": "pg0-3207752",
+      "page": 0,
+      "text": "17fa584cfdeb2071",
+      "bbox": [
+        2017,
+        2692,
+        83,
+        293
+      ],
+      "consolidated": {
+        "bold": false,
+        "italic": true,
+        "bold_score": 0.48958018550904936,
+        "italic_score": 0.5104198144909506
+      }
+    },
+    {
+      "id": "pg0-1666534",
+      "page": 0,
+      "text": "dr golding",
+      "bbox": [
+        875,
+        2634,
+        105,
+        363
+      ],
+      "consolidated": {
+        "bold": false,
+        "italic": true,
+        "bold_score": 0.49826655361421557,
+        "italic_score": 0.5017334463857845
+      }
+    },
+    {
+      "id": "pg0-409363",
+      "page": 0,
+      "text": "08/25/2025",
+      "bbox": [
+        1017,
+        2909,
+        64,
+        197
+      ],
+      "consolidated": {
+        "bold": false,
+        "italic": true,
+        "bold_score": 0.48708684162133936,
+        "italic_score": 0.5129131583786606
+      }
+    },
+    {
+      "id": "pg0-3331949",
+      "page": 0,
+      "text": "pin verified",
+      "bbox": [
+        2144,
+        2861,
+        57,
+        243
+      ],
+      "consolidated": {
+        "bold": false,
+        "italic": true,
+        "bold_score": 0.49214364366782065,
+        "italic_score": 0.5078563563321793
+      }
+    },
+    {
+      "id": "pg0-7171703",
+      "page": 0,
+      "text": "monday, 25 august 2025 13:28",
+      "bbox": [
+        157,
+        3103,
+        548,
+        48
+      ],
+      "consolidated": {
+        "bold": false,
+        "italic": false,
+        "bold_score": 0.4953735741288748,
+        "italic_score": 0.4953735741288748
+      }
+    },
+    {
+      "id": "pg0-134401",
+      "page": 0,
+      "text": "customer copy",
+      "bbox": [
+        2284,
+        2893,
+        58,
+        218
+      ],
+      "consolidated": {
+        "bold": false,
+        "italic": true,
+        "bold_score": 0.4897497681247728,
+        "italic_score": 0.5102502318752272
+      }
+    },
+    {
+      "id": "pg0-5007503",
+      "page": 0,
+      "text": "purchase",
+      "bbox": [
+        1084,
+        2902,
+        73,
+        217
+      ],
+      "consolidated": {
+        "bold": false,
+        "italic": true,
+        "bold_score": 0.4906972115218893,
+        "italic_score": 0.5093027884781107
+      }
+    },
+    {
+      "id": "pg0-7918974",
+      "page": 0,
+      "text": "transaction #:",
+      "bbox": [
+        1159,
+        2871,
+        70,
+        258
+      ],
+      "consolidated": {
+        "bold": false,
+        "italic": true,
+        "bold_score": 0.48820378867608794,
+        "italic_score": 0.5117962113239121
+      }
+    },
+    {
+      "id": "pg0-5981386",
+      "page": 0,
+      "text": "card type :",
+      "bbox": [
+        1201,
+        2948,
+        59,
+        181
+      ],
+      "consolidated": {
+        "bold": false,
+        "italic": true,
+        "bold_score": 0.4931653802718216,
+        "italic_score": 0.5068346197281783
+      }
+    },
+    {
+      "id": "pg0-1563293",
+      "page": 0,
+      "text": "description",
+      "bbox": [
+        1269,
+        2925,
+        62,
+        210
+      ],
+      "consolidated": {
+        "bold": false,
+        "italic": true,
+        "bold_score": 0.48910964383588407,
+        "italic_score": 0.5108903561641159
+      }
+    },
+    {
+      "id": "pg0-8988043",
+      "page": 0,
+      "text": "account :",
+      "bbox": [
+        1233,
+        2990,
+        54,
+        149
+      ],
+      "consolidated": {
+        "bold": false,
+        "italic": true,
+        "bold_score": 0.4918142059395423,
+        "italic_score": 0.5081857940604577
+      }
+    },
+    {
+      "id": "pg0-8348418",
+      "page": 0,
+      "text": "1851624733202508251325179714",
+      "bbox": [
+        1447,
+        2617,
+        110,
+        524
+      ],
+      "consolidated": {
+        "bold": false,
+        "italic": true,
+        "bold_score": 0.48847684995531565,
+        "italic_score": 0.5115231500446843
+      }
+    },
+    {
+      "id": "pg0-4875702",
+      "page": 0,
+      "text": "entry:",
+      "bbox": [
+        1304,
+        3030,
+        54,
+        115
+      ],
+      "consolidated": {
+        "bold": false,
+        "italic": false,
+        "bold_score": 0.4916584591415449,
+        "italic_score": 0.4916584591415449
+      }
+    },
+    {
+      "id": "pg0-6406373",
+      "page": 0,
+      "text": "trace id:",
+      "bbox": [
+        1379,
+        2968,
+        52,
+        179
+      ],
+      "consolidated": {
+        "bold": false,
+        "italic": true,
+        "bold_score": 0.4931116579018855,
+        "italic_score": 0.5068883420981145
+      }
+    },
+    {
+      "id": "pg0-2825224",
+      "page": 0,
+      "text": "ref. number:",
+      "bbox": [
+        1338,
+        2926,
+        65,
+        226
+      ],
+      "consolidated": {
+        "bold": false,
+        "italic": true,
+        "bold_score": 0.4909101515000506,
+        "italic_score": 0.5090898484999494
+      }
+    },
+    {
+      "id": "pg0-8382839",
+      "page": 0,
+      "text": "global uid:",
+      "bbox": [
+        1412,
+        2953,
+        58,
+        199
+      ],
+      "consolidated": {
+        "bold": false,
+        "italic": false,
+        "bold_score": 0.4937008945091575,
+        "italic_score": 0.4937008945091575
+      }
+    },
+    {
+      "id": "pg0-2469150",
+      "page": 0,
+      "text": "stan :",
+      "bbox": [
+        1483,
+        3076,
+        41,
+        89
+      ],
+      "consolidated": {
+        "bold": false,
+        "italic": false,
+        "bold_score": 0.4986125534458763,
+        "italic_score": 0.4986125534458763
+      }
+    },
+    {
+      "id": "pg0-1686092",
+      "page": 0,
+      "text": "auth. code:",
+      "bbox": [
+        1520,
+        2967,
+        57,
+        204
+      ],
+      "consolidated": {
+        "bold": false,
+        "italic": true,
+        "bold_score": 0.48885104055846795,
+        "italic_score": 0.5111489594415322
+      }
+    },
+    {
+      "id": "pg0-1670991",
+      "page": 0,
+      "text": "batch #:",
+      "bbox": [
+        1579,
+        3030,
+        52,
+        152
+      ],
+      "consolidated": {
+        "bold": false,
+        "italic": false,
+        "bold_score": 0.49259468889389213,
+        "italic_score": 0.49259468889389213
+      }
+    },
+    {
+      "id": "pg0-7702222",
+      "page": 0,
+      "text": "response:",
+      "bbox": [
+        1614,
+        3022,
+        53,
+        158
+      ],
+      "consolidated": {
+        "bold": false,
+        "italic": true,
+        "bold_score": 0.49626372998800544,
+        "italic_score": 0.5037362700119946
+      }
+    },
+    {
+      "id": "pg0-3322623",
+      "page": 0,
+      "text": "tvr :",
+      "bbox": [
+        1776,
+        3125,
+        36,
+        65
+      ],
+      "consolidated": {
+        "bold": false,
+        "italic": false,
+        "bold_score": 0.49664957497272516,
+        "italic_score": 0.49664957497272516
+      }
+    },
+    {
+      "id": "pg0-6956885",
+      "page": 0,
+      "text": "mode :",
+      "bbox": [
+        1707,
+        3100,
+        41,
+        91
+      ],
+      "consolidated": {
+        "bold": false,
+        "italic": true,
+        "bold_score": 0.49566317987331143,
+        "italic_score": 0.5043368201266886
+      }
+    },
+    {
+      "id": "pg0-9360152",
+      "page": 0,
+      "text": "aid:",
+      "bbox": [
+        1742,
+        3125,
+        37,
+        66
+      ],
+      "consolidated": {
+        "bold": false,
+        "italic": false,
+        "bold_score": 0.4966914638941889,
+        "italic_score": 0.4966914638941889
+      }
+    },
+    {
+      "id": "pg0-5830308",
+      "page": 0,
+      "text": "cvr :",
+      "bbox": [
+        1811,
+        3121,
+        39,
+        78
+      ],
+      "consolidated": {
+        "bold": false,
+        "italic": false,
+        "bold_score": 0.499968176366892,
+        "italic_score": 0.499968176366892
+      }
+    },
+    {
+      "id": "pg0-7391547",
+      "page": 0,
+      "text": "06011203a000000f030000000100",
+      "bbox": [
+        1846,
+        2689,
+        109,
+        511
+      ],
+      "consolidated": {
+        "bold": false,
+        "italic": true,
+        "bold_score": 0.49272059218841247,
+        "italic_score": 0.5072794078115875
+      }
+    },
+    {
+      "id": "pg0-8911919",
+      "page": 0,
+      "text": "000000000015116095",
+      "bbox": [
+        1879,
+        2870,
+        77,
+        340
+      ],
+      "consolidated": {
+        "bold": false,
+        "italic": true,
+        "bold_score": 0.49412941541462,
+        "italic_score": 0.5058705845853799
+      }
+    },
+    {
+      "id": "pg0-6340521",
+      "page": 0,
+      "text": "tsi :",
+      "bbox": [
+        1916,
+        3129,
+        38,
+        79
+      ],
+      "consolidated": {
+        "bold": false,
+        "italic": false,
+        "bold_score": 0.49231362282493046,
+        "italic_score": 0.49231362282493046
+      }
+    },
+    {
+      "id": "pg0-5360760",
+      "page": 0,
+      "text": "respcode :",
+      "bbox": [
+        1952,
+        3038,
+        53,
+        178
+      ],
+      "consolidated": {
+        "bold": false,
+        "italic": true,
+        "bold_score": 0.49347520416155527,
+        "italic_score": 0.5065247958384448
+      }
+    },
+    {
+      "id": "pg0-7922004",
+      "page": 0,
+      "text": "ac:",
+      "bbox": [
+        1988,
+        3166,
+        35,
+        56
+      ],
+      "consolidated": {
+        "bold": false,
+        "italic": false,
+        "bold_score": 0.4938865414871776,
+        "italic_score": 0.4938865414871776
+      }
+    },
+    {
+      "id": "pg0-180902",
+      "page": 0,
+      "text": "atc:",
+      "bbox": [
+        2019,
+        3158,
+        42,
+        72
+      ],
+      "consolidated": {
+        "bold": false,
+        "italic": false,
+        "bold_score": 0.4946443010385662,
+        "italic_score": 0.4946443010385662
+      }
+    },
+    {
+      "id": "pg0-9809175",
+      "page": 0,
+      "text": "appn:",
+      "bbox": [
+        2059,
+        3144,
+        49,
+        101
+      ],
+      "consolidated": {
+        "bold": false,
+        "italic": false,
+        "bold_score": 0.49165739360158994,
+        "italic_score": 0.49165739360158994
+      }
+    },
+    {
+      "id": "pg0-5963196",
+      "page": 0,
+      "text": "amount :",
+      "bbox": [
+        2193,
+        3078,
+        65,
+        183
+      ],
+      "consolidated": {
+        "bold": false,
+        "italic": true,
+        "bold_score": 0.49354624077032333,
+        "italic_score": 0.5064537592296767
+      }
+    }
+  ],
+  "summary": {
+    "toggles": {
+      "pymupdf": true,
+      "azure": true,
+      "tesseract": true,
+      "vision_pixel": true
+    },
+    "weights": {
+      "pymupdf": 0.3,
+      "azure": 0.4,
+      "tesseract": 0.2,
+      "vision_pixel": 0.1
+    },
+    "errors": {},
+    "counts": {
+      "pymupdf_spans": 152,
+      "azure_style_spans": 2,
+      "tesseract_words": 0,
+      "vision_word_rois": 121,
+      "items": 201
+    },
+    "notes": [
+      "Consolidation key is (page, normalized_text). Multiple occurrences of the same word on a page will merge.",
+      "Tune weights in this module or via the Step 2 UI sliders."
+    ]
+  }
+}

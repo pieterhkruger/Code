@@ -82,7 +82,9 @@ WEIGHT_VISION_PIXEL: float = 0.10
 
 INCLUDE_BACKEND_OPINIONS: bool = True   # if False, items[].services is omitted to keep JSON compact
 
-# ----------------- Public API -----------------
+# New: control whether repeated tokens on the same page collapse into a single fused item.
+# Default True to preserve current behavior; set False during audits to keep each occurrence separate.
+MERGE_DUPLICATES: bool = True
 
 def build_text_style_panel(
     *,
@@ -93,6 +95,7 @@ def build_text_style_panel(
     weights: Optional[Dict[str, float]] = None,
     include_backend_opinions: Optional[bool] = None,
     max_pages: int = 3,
+    merge_duplicates: Optional[bool] = None,
 ) -> Dict[str, Any]:
     """
     Entry point called by Step 2.
@@ -102,6 +105,8 @@ def build_text_style_panel(
     - service_toggles: overrides for ENABLE_* flags.
     - weights: overrides for WEIGHT_* dict.
     - include_backend_opinions: overrides INCLUDE_BACKEND_OPINIONS.
+    - max_pages: max PDF pages to rasterize for pixel operations.
+    - merge_duplicates: override MERGE_DUPLICATES. If False, keeps each (page, text) occurrence separate.
 
     Returns dict with keys: {"items": [...], "summary": {...}}
     """
@@ -125,6 +130,7 @@ def build_text_style_panel(
         wts.update(weights)
 
     include_ops = INCLUDE_BACKEND_OPINIONS if include_backend_opinions is None else include_backend_opinions
+    keep_merging = MERGE_DUPLICATES if merge_duplicates is None else bool(merge_duplicates)
 
     errors: Dict[str, str] = {}
     pages_images: List[Image.Image] = []
@@ -140,10 +146,11 @@ def build_text_style_panel(
             pages_images = [img]
             image_mode = True
         else:
-            # No source bytes: try to infer from Vision raw (not perfect).
+            # No source bytes available; pixel backends may be disabled later with an error record.
             pages_images = []
     except Exception as ex:
         errors["rasterize"] = repr(ex)
+        pages_images = []
 
     # ---- Collect raw opinions by backend ----
     # 1) PyMuPDF true PDF spans
@@ -159,7 +166,7 @@ def build_text_style_panel(
         except Exception as ex:
             errors["pymupdf"] = repr(ex)
 
-    # 2) Azure (DI v4 preferred; FR v3 fallback)
+    # 2) Azure (DI v4 preferred; FR v3 fallback) — prefer normalized styles if Step-2 added them
     az_styles = []
     if toggles["azure"]:
         try:
@@ -171,21 +178,30 @@ def build_text_style_panel(
     tess_words = []
     if toggles["tesseract"]:
         try:
+            if not pages_images:
+                raise RuntimeError("No raster pages available for Tesseract (source_file_bytes missing or rasterization failed)")
             tess_words = tesseract_words_with_wfa(pages_images)
+            # If Tesseract returns only page-level errors, surface the best message
+            if tess_words and all(("error" in t) for t in tess_words):
+                errors["tesseract"] = "; ".join(sorted(set(t["error"] for t in tess_words if "error" in t)))
         except Exception as ex:
             errors["tesseract"] = repr(ex)
+            tess_words = []
 
     # 4) Vision pixel ROI metrics (using Step 1 Vision READ + our pages_images)
     vision_metrics = []
     per_page_stats = {}
     if toggles["vision_pixel"]:
         try:
+            if not pages_images:
+                raise RuntimeError("No raster pages available for Vision pixel metrics (source_file_bytes missing or rasterization failed)")
             vision_pages = (step1_raw or {}).get("vision", {}).get("pages", [])
             vision_metrics, per_page_stats = vision_roi_metrics(vision_pages, pages_images)
         except Exception as ex:
             errors["vision_pixel"] = repr(ex)
+            vision_metrics, per_page_stats = [], {}
 
-    # ---- Fuse opinions by a simple key: (page, normalized_text) ----
+    # ---- Fuse opinions (optionally merging duplicates) ----
     items = fuse_by_text_key(
         pm_spans=pm_spans,
         az_styles=az_styles,
@@ -194,6 +210,7 @@ def build_text_style_panel(
         weights=wts,
         include_ops=include_ops,
         per_page_stats=per_page_stats,
+        merge_duplicates=keep_merging,
     )
 
     summary = {
@@ -203,16 +220,20 @@ def build_text_style_panel(
         "counts": {
             "pymupdf_spans": len(pm_spans),
             "azure_style_spans": len(az_styles),
-            "tesseract_words": len(tess_words),
+            "tesseract_words": len([t for t in tess_words if "error" not in t]),
             "vision_word_rois": len(vision_metrics),
             "items": len(items),
         },
         "notes": [
-            "Consolidation key is (page, normalized_text). Multiple occurrences of the same word on a page will merge.",
-            "Tune weights in this module or via the Step 2 UI sliders.",
+            ("Consolidation key is (page, normalized_text). Multiple occurrences of the same word on a page will merge."
+             if keep_merging else
+             "Duplicate merging is OFF: each (page, text) occurrence is kept as a separate item."),
+            "DI normalized styles (if present) are preferred over raw DI styles.",
+            "Tesseract/Vision pixel metrics require raster pages; errors are recorded if source bytes are absent.",
         ],
     }
     return {"items": items, "summary": summary}
+
 
 # ----------------- Helpers: rasterization -----------------
 
@@ -284,23 +305,47 @@ from services.di_client import DIService
 
 def azure_styles_from_backends(step1_raw: Dict[str, Any], source_file_bytes: Optional[bytes], content_type_hint: Optional[str]) -> List[Dict[str, Any]]:
     """
-    Resolve Azure opinion:
-    1) If Step 1 DI result already contains styles, parse them.
-    2) Else, try DI v4 directly with styleFont.
-    3) Else, try FR v3 (best-effort).
+    Resolve Azure opinion (bold/italic/handwriting):
+    Preference order:
+      (A) Step-2 normalized styles, if present: step1_raw["di"]["result"]["layout"]["style_normalized"]
+      (B) Raw DI v4 styles present in step1_raw
+      (C) Fresh DI v4 call with styleFont (requires source_file_bytes)
+      (D) FR v3 fallback (styles limited; handwriting only)
     """
-    # 1) Parse existing DI raw if present
+    # A) Prefer normalized styles injected by Step-2 (if any)
+    try:
+        norm = (((step1_raw or {}).get("di") or {}).get("result") or {}).get("layout", {}).get("style_normalized")
+        if norm:
+            out = []
+            for st in norm:
+                out.append({
+                    "service": "azure",
+                    "page": st.get("page"),
+                    "text": (st.get("text") or "").strip(),
+                    "bbox": st.get("bbox"),
+                    "fontStyle": st.get("fontStyle"),
+                    "fontWeight": st.get("fontWeight"),
+                    "isHandwritten": st.get("isHandwritten"),
+                    "is_bold": bool(str(st.get("fontWeight", "")).lower() == "bold"),
+                    "is_italic": bool(str(st.get("fontStyle", "")).lower() == "italic"),
+                    "confidence": float(st.get("confidence", 0.7)),
+                })
+            if out:
+                return out
+    except Exception:
+        pass
+
+    # B) Parse existing DI raw if present
     di_result = (step1_raw or {}).get("di", {}).get("result") or {}
     styles = azure_styles_from_di_result(di_result)
     if styles:
         return styles
 
-    # 2) Try DI v4 directly
+    # C) Try DI v4 directly
     try:
         cfg = get_config()
         if cfg.azure.di_endpoint and cfg.azure.di_key and source_file_bytes:
             di = DIService(cfg.azure.di_endpoint, cfg.azure.di_key)
-            # best content-type guess
             ctype = "application/pdf" if (content_type_hint or "").lower() == ".pdf" else "application/octet-stream"
             di_out = di.analyze_layout(content=source_file_bytes, content_type=ctype, model_id="prebuilt-layout", want_style_font=True, request_kv=False)
             styles = azure_styles_from_di_result(di_out.get("result") or {})
@@ -309,7 +354,7 @@ def azure_styles_from_backends(step1_raw: Dict[str, Any], source_file_bytes: Opt
     except Exception:
         pass
 
-    # 3) Try FR v3 (very light-weight; styles are more limited)
+    # D) FR v3 fallback (handwriting only typically)
     try:
         from azure.ai.formrecognizer import DocumentAnalysisClient
         from azure.core.credentials import AzureKeyCredential
@@ -318,13 +363,10 @@ def azure_styles_from_backends(step1_raw: Dict[str, Any], source_file_bytes: Opt
             fr = DocumentAnalysisClient(endpoint=cfg.azure.di_endpoint, credential=AzureKeyCredential(cfg.azure.di_key))
             poller = fr.begin_analyze_document(model_id="prebuilt-layout", document=source_file_bytes)
             res = poller.result()
-            # Normalize to dict
             try:
                 resd = res.to_dict()
             except Exception:
                 resd = json.loads(res.to_json()) if hasattr(res, "to_json") else {}
-            # FR v3 exposes 'styles' (handwriting) and 'paragraphs'[...]['role'].
-            # It may not expose font weight/style, so we convert what we can.
             out = []
             content = resd.get("content") or ""
             for st in (resd.get("styles") or []):
@@ -335,7 +377,6 @@ def azure_styles_from_backends(step1_raw: Dict[str, Any], source_file_bytes: Opt
                     s0 = spans[0]; off = int(s0.get("offset", 0)); length = int(s0.get("length", 0))
                     try: snippet = content[off: off + length]
                     except Exception: snippet = ""
-                # FR v3 styles don't have bold/italic; leave as None
                 out.append({
                     "service": "azure",
                     "page": None,
@@ -353,6 +394,7 @@ def azure_styles_from_backends(step1_raw: Dict[str, Any], source_file_bytes: Opt
         pass
 
     return []
+
 
 def azure_styles_from_di_result(di_result: Dict[str, Any]) -> List[Dict[str, Any]]:
     """
@@ -557,22 +599,38 @@ def fuse_by_text_key(
     weights: Dict[str, float],
     include_ops: bool,
     per_page_stats: Dict[int, Dict[str, float]],
+    merge_duplicates: bool = True,
 ) -> List[Dict[str, Any]]:
     """
-    Merge backend opinions by (page, normalized_text).
-    For backends that lack page info (Azure DI), we use page=None key and still fold them in by text only.
+    Merge backend opinions. By default, buckets by (page, normalized_text),
+    which merges repeated tokens on the same page. If merge_duplicates=False,
+    keep each occurrence separate by indexing repeated keys.
     """
-    def key_for(page, text):
-        t = (text or "").strip()
-        t = " ".join(t.split())  # collapse whitespace
-        t = t[:64].lower()
-        return (page, t)
+    def norm_text(s: str) -> str:
+        t = (s or "").strip()
+        t = " ".join(t.split())
+        return t[:64].lower()
 
-    buckets: Dict[Tuple[Optional[int], str], Dict[str, Any]] = {}
+    # If we keep duplicates, the key is (page, norm_text, nth_occur)
+    counters: Dict[Tuple[Optional[int], str], int] = {}
+
+    def make_key(page: Optional[int], text: str) -> Tuple:
+        nt = norm_text(text)
+        if merge_duplicates:
+            return (page, nt)
+        # Separate each occurrence
+        base = (page, nt)
+        k = counters.get(base, 0) + 1
+        counters[base] = k
+        return (page, nt, k)
+
+    buckets: Dict[Tuple, Dict[str, Any]] = {}
 
     def add(service_name: str, page: Optional[int], text: str, payload: Dict[str, Any]):
-        k = key_for(page, text)
-        b = buckets.setdefault(k, {"page": page, "text": text, "services": {}})
+        if not text:
+            return
+        k = make_key(page, text)
+        b = buckets.setdefault(k, {"page": page, "text": norm_text(text), "services": {}})
         b["services"][service_name] = payload
 
     for row in pm_spans:
@@ -587,24 +645,23 @@ def fuse_by_text_key(
     for row in vision_metrics:
         add("vision_pixel", row.get("page"), row.get("text"), row)
 
-    # Consolidate
     items: List[Dict[str, Any]] = []
-    for (page, key_text), b in buckets.items():
+    for key, b in buckets.items():
+        page = b["page"]
+        key_text = b["text"]
         services = b["services"]
 
         def pick(service: str, field: str, default=None):
             return (services.get(service) or {}).get(field, default)
 
-        # For bbox we prefer tesseract (has pixel coords), else vision
+        # Prefer tesseract bbox, else vision
         bbox = pick("tesseract", "bbox") or pick("vision_pixel", "bbox")
 
-        # Turn each service into a signed vote for bold/italic
-        def sv(service: str, pred: Optional[bool], conf: float, weight: float):
+        def sv(pred: Optional[bool], conf: float, weight: float) -> float:
             if pred is None:
                 return 0.0
             return (1.0 if pred else -1.0) * float(conf) * float(weight)
 
-        # Service-level predictions
         bold_votes = []
         italic_votes = []
 
@@ -613,25 +670,23 @@ def fuse_by_text_key(
             pb = bool(pick("pymupdf", "is_bold", False))
             pi = bool(pick("pymupdf", "is_italic", False))
             pc = float(pick("pymupdf", "confidence", 0.6))
-            bold_votes.append(sv("pymupdf", pb, pc, weights["pymupdf"]))
-            italic_votes.append(sv("pymupdf", pi, pc, weights["pymupdf"]))
+            bold_votes.append(sv(pb, pc, weights["pymupdf"]))
+            italic_votes.append(sv(pi, pc, weights["pymupdf"]))
 
         # Azure
         if "azure" in services:
             ab = (str(pick("azure", "is_bold", "false")).lower() == "true")
             ai = (str(pick("azure", "is_italic", "false")).lower() == "true")
             ac = float(pick("azure", "confidence", 0.7))
-            bold_votes.append(sv("azure", ab, ac, weights["azure"]))
-            italic_votes.append(sv("azure", ai, ac, weights["azure"]))
+            bold_votes.append(sv(ab, ac, weights["azure"]))
+            italic_votes.append(sv(ai, ac, weights["azure"]))
 
-        # Tesseract
+        # Tesseract (boost/penalize with Vision hints if present)
         if "tesseract" in services:
             tb = bool(pick("tesseract", "is_bold", False))
             ti = bool(pick("tesseract", "is_italic", False))
             tc = float(pick("tesseract", "confidence", 0.5))
-            # Adjust with pixel hints if present
             if "vision_pixel" in services:
-                # If both agree it's bold, boost; if they disagree, penalize
                 vb = bool(pick("vision_pixel", "bold_hint", False))
                 vi = bool(pick("vision_pixel", "italic_hint", False))
                 if vb == tb:
@@ -640,18 +695,17 @@ def fuse_by_text_key(
                     tc = max(0.0, tc - 0.2)
                 if vi != ti:
                     tc = max(0.0, tc - 0.1)
-            bold_votes.append(sv("tesseract", tb, tc, weights["tesseract"]))
-            italic_votes.append(sv("tesseract", ti, tc, weights["tesseract"]))
+            bold_votes.append(sv(tb, tc, weights["tesseract"]))
+            italic_votes.append(sv(ti, tc, weights["tesseract"]))
 
         # Vision pixel
         if "vision_pixel" in services:
             vb = bool(pick("vision_pixel", "bold_hint", False))
             vi = bool(pick("vision_pixel", "italic_hint", False))
             vc = float(pick("vision_pixel", "confidence", 0.4))
-            bold_votes.append(sv("vision_pixel", vb, vc, weights["vision_pixel"]))
-            italic_votes.append(sv("vision_pixel", vi, vc, weights["vision_pixel"]))
+            bold_votes.append(sv(vb, vc, weights["vision_pixel"]))
+            italic_votes.append(sv(vi, vc, weights["vision_pixel"]))
 
-        # Aggregate with sigmoid to 0..1
         bold_score = float(sigmoid(sum(bold_votes)))
         italic_score = float(sigmoid(sum(italic_votes)))
         consolidated = {
@@ -661,18 +715,28 @@ def fuse_by_text_key(
             "italic_score": italic_score,
         }
 
+        # id is stable if merging, or distinct per occurrence if not merging
+        if merge_duplicates:
+            uniq = f"pg{page if page is not None else 'NA'}-{abs(hash(key_text))%10_000_000}"
+        else:
+            # include the occurrence index in the id for auditing purposes
+            occ = key[-1] if isinstance(key, tuple) and len(key) == 3 else 1
+            uniq = f"pg{page if page is not None else 'NA'}-{abs(hash(key_text))%10_000_000}-{occ}"
+
         item = {
-            "id": f"pg{page if page is not None else 'NA'}-{abs(hash(key_text))%10_000_000}",
+            "id": uniq,
             "page": page,
             "text": key_text,
             "bbox": bbox,
             "consolidated": consolidated,
-            "truth": {"bold": None, "italic": None},  # to be filled manually by adjudicator
+            "truth": {"bold": None, "italic": None},
         }
         if include_ops:
             item["services"] = services
         items.append(item)
+
     return items
+
 
 def sigmoid(x: float) -> float:
     return 1.0 / (1.0 + math.exp(-x))
